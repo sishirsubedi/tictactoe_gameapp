@@ -1,0 +1,50 @@
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\bin\Debug\Tfour_Main.exe.config
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\bin\Debug\Tfour_Main.exe
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\bin\Debug\Tfour_Main.pdb
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.csprojResolveAssemblyReference.cache
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Login.baml
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\MainWindow.baml
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Login.g.cs
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\MainWindow.g.cs
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\App.g.cs
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main_MarkupCompile.cache
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.g.resources
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.Properties.Resources.resources
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.csproj.GenerateResource.Cache
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.exe
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.pdb
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Game.baml
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Game.g.cs
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Login2.baml
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Login2.g.cs
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\ForgetPassword.baml
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Register.baml
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\ForgetPassword.g.cs
+C:\Users\sishir.subedi\Desktop\Tfour_Main\Tfour_Main\obj\Debug\Register.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\bin\Debug\Tfour_Main.exe.config
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.exe
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.pdb
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\bin\Debug\Tfour_Main.exe
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\bin\Debug\Tfour_Main.pdb
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.csprojResolveAssemblyReference.cache
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\ForgetPassword.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Game.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Login.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Login2.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\MainWindow.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Register.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\ForgetPassword.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Game.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Login.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Login2.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\MainWindow.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Register.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\App.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main_MarkupCompile.cache
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.g.resources
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.Properties.Resources.resources
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Tfour_Main.csproj.GenerateResource.Cache
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Profile.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Profile.g.cs
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Profile2.baml
+C:\Users\ibm-lenovo\Desktop\SE Project TTT\2_23_2016_Tfour_Main\Tfour_Main\Tfour_Main\obj\Debug\Profile2.g.cs

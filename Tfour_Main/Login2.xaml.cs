@@ -27,6 +27,7 @@ namespace Tfour_Main
             InitializeComponent();
             Grid_gameOptions.Visibility = System.Windows.Visibility.Hidden;
             Button_View_Profile2.Visibility = System.Windows.Visibility.Hidden;
+            Button_playerTwoLogin.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -44,43 +45,74 @@ namespace Tfour_Main
         private void Button_Click_PayerOneLogin(object sender, RoutedEventArgs e)
         {
 
-            var query = from u in db.PlayerInformations
-                        where (u.UserID.Equals(Textbox_Username.Text) &&
-                        u.Password.Equals(Textbox_Password.Text))
-                        select u;
-            if (query.Count() != 0)
+            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(Textbox_Password.Text))
             {
-
-                MessageBox.Show(" Login 1 Success. Please try Login 2 !");
+                MessageBox.Show("TextBox is empty");
             }
             else
             {
-                MessageBox.Show(" Credentials are Incorrect. Please Try Again !");
-            }
+                try
+                {
 
+                    var query = from s in db.PlayerInformations
+                                where (s.UserID == Textbox_Username.Text &&
+                                s.Password == Textbox_Password.Text)
+                                select s;
+
+
+                    if (query.Any())
+                    {
+                        MessageBox.Show(" Login 1 Success. Please try Login 2 !");
+                        Button_playerTwoLogin.IsEnabled = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credential is Incorrect. Please Try Again !");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Credential is Incorrect.Please Try Again  !");
+                }
+
+            }
         }
 
         private void Button_Click_PayerTwoLogin(object sender, RoutedEventArgs e)
         {
-
-            var query = from u in db.PlayerInformations
-                        where (u.UserID.Equals(Textbox_Username.Text) &&
-                        u.Password.Equals(Textbox_Password.Text))
-                        select u;
-            if (query.Count() != 0)
+            if (string.IsNullOrWhiteSpace(Textbox_Username2.Text) || string.IsNullOrWhiteSpace(Textbox_Password2.Text))
             {
-
-                Button_View_Profile2.Visibility = System.Windows.Visibility.Visible;
-                Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
+                MessageBox.Show("TextBox is empty");
             }
             else
             {
-                MessageBox.Show(" Credentials are Incorrect. Please Try Again !");
-            }
+                try
+                {
 
-            
-            Button_View_Profile2.Visibility = System.Windows.Visibility.Visible;
-            Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
+                    var query = from s in db.PlayerInformations
+                                where (s.UserID == Textbox_Username2.Text &&
+                                s.Password == Textbox_Password2.Text)
+                                select s;
+
+
+                    if (query.Any())
+                    {
+
+                        Button_View_Profile2.Visibility = System.Windows.Visibility.Visible;
+                        Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credential is Incorrect. Please Try Again !");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Credential is Incorrect.Please Try Again  !");
+                }
+
+            }
         }
 
         private void Button_ForgetPassword_Click(object sender, RoutedEventArgs e)

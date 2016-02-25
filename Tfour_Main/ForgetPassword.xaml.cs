@@ -66,7 +66,7 @@ namespace Tfour_Main
             {
 
                 {
-                    MessageBox.Show("INCORRECT");
+                    MessageBox.Show("Error : Email was not sent !");
 
                 }
 

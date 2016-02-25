@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Login2" Height="350" Width="525">
     <Grid Background="#FF43BD86">
-        <Button x:Name="Button_playerOneLogin" Content="Login 1" HorizontalAlignment="Left" Margin="50,77,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_PayerOneLogin"/>
-        <Button x:Name="Button_playerTwoLogin" Content="Login 2" HorizontalAlignment="Left" Margin="50,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_PayerTwoLogin"/>
+        <Button x:Name="Button_playerOneLogin" Content="Login 1" HorizontalAlignment="Left" Margin="19,77,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_PayerOneLogin"/>
+        <Button x:Name="Button_playerTwoLogin" Content="Login 2" HorizontalAlignment="Left" Margin="19,190,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_PayerTwoLogin"/>
         <Grid x:Name="Grid_gameOptions" HorizontalAlignment="Left" Height="268" Margin="229,22,0,0" VerticalAlignment="Top" Width="280" Background="#FFB03C3C">
             <Button x:Name="Button_Play" Content="Play" HorizontalAlignment="Left" Margin="132,188,0,0" VerticalAlignment="Top" Width="63" Height="45" Click="Button_Play_Click"/>
         </Grid>
-        <Button x:Name="Button_ForgetPassword" Content="Forget Password" HorizontalAlignment="Left" Margin="29,237,0,0" VerticalAlignment="Top" Width="116" Click="Button_ForgetPassword_Click"/>
-        <Button x:Name="Button_Register" Content="Register" HorizontalAlignment="Left" Margin="29,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Register_Click"/>
+        <Button x:Name="Button_ForgetPassword" Content="Forget Password" HorizontalAlignment="Left" Margin="9,270,0,0" VerticalAlignment="Top" Width="116" Click="Button_ForgetPassword_Click"/>
+        <Button x:Name="Button_Register" Content="Register" HorizontalAlignment="Left" Margin="135,270,0,0" VerticalAlignment="Top" Width="75" Click="Button_Register_Click"/>
         <Button x:Name="Button_View_Profile2" Content="Profile" HorizontalAlignment="Left" Margin="311,25,0,0" VerticalAlignment="Top" Width="75" Click="Button_View_Profile_Click"/>
         <Label Content="USERNAME" HorizontalAlignment="Left" Margin="19,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
         <Label Content="PASSWORD" HorizontalAlignment="Left" Margin="19,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>

@@ -34,24 +34,39 @@ namespace Tfour_Main
 
         private void Button_playerOneLogin_Click(object sender, RoutedEventArgs e)
         {
-            
-            var query = from u in db.PlayerInformations
-                        where (u.UserID.Equals(Textbox_Username.Text) &&
-                        u.Password.Equals(Textbox_Password.Text))
-                        select u;
 
-
-            if (query.Count() != 0)
+            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(Textbox_Password.Text))
             {
-                
-                Button_View_Profile.Visibility = System.Windows.Visibility.Visible;
-                Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
+                MessageBox.Show("TextBox is empty");
             }
             else
             {
-                MessageBox.Show(" Credentials are Incorrect. Please Try Again !");
-            }
+                try
+                {
 
+                    var query = from s in db.PlayerInformations
+                                where (s.UserID == Textbox_Username.Text &&
+                                s.Password == Textbox_Password.Text)
+                                select s;
+
+
+                    if (query.Any())
+                    {
+
+                        Button_View_Profile.Visibility = System.Windows.Visibility.Visible;
+                        Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credential is Incorrect. Please Try Again !");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Credential is Incorrect.Please Try Again  !");
+                }
+
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
