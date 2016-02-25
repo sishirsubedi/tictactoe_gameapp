@@ -18,6 +18,8 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// This is a welcome window
+
     public partial class MainWindow : Window
     {
         public MainWindow()
