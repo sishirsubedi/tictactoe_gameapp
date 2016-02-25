@@ -19,9 +19,26 @@ namespace Tfour_Main
     /// </summary>
     public partial class Profile2 : Window
     {
-        public Profile2()
+        DatabaseDataContext db = new DatabaseDataContext(
+        Properties.Settings.Default.Tfour_ConnectionString);
+        String userID, userID2;
+
+        public Profile2( String id1, string id2)
         {
             InitializeComponent();
+            userID = id1;
+            userID2 = id2;
+            displayPlayerInformation(userID, userID2);
+        }
+
+        private void displayPlayerInformation(String id1, String id2)
+        {
+            var query = from s in db.PlayerInformations
+                        where (s.UserID == id1 || s.UserID == id2 )
+                        select s;
+
+            DataGrid_ProfileInformation2.ItemsSource = query.ToList();
+
         }
 
         private void Button_Profile_Back_Click(object sender, RoutedEventArgs e)

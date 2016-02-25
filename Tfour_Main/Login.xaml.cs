@@ -90,7 +90,7 @@ namespace Tfour_Main
 
         private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile profile = new Profile();
+            Profile profile = new Profile(Textbox_Username.Text);
             profile.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
         }

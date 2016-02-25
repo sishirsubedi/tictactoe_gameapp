@@ -131,7 +131,7 @@ namespace Tfour_Main
 
         private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile2 profile = new Profile2();
+            Profile2 profile = new Profile2(Textbox_Username.Text, Textbox_Username2.Text);
             profile.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
         }
