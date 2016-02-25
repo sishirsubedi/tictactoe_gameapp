@@ -52,11 +52,6 @@ namespace Tfour_Main
                 MessageBox.Show(" Credentials are Incorrect. Please Try Again !");
             }
 
-
-
-
-
-           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
