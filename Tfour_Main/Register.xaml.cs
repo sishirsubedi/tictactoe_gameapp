@@ -31,6 +31,22 @@ namespace Tfour_Main
         public Register()
         {
             InitializeComponent();
+            Label_usernameTaken.Visibility = Visibility.Hidden;
+        }
+
+        private void Textbox_userID_TextChanged(object sender, RoutedEventArgs e)
+        {
+            var query = from p in db.PlayerInformations
+                        where (p.UserID.Equals(TextBox_userID.Text))
+                        select p;
+            if (query.Any())
+            {
+                Label_usernameTaken.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Label_usernameTaken.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
@@ -38,26 +54,23 @@ namespace Tfour_Main
             if (string.IsNullOrWhiteSpace(TextBox_Name.Text)
                 || string.IsNullOrWhiteSpace(TextBox_userID.Text)
                 || string.IsNullOrWhiteSpace(TextBox_password.Text)
-                || string.IsNullOrWhiteSpace(TextBox_email.Text)
-
-                )
+                || string.IsNullOrWhiteSpace(TextBox_email.Text))
             {
-                MessageBox.Show("Please Complete the form.");
+                MessageBox.Show("You are missing required fields, please complete the registration form.");
             }
             else
             {
                 try
                 {
 
-                    var query = from s in db.PlayerInformations
-                                where (s.UserID.Equals(TextBox_userID.Text))
-                                select s;
+                    var query = from p in db.PlayerInformations
+                                where (p.UserID.Equals(TextBox_userID.Text))
+                                select p;
 
 
                     if (query.Any())
                     {
-                        MessageBox.Show("User ID is already taken. Please Try Again!");
-                  
+                        MessageBox.Show("The username you entered is already taken. Please choose a different one and try again.");
                     }
                     else
                     {
@@ -79,8 +92,6 @@ namespace Tfour_Main
                 {
                     MessageBox.Show("Registration error.Please Try Again  !");
                 }
-
-               
             }
         }
     }

@@ -6,12 +6,12 @@
         <Button x:Name="Button_Register" Content="Register" HorizontalAlignment="Left" Margin="163,246,0,0" VerticalAlignment="Top" Width="75" Click="Button_Register_Click"/>
         <Label x:Name="Label_name" Content="Name" HorizontalAlignment="Left" Margin="97,59,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="23" Margin="163,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.28,-0.407"/>
-        <Label x:Name="Label_userID" Content="User ID" HorizontalAlignment="Left" Margin="97,101,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBox_userID" HorizontalAlignment="Left" Height="23" Margin="163,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.28,-0.407"/>
+        <Label x:Name="Label_userID" Content="Username" HorizontalAlignment="Left" Margin="97,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBox_userID" HorizontalAlignment="Left" Height="23" Margin="163,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.28,-0.407" TextChanged="Textbox_userID_TextChanged"/>
         <Label x:Name="Label_password" Content="Password" HorizontalAlignment="Left" Margin="97,148,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_password" HorizontalAlignment="Left" Height="23" Margin="163,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.28,-0.407"/>
         <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="97,192,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBox_email" HorizontalAlignment="Left" Height="23" Margin="163,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.28,-0.407"/>
-
+        <Label x:Name="Label_usernameTaken" Content="username already exist" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="163,124,0,0" Foreground="Red"/>
     </Grid>
 </Window>
