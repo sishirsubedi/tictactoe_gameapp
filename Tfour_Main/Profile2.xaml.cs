@@ -19,8 +19,15 @@ namespace Tfour_Main
     /// </summary>
     public partial class Profile2 : Window
     {
-        DatabaseDataContext db = new DatabaseDataContext(
-        Properties.Settings.Default.TfourConnectionString);
+        // Sishir's Server
+        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+
+        // Gabriel's Server
+        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+
+        // Dan's Server
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString1);
+
         String userID, userID2;
 
         public Profile2( String id1, string id2)
