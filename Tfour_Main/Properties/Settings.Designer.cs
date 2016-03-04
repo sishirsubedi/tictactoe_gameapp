@@ -54,15 +54,5 @@ namespace Tfour_Main.Properties {
                 return ((string)(this["TfourConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DANLE14E0\\SQLEXPRESS;Initial Catalog=Tfour;Integrated Security=True")]
-        public string TfourConnectionString1 {
-            get {
-                return ((string)(this["TfourConnectionString1"]));
-            }
-        }
     }
 }

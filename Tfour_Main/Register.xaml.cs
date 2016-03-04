@@ -23,14 +23,9 @@ namespace Tfour_Main
     public partial class Register : Window
     {
 
-        // Sishir's Server
-        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
 
-        // Gabriel's Server
-        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
-
-        // Dan's Server
-        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString1);
+        DatabaseDataContext db = new DatabaseDataContext(
+          Properties.Settings.Default.TfourConnectionString);
 
 
         public Register()
