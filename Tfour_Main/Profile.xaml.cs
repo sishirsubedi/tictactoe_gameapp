@@ -21,7 +21,7 @@ namespace Tfour_Main
     {
 
         DatabaseDataContext db = new DatabaseDataContext(
-   Properties.Settings.Default.Tfour_ConnectionString);
+   Properties.Settings.Default.TfourConnectionString);
 
         String userID;
 
@@ -37,7 +37,7 @@ namespace Tfour_Main
         private void displayPlayerInformation(String id)
         {
        var query = from s in db.PlayerInformations
-                                where (s.UserID == id)
+                                where (s.UserID.Equals( id))
                                 select s;
 
        DataGrid_ProfileInformation.ItemsSource = query.ToList();

@@ -19,10 +19,10 @@ namespace Tfour_Main
     /// </summary>
     public partial class Login : Window
     {
-
-
-        DatabaseDataContext db = new DatabaseDataContext(
-          Properties.Settings.Default.Tfour_ConnectionString);
+        // Sishir's Server
+        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+        // Gabriel's Server
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
 
 
         public Login()
@@ -35,7 +35,7 @@ namespace Tfour_Main
         private void Button_playerOneLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(Textbox_Password.Text))
+            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(PasswordBox_LoginOne.Password))
             {
                 MessageBox.Show("TextBox is empty");
             }
@@ -45,8 +45,8 @@ namespace Tfour_Main
                 {
 
                     var query = from s in db.PlayerInformations
-                                where (s.UserID == Textbox_Username.Text &&
-                                s.Password == Textbox_Password.Text)
+                                where (s.UserID.Equals(Textbox_Username.Text) &&
+                                s.Password.Equals(PasswordBox_LoginOne.Password))
                                 select s;
 
 

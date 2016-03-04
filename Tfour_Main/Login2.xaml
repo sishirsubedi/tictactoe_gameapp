@@ -14,11 +14,11 @@
         <Label Content="USERNAME" HorizontalAlignment="Left" Margin="19,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
         <Label Content="PASSWORD" HorizontalAlignment="Left" Margin="19,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
         <TextBox x:Name="Textbox_Username" HorizontalAlignment="Left" Height="23" Margin="90,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Textbox_Password" HorizontalAlignment="Left" Height="23" Margin="90,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="USERNAME" HorizontalAlignment="Left" Margin="19,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
         <Label Content="PASSWORD" HorizontalAlignment="Left" Margin="19,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
         <TextBox x:Name="Textbox_Username2" HorizontalAlignment="Left" Height="23" Margin="90,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Textbox_Password2" HorizontalAlignment="Left" Height="23" Margin="90,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="PasswordBox_LoginTwo" HorizontalAlignment="Left" Margin="92,156,0,0" VerticalAlignment="Top" Width="118"/>
+        <PasswordBox x:Name="PasswordBox_LoginOne" HorizontalAlignment="Left" Margin="96,46,0,0" VerticalAlignment="Top" Width="118"/>
 
     </Grid>
 </Window>

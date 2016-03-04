@@ -20,7 +20,7 @@ namespace Tfour_Main
     public partial class Login2 : Window
     {
         DatabaseDataContext db = new DatabaseDataContext(
-          Properties.Settings.Default.Tfour_ConnectionString);
+          Properties.Settings.Default.TfourConnectionString);
 
         public Login2()
         {
@@ -45,7 +45,7 @@ namespace Tfour_Main
         private void Button_Click_PayerOneLogin(object sender, RoutedEventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(Textbox_Password.Text))
+            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(PasswordBox_LoginOne.Password))
             {
                 MessageBox.Show("TextBox is empty");
             }
@@ -55,8 +55,8 @@ namespace Tfour_Main
                 {
 
                     var query = from s in db.PlayerInformations
-                                where (s.UserID == Textbox_Username.Text &&
-                                s.Password == Textbox_Password.Text)
+                                where (s.UserID.Equals(Textbox_Username.Text) &&
+                                s.Password.Equals(PasswordBox_LoginOne.Password))
                                 select s;
 
 
@@ -81,7 +81,7 @@ namespace Tfour_Main
 
         private void Button_Click_PayerTwoLogin(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Textbox_Username2.Text) || string.IsNullOrWhiteSpace(Textbox_Password2.Text))
+            if (string.IsNullOrWhiteSpace(Textbox_Username2.Text) || string.IsNullOrWhiteSpace(PasswordBox_LoginTwo.Password))
             {
                 MessageBox.Show("TextBox is empty");
             }
@@ -91,8 +91,8 @@ namespace Tfour_Main
                 {
 
                     var query = from s in db.PlayerInformations
-                                where (s.UserID == Textbox_Username2.Text &&
-                                s.Password == Textbox_Password2.Text)
+                                where (s.UserID.Equals(Textbox_Username2.Text) &&
+                                s.Password.Equals (PasswordBox_LoginTwo.Password))
                                 select s;
 
 

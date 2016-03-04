@@ -25,7 +25,7 @@ namespace Tfour_Main
 
 
         DatabaseDataContext db = new DatabaseDataContext(
-          Properties.Settings.Default.Tfour_ConnectionString);
+          Properties.Settings.Default.TfourConnectionString);
 
 
         public Register()
@@ -35,22 +35,53 @@ namespace Tfour_Main
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TextBox_Name.Text)
+                || string.IsNullOrWhiteSpace(TextBox_userID.Text)
+                || string.IsNullOrWhiteSpace(TextBox_password.Text)
+                || string.IsNullOrWhiteSpace(TextBox_email.Text)
 
-            PlayerInformation newplayer = new PlayerInformation();
-            newplayer.Name = TextBox_Name.Text;
-            newplayer.UserID = TextBox_userID.Text;
-            newplayer.Password = TextBox_password.Text;
-            newplayer.Email = TextBox_email.Text;
+                )
+            {
+                MessageBox.Show("Please Complete the form.");
+            }
+            else
+            {
+                try
+                {
 
-            db.PlayerInformations.InsertOnSubmit(newplayer);
-            db.SubmitChanges();
+                    var query = from s in db.PlayerInformations
+                                where (s.UserID.Equals(TextBox_userID.Text))
+                                select s;
 
-                
-            
 
-            Login loginForm = new Login();
-            loginForm.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+                    if (query.Any())
+                    {
+                        MessageBox.Show("User ID is already taken. Please Try Again!");
+                  
+                    }
+                    else
+                    {
+                        PlayerInformation newplayer = new PlayerInformation();
+                        newplayer.Name = TextBox_Name.Text;
+                        newplayer.UserID = TextBox_userID.Text;
+                        newplayer.Password = TextBox_password.Text;
+                        newplayer.Email = TextBox_email.Text;
+
+                        db.PlayerInformations.InsertOnSubmit(newplayer);
+                        db.SubmitChanges();
+
+                        Login loginForm = new Login();
+                        loginForm.Visibility = System.Windows.Visibility.Visible;
+                        this.Visibility = System.Windows.Visibility.Hidden;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Registration error.Please Try Again  !");
+                }
+
+               
+            }
         }
     }
 }

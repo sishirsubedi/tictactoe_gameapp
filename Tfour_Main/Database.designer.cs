@@ -22,7 +22,7 @@ namespace Tfour_Main
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Tfour")]
 	public partial class DatabaseDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -36,7 +36,7 @@ namespace Tfour_Main
     #endregion
 		
 		public DatabaseDataContext() : 
-				base(global::Tfour_Main.Properties.Settings.Default.DataSourceConnectionString, mappingSource)
+				base(global::Tfour_Main.Properties.Settings.Default.TfourConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

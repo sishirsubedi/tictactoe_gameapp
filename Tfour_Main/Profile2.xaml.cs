@@ -20,7 +20,7 @@ namespace Tfour_Main
     public partial class Profile2 : Window
     {
         DatabaseDataContext db = new DatabaseDataContext(
-        Properties.Settings.Default.Tfour_ConnectionString);
+        Properties.Settings.Default.TfourConnectionString);
         String userID, userID2;
 
         public Profile2( String id1, string id2)
@@ -34,7 +34,7 @@ namespace Tfour_Main
         private void displayPlayerInformation(String id1, String id2)
         {
             var query = from s in db.PlayerInformations
-                        where (s.UserID == id1 || s.UserID == id2 )
+                        where (s.UserID.Equals(id1) || s.UserID.Equals( id2) )
                         select s;
 
             DataGrid_ProfileInformation2.ItemsSource = query.ToList();
