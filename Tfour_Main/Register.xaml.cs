@@ -22,16 +22,13 @@ namespace Tfour_Main
     /// </summary>
     public partial class Register : Window
     {
-
-
-        DatabaseDataContext db = new DatabaseDataContext(
-          Properties.Settings.Default.TfourConnectionString);
-
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
 
         public Register()
         {
             InitializeComponent();
             Label_usernameTaken.Visibility = Visibility.Hidden;
+            Label_passwordsDontMatch.Visibility = Visibility.Hidden;
         }
 
         private void Textbox_userID_TextChanged(object sender, RoutedEventArgs e)
@@ -53,10 +50,10 @@ namespace Tfour_Main
         {
             if (string.IsNullOrWhiteSpace(TextBox_Name.Text)
                 || string.IsNullOrWhiteSpace(TextBox_userID.Text)
-                || string.IsNullOrWhiteSpace(TextBox_password.Text)
+                || string.IsNullOrWhiteSpace(PasswordBox_password.Password)
                 || string.IsNullOrWhiteSpace(TextBox_email.Text))
             {
-                MessageBox.Show("You are missing required fields, please complete the registration form.");
+                MessageBox.Show("Required fields missing, please complete the registration form.");
             }
             else
             {
@@ -70,28 +67,68 @@ namespace Tfour_Main
 
                     if (query.Any())
                     {
-                        MessageBox.Show("The username you entered is already taken. Please choose a different one and try again.");
+                        MessageBox.Show("Username is already taken. Please choose a different username.");
+                        TextBox_userID.Text = "";
+                        TextBox_userID.Focus();
+                    }
+                    else if (!PasswordBox_ReenterPassword.Password.Equals(PasswordBox_password.Password))
+                    {
+                        MessageBox.Show("Passwords do not match. Please reenter you password.");
+                        PasswordBox_password.Password = "";
+                        PasswordBox_ReenterPassword.Password = "";
+                        PasswordBox_password.Focus();
                     }
                     else
                     {
+                        // Create new player information object
                         PlayerInformation newplayer = new PlayerInformation();
                         newplayer.Name = TextBox_Name.Text;
                         newplayer.UserID = TextBox_userID.Text;
-                        newplayer.Password = TextBox_password.Text;
-                        newplayer.Email = TextBox_email.Text;
+                        newplayer.Password = PasswordBox_password.Password;
+                        newplayer.Email = TextBox_email.Text.Trim();
 
                         db.PlayerInformations.InsertOnSubmit(newplayer);
                         db.SubmitChanges();
 
-                        Login loginForm = new Login();
+                        Login loginForm = new Login(this);
                         loginForm.Visibility = System.Windows.Visibility.Visible;
                         this.Visibility = System.Windows.Visibility.Hidden;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Registration error.Please Try Again  !");
+                    MessageBox.Show("There was an error processing your registration, please try again.");
+                    Console.WriteLine(ex.Message);
                 }
+            }
+        }
+
+        private void PasswordBox_Reenterpassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (!PasswordBox_ReenterPassword.Password.Equals(PasswordBox_password.Password))
+            {
+                Label_passwordsDontMatch.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Label_passwordsDontMatch.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void PasswordBox_ReenterPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            Label_passwordsDontMatch.Visibility = Visibility.Hidden;
+        }
+
+        private void PasswordBox_ReenterPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!PasswordBox_ReenterPassword.Password.Equals(PasswordBox_password.Password))
+            {
+                Label_passwordsDontMatch.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Label_passwordsDontMatch.Visibility = Visibility.Hidden;
             }
         }
     }

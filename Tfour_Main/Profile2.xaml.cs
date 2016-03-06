@@ -19,8 +19,8 @@ namespace Tfour_Main
     /// </summary>
     public partial class Profile2 : Window
     {
-        DatabaseDataContext db = new DatabaseDataContext(
-        Properties.Settings.Default.TfourConnectionString);
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+
         String userID, userID2;
 
         public Profile2( String id1, string id2)
@@ -43,11 +43,9 @@ namespace Tfour_Main
 
         private void Button_Profile_Back_Click(object sender, RoutedEventArgs e)
         {
-            Login2 loginForm = new Login2();
-            loginForm.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
-            loginForm.Button_View_Profile2.Visibility = System.Windows.Visibility.Visible;
-            loginForm.Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
+            Login2 loginForm = new Login2(this);
+            loginForm.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

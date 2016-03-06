@@ -18,8 +18,6 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// This is a welcome window
-    /// // test
 
     public partial class MainWindow : Window
     {
@@ -30,15 +28,19 @@ namespace Tfour_Main
 
         private void Button_playerOneGame_Click(object sender, RoutedEventArgs e)
         {
-            Login loginForm = new Login();
+            // Create and display one player login form
+            Login loginForm = new Login(this);
             loginForm.Visibility = System.Windows.Visibility.Visible;
+            // Hide welcome window
             this.Visibility = System.Windows.Visibility.Hidden;
         }
 
         private void Button_playerTwoGame_Click(object sender, RoutedEventArgs e)
         {
-            Login2 loginForm = new Login2();
+            // Create and display two player login form
+            Login2 loginForm = new Login2(this);
             loginForm.Visibility = System.Windows.Visibility.Visible;
+            // Hide welcome window
             this.Visibility = System.Windows.Visibility.Hidden;
         }
     }

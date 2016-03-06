@@ -22,22 +22,25 @@ namespace Tfour_Main
         // Sishir's Server
         // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
         // Gabriel's Server
-        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        private Window prevWindow;
 
-
-        public Login()
+        public Login(Window window)
         {
             InitializeComponent();
-            Grid_gameOptions.Visibility = System.Windows.Visibility.Hidden;
-            Button_View_Profile.Visibility = System.Windows.Visibility.Hidden;
+            prevWindow = window;
         }
 
         private void Button_playerOneLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(Textbox_Username.Text) || string.IsNullOrWhiteSpace(PasswordBox_LoginOne.Password))
+            if (string.IsNullOrWhiteSpace(Textbox_Username.Text))
             {
-                MessageBox.Show("TextBox is empty");
+                MessageBox.Show("The username field is empty. You must provide a valid username to log in.");
+            }
+            else if (string.IsNullOrWhiteSpace(PasswordBox_LoginOne.Password))
+            {
+                MessageBox.Show("The password field is empty. You must provide a password to log in.");
             }
             else
             {
@@ -49,57 +52,46 @@ namespace Tfour_Main
                                 s.Password.Equals(PasswordBox_LoginOne.Password))
                                 select s;
 
-
-                    if (query.Any())
+                    if (!query.Any())
                     {
-
-                        Button_View_Profile.Visibility = System.Windows.Visibility.Visible;
-                        Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Credential is Incorrect. Please Try Again !");
+                        MessageBox.Show("Invalid username or password. Please Try Again!");
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Credential is Incorrect.Please Try Again  !");
+                    MessageBox.Show("An error ocurred, please try again.");
+                    Console.WriteLine(ex);
                 }
 
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Forgot_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
-
-        private void Button_ForgetPassword_Click(object sender, RoutedEventArgs e)
-        {
-            ForgetPassword forgetpassword = new ForgetPassword();
-            forgetpassword.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            ForgotCredentials forgot = new ForgotCredentials(this);
+            forgot.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
         }
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
             Register register = new Register();
-            register.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            register.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
         }
 
         private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
         {
             Profile profile = new Profile(Textbox_Username.Text);
-            profile.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            profile.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
         }
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
             Game newGame = new Game();
-            newGame.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            newGame.Visibility = Visibility.Visible;
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

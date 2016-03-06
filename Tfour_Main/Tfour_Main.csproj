@@ -74,8 +74,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database.dbml</DependentUpon>
     </Compile>
-    <Compile Include="ForgetPassword.xaml.cs">
-      <DependentUpon>ForgetPassword.xaml</DependentUpon>
+    <Compile Include="ForgotCredentials.xaml.cs">
+      <DependentUpon>ForgotCredentials.xaml</DependentUpon>
     </Compile>
     <Compile Include="Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -86,7 +86,7 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Page Include="ForgetPassword.xaml">
+    <Page Include="ForgotCredentials.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -19,27 +19,19 @@ namespace Tfour_Main
     /// </summary>
     public partial class Login2 : Window
     {
-        DatabaseDataContext db = new DatabaseDataContext(
-          Properties.Settings.Default.TfourConnectionString);
+        private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        private Window prevWindow;
 
-        public Login2()
+        public Login2(Window window)
         {
             InitializeComponent();
-            Grid_gameOptions.Visibility = System.Windows.Visibility.Hidden;
-            Button_View_Profile2.Visibility = System.Windows.Visibility.Hidden;
+            prevWindow = window;
             Button_playerTwoLogin.IsEnabled = false;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-       
-        }
-
-      
-
         private void Button_Game_Click(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void Button_Click_PayerOneLogin(object sender, RoutedEventArgs e)
@@ -92,15 +84,12 @@ namespace Tfour_Main
 
                     var query = from s in db.PlayerInformations
                                 where (s.UserID.Equals(Textbox_Username2.Text) &&
-                                s.Password.Equals (PasswordBox_LoginTwo.Password))
+                                s.Password.Equals(PasswordBox_LoginTwo.Password))
                                 select s;
 
 
                     if (query.Any())
                     {
-
-                        Button_View_Profile2.Visibility = System.Windows.Visibility.Visible;
-                        Grid_gameOptions.Visibility = System.Windows.Visibility.Visible;
                     }
                     else
                     {
@@ -117,7 +106,7 @@ namespace Tfour_Main
 
         private void Button_ForgetPassword_Click(object sender, RoutedEventArgs e)
         {
-            ForgetPassword forgetpassword = new ForgetPassword();
+            ForgotCredentials forgetpassword = new ForgotCredentials(this);
             forgetpassword.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
         }
