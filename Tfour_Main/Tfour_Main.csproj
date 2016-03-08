@@ -77,6 +77,9 @@
     <Compile Include="ForgotCredentials.xaml.cs">
       <DependentUpon>ForgotCredentials.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameOptions.xaml.cs">
+      <DependentUpon>GameOptions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameOptions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
