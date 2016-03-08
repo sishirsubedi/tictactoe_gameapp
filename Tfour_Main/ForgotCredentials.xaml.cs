@@ -59,8 +59,6 @@ namespace Tfour_Main
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred please try again.");
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.Data);
                 Console.WriteLine(ex.InnerException.Message);
                 Console.WriteLine(ex.InnerException);
                 Textbox_Email.Text = "";
@@ -100,7 +98,8 @@ namespace Tfour_Main
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred or there's no Tfour account associated with your email address.");
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException.Message);
+                Console.WriteLine(ex.InnerException);
                 Textbox_Email.Text = "";
                 Textbox_Email.Focus();
             }

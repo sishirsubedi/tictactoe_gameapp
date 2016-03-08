@@ -19,6 +19,14 @@ namespace Tfour_Main
     /// </summary>
     public partial class Game : Window
     {
+        // Fields
+        private int turnsRemaining;
+        private PlayerInformation p1, p2;
+        // We can use the reference to keep track of who's turn it is
+        private PlayerInformation activePlayer;
+        private const int ROWS = 6, COLS = 6;
+        //private Board board;
+
         public Game()
         {
             InitializeComponent();
