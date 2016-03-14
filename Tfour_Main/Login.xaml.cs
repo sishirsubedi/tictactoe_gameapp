@@ -29,6 +29,8 @@ namespace Tfour_Main
         {
             InitializeComponent();
             prevWindow = window;
+            Label_LoggedInAs_Player1.Visibility = Visibility.Hidden;
+            Label_PLAYER1_LOGUSER.Visibility = Visibility.Hidden;
         }
 
         private void Button_playerOneLogin_Click(object sender, RoutedEventArgs e)
@@ -56,6 +58,12 @@ namespace Tfour_Main
                     {
                         MessageBox.Show("Invalid username or password. Please Try Again!");
                     }
+                    else
+                    {
+                        Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
+                        Label_PLAYER1_LOGUSER.Visibility = Visibility.Visible;
+                        Label_LoggedInAs_Player1.Visibility = Visibility.Visible;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -69,29 +77,28 @@ namespace Tfour_Main
         private void Button_Forgot_Click(object sender, RoutedEventArgs e)
         {
             ForgotCredentials forgot = new ForgotCredentials(this);
-            forgot.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
+            forgot.Show();
+            this.Hide();
         }
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
             Register register = new Register();
-            register.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
+            register.Show();
         }
 
         private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
         {
             Profile profile = new Profile(Textbox_Username.Text);
-            profile.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
+            profile.Show();
+            this.Hide();
         }
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            Game newGame = new Game();
-            newGame.Visibility = Visibility.Visible;
-            this.Visibility = Visibility.Hidden;
+            Game game = new Game();
+            game.Show();
+            this.Hide();
         }
     }
 }

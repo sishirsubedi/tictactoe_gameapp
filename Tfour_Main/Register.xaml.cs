@@ -90,9 +90,7 @@ namespace Tfour_Main
                         db.PlayerInformations.InsertOnSubmit(newplayer);
                         db.SubmitChanges();
 
-                        Login loginForm = new Login(this);
-                        loginForm.Visibility = System.Windows.Visibility.Visible;
-                        this.Visibility = System.Windows.Visibility.Hidden;
+                        this.Hide();
                     }
                 }
                 catch (Exception ex)
