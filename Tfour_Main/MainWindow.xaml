@@ -1,11 +1,15 @@
 ﻿<Window x:Name="Window_MainWindow" x:Class="Tfour_Main.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="694" Width="1050" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid x:Name="Grid_MainWindowGrid">
-        <Button x:Name="Button_playerOneGame" Content="1 Player " HorizontalAlignment="Left" Margin="217,206,0,0" VerticalAlignment="Top" Width="52" Height="33" Click="Button_playerOneGame_Click"/>
-        <Button x:Name="Button_playerTwoGame" Content="2 Player" HorizontalAlignment="Left" Margin="207,244,0,0" VerticalAlignment="Top" Width="62" Height="29" Click="Button_playerTwoGame_Click"/>
-        <Image HorizontalAlignment="Left" Height="167" Margin="113,10,0,0" VerticalAlignment="Top" Width="280" OpacityMask="#FF814C4C" Source="TfourLogo.PNG"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="8BitBackground.bmp"/>
+        </Grid.Background>
+
+        <Button x:Name="Button_playerOneGame" Content="1 Player " Margin="426.411,0,427.589,244.6" VerticalAlignment="Bottom" Height="49.8" Click="Button_playerOneGame_Click"/>
+        <Button x:Name="Button_playerTwoGame" Content="2 Player" Margin="426.411,0,427.589,161.8" VerticalAlignment="Bottom" Height="49.8" Click="Button_playerTwoGame_Click"/>
+        <Image x:Name="TitleIMG_bmp" Height="241.267" Margin="401.211,42.224,401.522,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

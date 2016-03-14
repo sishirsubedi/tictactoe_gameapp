@@ -27,6 +27,10 @@ namespace Tfour_Main
             InitializeComponent();
             prevWindow = window;
             Button_playerTwoLogin.IsEnabled = false;
+            Label_LoggedInAs_Player1.Visibility = System.Windows.Visibility.Hidden;
+            Label_LoggedInAs_Player2.Visibility = System.Windows.Visibility.Hidden;
+            Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Hidden;
+            Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Hidden;
         }
 
         private void Button_Game_Click(object sender, RoutedEventArgs e)
@@ -55,6 +59,9 @@ namespace Tfour_Main
                     if (query.Any())
                     {
                         MessageBox.Show(" Login 1 Success. Please try Login 2 !");
+                        Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
+                        Label_LoggedInAs_Player1.Visibility = System.Windows.Visibility.Visible;
+                        Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Visible;
                         Button_playerTwoLogin.IsEnabled = true;
 
                     }
@@ -90,6 +97,9 @@ namespace Tfour_Main
 
                     if (query.Any())
                     {
+                        Label_PLAYER2_LOGUSER.Content = Textbox_Username2.Text;
+                        Label_LoggedInAs_Player2.Visibility = System.Windows.Visibility.Visible;
+                        Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Visible;
                     }
                     else
                     {

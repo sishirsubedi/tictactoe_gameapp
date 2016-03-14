@@ -201,6 +201,24 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TitleIMG.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="8BitBackground.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="greenpanel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="redpanel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="yellowpanel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bluepanel.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

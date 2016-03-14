@@ -1,16 +1,32 @@
-﻿<Window x:Class="Tfour_Main.Login"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="350" Width="525">
-    <Grid>
-        <Button x:Name="Button_playerOneLogin" Content="Log In" HorizontalAlignment="Left" Margin="176,146,0,0" VerticalAlignment="Top" Width="100" Height="39" Click="Button_playerOneLogin_Click"/>
-        <Button x:Name="Button_Forgot" Content="Forgot Login or Password" HorizontalAlignment="Left" Margin="170,237,0,0" VerticalAlignment="Top" Width="137" Click="Button_Forgot_Click"/>
-        <Button x:Name="Button_Register" Content="Sign Up" HorizontalAlignment="Left" Margin="188,185,0,0" VerticalAlignment="Top" Width="75" Click="Button_Register_Click"/>
-        <Label Content="User name" HorizontalAlignment="Left" Margin="170,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="172,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167"/>
-        <TextBox x:Name="Textbox_Username" HorizontalAlignment="Left" Height="23" Margin="170,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="PasswordBox_LoginOne" HorizontalAlignment="Left" Margin="172,129,0,0" VerticalAlignment="Top" Width="118"/>
-        <Button x:Name="Button_GuestLogin" Content="Login as Guest" HorizontalAlignment="Left" Margin="176,214,0,0" VerticalAlignment="Top" Width="118"/>
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Tfour_Main.Login"
+        Title="Login" Height="700" Width="1050" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="8BitBackground.bmp"/>
+    </Window.Background>
+    <Grid Margin="0,0,-6,0">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Image x:Name="greenpanel_bmp" HorizontalAlignment="Left" Margin="50,50,0,152.4" Source="greenpanel.bmp" Stretch="Fill" Width="285" Height="470" d:IsLocked="True"/>
+        <Image x:Name="redpanel_bmp" HorizontalAlignment="Right" Margin="0,50,49.2,152.4" Source="redpanel.bmp" Stretch="Fill" Width="286" d:IsLocked="True"/>
+        <Image x:Name="yellowpanel_bmp" Margin="403.08,138.6,402.6,328.6" Source="yellowpanel.bmp" Stretch="Fill" d:IsLocked="True"/>
+
+        <Button x:Name="Button_playerOneLogin" Content="Log In" HorizontalAlignment="Left" Margin="171.2,0,0,255.141" Width="118.8" Click="Button_playerOneLogin_Click" Height="30" VerticalAlignment="Bottom" FontSize="24" FontFamily="Consolas"/>
+        <Button x:Name="Button_Forgot" Content="Forgot Password" Margin="403.08,255.246,402.6,0" VerticalAlignment="Top" Click="Button_Forgot_Click" FontSize="24" FontFamily="Consolas"/>
+        <Button x:Name="Button_Register" Content="Register" Margin="403.08,186.63,402.6,0" VerticalAlignment="Top" Click="Button_Register_Click" FontSize="24" FontFamily="Consolas"/>
+        <Label Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167" FontSize="24" Margin="85,230.399,0,0" FontFamily="Consolas"/>
+        <Label Content="Password" HorizontalAlignment="Left" RenderTransformOrigin="0.12,1.167" FontSize="24" Margin="85,306.235,0,322.641" d:LayoutOverrides="Height" FontFamily="Consolas"/>
+        <TextBox x:Name="Textbox_Username" HorizontalAlignment="Left" Height="25" Margin="120,272.323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <PasswordBox x:Name="PasswordBox_LoginOne" HorizontalAlignment="Left" Margin="120,0,0,297.641" Width="170" Height="25" VerticalAlignment="Bottom" d:LayoutOverrides="Height"/>
+        <Button x:Name="Button_GuestLogin" Content="Login as Guest" Margin="85,0,0,208.19" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="205" Height="30" FontFamily="Consolas" FontSize="24"/>
+        <TextBlock x:Name="textBlock_PlayerOne" HorizontalAlignment="Left" Height="40" Margin="62.4,71,0,0" TextWrapping="Wrap" Text="PLAYER ONE" VerticalAlignment="Top" Width="260.2" FontFamily="Consolas" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="White" RenderTransformOrigin="0.549,0.48"/>
+        <Label x:Name="Label_LoggedInAs_Player1" Content="Logged in as:" HorizontalAlignment="Left" Margin="70,116,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="20" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="Label_PLAYER1_LOGUSER" Content="USERNAME" HorizontalAlignment="Left" Margin="62.4,155.5,0,0" Width="260.2" Height="70" FontFamily="Consolas" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+
+
 
     </Grid>
 </Window>
