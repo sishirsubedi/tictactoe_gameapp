@@ -22,5 +22,6 @@
         <Label x:Name="Label_ReenterPassword" Content="Re-enter Password" HorizontalAlignment="Left" Margin="38,191,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
         <PasswordBox x:Name="PasswordBox_ReenterPassword" HorizontalAlignment="Left" Height="26" Margin="165,189,0,0" VerticalAlignment="Top" Width="170" PasswordChanged="PasswordBox_Reenterpassword_PasswordChanged" LostFocus="PasswordBox_ReenterPassword_LostFocus" GotFocus="PasswordBox_ReenterPassword_GotFocus" KeyboardNavigation.TabIndex="3" FontFamily="Consolas"/>
         <Label x:Name="Label_passwordsDontMatch" Content="passwords do not match" HorizontalAlignment="Left" Margin="165,215,0,0" VerticalAlignment="Top" Foreground="Red" FontFamily="Consolas"/>
+        <Button x:Name="Button_Back" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Back_Click" Margin="260,282,0,0"/>
     </Grid>
 </Window>

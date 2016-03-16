@@ -97,8 +97,24 @@ namespace Tfour_Main
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
             Game game = new Game();
-            game.Show();
             this.Hide();
+            game.Show();
+        }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            prevWindow.Show();
+        }
+
+        private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Play_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -30,6 +30,13 @@ namespace Tfour_Main
         public Game()
         {
             InitializeComponent();
+            Loaded += Game_Loaded;
+        }
+
+        private void Game_Loaded(object sender, RoutedEventArgs e)
+        {
+            GameOptions go = new GameOptions();
+            go.Show();
         }
     }
 }

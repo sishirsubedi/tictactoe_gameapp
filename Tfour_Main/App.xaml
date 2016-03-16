@@ -6,6 +6,10 @@
         <Style TargetType="{x:Type Button}">
             <Setter Property="BorderThickness" Value="0"></Setter>
             <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="FontFamily" Value="Consolas"></Setter>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="Consolas"></Setter>
         </Style>
     </Application.Resources>
 </Application>

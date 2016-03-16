@@ -128,5 +128,10 @@ namespace Tfour_Main
                 Label_passwordsDontMatch.Visibility = Visibility.Hidden;
             }
         }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

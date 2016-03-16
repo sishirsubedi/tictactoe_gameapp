@@ -43,5 +43,10 @@ namespace Tfour_Main
             // Hide welcome window
             this.Visibility = System.Windows.Visibility.Hidden;
         }
+
+        private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

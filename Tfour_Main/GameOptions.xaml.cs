@@ -23,5 +23,10 @@ namespace Tfour_Main
         {
             InitializeComponent();
         }
+
+        private void Button_Play_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
