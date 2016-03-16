@@ -36,6 +36,7 @@ namespace Tfour_Main
             var query = from p in db.PlayerInformations
                         where (p.UserID.Equals(TextBox_userID.Text))
                         select p;
+
             if (query.Any())
             {
                 Label_usernameTaken.Visibility = Visibility.Visible;
@@ -59,11 +60,9 @@ namespace Tfour_Main
             {
                 try
                 {
-
                     var query = from p in db.PlayerInformations
                                 where (p.UserID.Equals(TextBox_userID.Text))
                                 select p;
-
 
                     if (query.Any())
                     {
@@ -90,7 +89,7 @@ namespace Tfour_Main
                         db.PlayerInformations.InsertOnSubmit(newplayer);
                         db.SubmitChanges();
 
-                        this.Hide();
+                        this.Close();
                     }
                 }
                 catch (Exception ex)
