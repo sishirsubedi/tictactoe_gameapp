@@ -245,3 +245,7 @@ _Pvt_Extensions
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Mac Config Files
+.DS_Store
+Thumbs.db
