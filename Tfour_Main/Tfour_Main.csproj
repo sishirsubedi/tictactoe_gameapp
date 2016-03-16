@@ -219,6 +219,39 @@
   <ItemGroup>
     <Resource Include="bluepanel.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BoardGrid.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GreenStone.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BlueStone.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BlueStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CompStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GreenStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="OrangeStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PurpleStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RedStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="YellowStone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="background2.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
