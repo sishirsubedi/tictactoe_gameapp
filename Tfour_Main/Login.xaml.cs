@@ -78,7 +78,6 @@ namespace Tfour_Main
         {
             ForgotCredentials forgot = new ForgotCredentials(this);
             forgot.Show();
-            this.Hide();
         }
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
@@ -112,9 +111,5 @@ namespace Tfour_Main
             Application.Current.Shutdown();
         }
 
-        private void Button_Play_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

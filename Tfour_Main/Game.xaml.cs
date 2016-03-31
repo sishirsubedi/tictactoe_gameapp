@@ -37,15 +37,15 @@ namespace Tfour_Main
 
             board = new int[ROWS, COLS];
 
-            p1Token = new BitmapImage();
-            p1Token.BeginInit();
-            p1Token.UriSource = new Uri(".\\GreenStone.png");
-            p1Token.EndInit();
+            //p1Token = new BitmapImage();
+            //p1Token.BeginInit();
+            //p1Token.UriSource = new Uri(".\\GreenStone.png");
+            //p1Token.EndInit();
 
-            p2Token = new BitmapImage();
-            p2Token.BeginInit();
-            p2Token.UriSource = new Uri(".\\YellowStone.png");
-            p2Token.EndInit();
+            //p2Token = new BitmapImage();
+            //p2Token.BeginInit();
+            //p2Token.UriSource = new Uri(".\\YellowStone.png");
+            //p2Token.EndInit();
 
         }
 
