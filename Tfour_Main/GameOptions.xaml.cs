@@ -20,9 +20,11 @@ namespace Tfour_Main
     public partial class GameOptions : Window
     {
         private string playerOneUserID;
+        private string playerOneGameStone;
         private Boolean playerOneTurn;
 
         private string playerTwoUserID;
+        private string playerTwoGameStone;
         private Boolean playerTwoTurn;
 
         private string gameLevel;
@@ -49,7 +51,7 @@ namespace Tfour_Main
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
             //playMode,playerOneUserID,playerOneTurn,playerTwoUserID,playerTwoTurn,gameLevel);
-            Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerTwoUserID, playerTwoTurn, gameLevel);
+            Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerOneGameStone, playerTwoUserID, playerTwoTurn, playerTwoGameStone, gameLevel);
             newgame.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
 

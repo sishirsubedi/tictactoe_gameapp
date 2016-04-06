@@ -32,11 +32,15 @@ namespace Tfour_Main
 
         private Boolean isPlayerOneGame;
 
-       // private  DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+        private string playerOneGameStone;
 
-       
+        private string playerTwoGameStone;
 
-        public Game(int playMode, String player1,  Boolean player1turn, String player2, Boolean player2turn, String gLevel )
+        // private  DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+
+
+
+        public Game(int playMode, String player1,  Boolean player1turn, string p1gstone, String player2, Boolean player2turn, string p2gstone, String gLevel )
         {
 
             InitializeComponent();
@@ -45,6 +49,9 @@ namespace Tfour_Main
             gamePlayers = new Player[2];
             gameBoard = new Board();
             gameLevel = gLevel;
+
+            playerOneGameStone = p1gstone;
+            playerTwoGameStone = p2gstone;
 
          if(playMode == 1)
             {
@@ -76,7 +83,97 @@ namespace Tfour_Main
             int row = (int)btn.GetValue(Grid.RowProperty);
             int col = (int)btn.GetValue(Grid.ColumnProperty);
 
-           
+            if (isPlayerOneGame)
+            {
+                // player one vs AI
+                // player 1 will always be human player
+                // player 2 will be AI
+
+                     if (gamePlayers[0].getPlayerTurn())
+                     {
+                              // human player goes first
+                            string image_string = playerOneGameStone;
+                             // btn.Background = 
+
+                            gameBoard.updateBoard(row, col, 1);
+
+
+                    // update score board for player one
+
+                    Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
+                            
+                            gamePlayers[0].setPlayerTurn(false);
+                             gamePlayers[1].setPlayerTurn(true);
+
+                     }
+                     else
+                     {
+                              // AI goes second 
+
+
+                             string image_string = playerTwoGameStone;
+                             // btn.Background = 
+
+
+                              gameBoard.updateBoard(row, col, 2);
+
+                            // update score board for player two
+
+                             Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
+
+                             gamePlayers[1].setPlayerTurn(false);
+                             gamePlayers[0].setPlayerTurn(true);
+                      }
+
+
+            }
+            else
+            {
+
+                // two player game
+                // player 1 will always be human player
+                // player 2 will be SECOND polayer
+
+                if (gamePlayers[0].getPlayerTurn())
+                {
+                    // human player goes first
+                    string image_string = playerOneGameStone;
+                    // btn.Background = 
+
+                    gameBoard.updateBoard(row, col, 1);
+
+
+                    // update score board for player one
+
+                    Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
+
+
+                    gamePlayers[0].setPlayerTurn(false);
+                    gamePlayers[1].setPlayerTurn(true);
+
+                }
+                else
+                {
+                    string image_string = playerTwoGameStone;
+                    // btn.Background = 
+
+                    gameBoard.updateBoard(row, col, 2);
+
+                    // update score board for player two
+                    Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
+
+                    gamePlayers[1].setPlayerTurn(false);
+                    gamePlayers[0].setPlayerTurn(true);
+
+                }
+
+
+
+
+
+            }
+
+
         }
 
        
