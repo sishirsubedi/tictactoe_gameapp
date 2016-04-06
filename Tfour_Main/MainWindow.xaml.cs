@@ -38,7 +38,7 @@ namespace Tfour_Main
         private void Button_playerTwoGame_Click(object sender, RoutedEventArgs e)
         {
             // Create and display two player login form
-            Login2 loginForm = new Login2(this);
+           Login2 loginForm = new Login2(this);
             loginForm.Visibility = System.Windows.Visibility.Visible;
             // Hide welcome window
             this.Visibility = System.Windows.Visibility.Hidden;

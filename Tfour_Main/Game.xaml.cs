@@ -20,40 +20,54 @@ namespace Tfour_Main
     public partial class Game : Window
     {
         // Fields
-        private int turnsRemaining;
-        private PlayerInformation p1, p2;
-        // We can use a reference to keep track of who's turn it is
-        private PlayerInformation activePlayer;
-        private const int ROWS = 6, COLS = 6;
-        private int[,] board;
-        BitmapImage p1Token, p2Token; 
-         
-        public Game()
+        private int gameCounter;
+
+        private Player[] gamePlayers;
+
+        private Board gameBoard;
+
+        private Boolean isGameOver;
+
+        private String gameLevel;
+
+        private Boolean isPlayerOneGame;
+
+       // private  DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+
+       
+
+        public Game(int playMode, String player1,  Boolean player1turn, String player2, Boolean player2turn, String gLevel )
         {
+
             InitializeComponent();
-            Loaded += Game_Loaded;
+           
+            gameCounter = 36;
+            gamePlayers = new Player[2];
+            gameBoard = new Board();
+            gameLevel = gLevel;
 
-            turnsRemaining = 36;
+         if(playMode == 1)
+            {
+                isPlayerOneGame = true;
+          
+                gamePlayers[0] = new Player (player1, player1turn);
 
-            board = new int[ROWS, COLS];
+                gamePlayers[1] = new ComputerPlayer(player2, player2turn, gameBoard, gameLevel);
 
-            //p1Token = new BitmapImage();
-            //p1Token.BeginInit();
-            //p1Token.UriSource = new Uri(".\\GreenStone.png");
-            //p1Token.EndInit();
+            }
+         else if (playMode == 2)
+            {
 
-            //p2Token = new BitmapImage();
-            //p2Token.BeginInit();
-            //p2Token.UriSource = new Uri(".\\YellowStone.png");
-            //p2Token.EndInit();
+                isPlayerOneGame = false;
+           
+
+                gamePlayers[0] = new Player (player1, player1turn);
+                gamePlayers[1] = new Player (player2, player2turn);
+            }
+
 
         }
 
-        private void Game_Loaded(object sender, RoutedEventArgs e)
-        {
-            GameOptions go = new GameOptions();
-            go.Show();
-        }
 
         private void Cell_Click(object sender, RoutedEventArgs e)
         {
@@ -62,34 +76,9 @@ namespace Tfour_Main
             int row = (int)btn.GetValue(Grid.RowProperty);
             int col = (int)btn.GetValue(Grid.ColumnProperty);
 
-            NextTurn();
+           
         }
 
-        private void NextTurn()
-        {
-            if (activePlayer == p1)
-                activePlayer = p2;
-            else
-                activePlayer = p1;
-
-            turnsRemaining--;
-
-            if (turnsRemaining == 0)
-            {
-                MessageBox.Show("Game Over");
-                ClearBoard();
-            }
-        }
-
-        private void ClearBoard()
-        {
-            for (int r = 0; r < ROWS; r++)
-            {
-                for (int c = 0; c < COLS; c++)
-                {
-                    
-                }
-            }
-        }
+       
     }
 }

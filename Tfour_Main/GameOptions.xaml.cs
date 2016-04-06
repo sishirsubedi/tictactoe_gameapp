@@ -19,14 +19,42 @@ namespace Tfour_Main
     /// </summary>
     public partial class GameOptions : Window
     {
-        public GameOptions()
+        private string playerOneUserID;
+        private Boolean playerOneTurn;
+
+        private string playerTwoUserID;
+        private Boolean playerTwoTurn;
+
+        private string gameLevel;
+        
+        private int playMode;
+
+        public GameOptions(string p1, string p2, int mode)
         {
             InitializeComponent();
+            playerOneUserID = p1;
+            playerTwoUserID = p2;
+            playMode = mode;
+
+
+            playerOneTurn = true;
+
+            playerTwoTurn = false;
+
+            gameLevel = "Easy";
         }
+
+
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //playMode,playerOneUserID,playerOneTurn,playerTwoUserID,playerTwoTurn,gameLevel);
+            Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerTwoUserID, playerTwoTurn, gameLevel);
+            newgame.Visibility = System.Windows.Visibility.Visible;
+            this.Visibility = System.Windows.Visibility.Hidden;
+
+        
+            
         }
     }
 }

@@ -20,10 +20,16 @@ namespace Tfour_Main
     public partial class Login : Window
     {
         // Sishir's Server
-        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
         // Gabriel's Server
-        private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        //private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString1);
         private Window prevWindow;
+
+        private string playerOneUserID;
+        private string playerTwoUserID;
+
+
+
 
         public Login(Window window)
         {
@@ -53,6 +59,7 @@ namespace Tfour_Main
                                 where (s.UserID.Equals(Textbox_Username.Text) &&
                                 s.Password.Equals(PasswordBox_LoginOne.Password))
                                 select s;
+                    
 
                     if (!query.Any())
                     {
@@ -63,6 +70,10 @@ namespace Tfour_Main
                         Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
                         Label_PLAYER1_LOGUSER.Visibility = Visibility.Visible;
                         Label_LoggedInAs_Player1.Visibility = Visibility.Visible;
+
+                        playerOneUserID = Textbox_Username.Text;
+                        playerTwoUserID = "smario";
+
                     }
                 }
                 catch (Exception ex)
@@ -95,9 +106,9 @@ namespace Tfour_Main
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            Game game = new Game();
+            GameOptions go = new GameOptions( playerOneUserID, playerTwoUserID,1);
             this.Hide();
-            game.Show();
+            go.Show();
         }
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)

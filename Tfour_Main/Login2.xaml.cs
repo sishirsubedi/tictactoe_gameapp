@@ -22,6 +22,9 @@ namespace Tfour_Main
         private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
         private Window prevWindow;
 
+        private string playerOneUserID;
+        private string playerTwoUserID;
+
         public Login2(Window window)
         {
             InitializeComponent();
@@ -64,6 +67,8 @@ namespace Tfour_Main
                         Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Visible;
                         Button_playerTwoLogin.IsEnabled = true;
 
+                        playerOneUserID = Textbox_Username.Text;
+                       
                     }
                     else
                     {
@@ -100,6 +105,9 @@ namespace Tfour_Main
                         Label_PLAYER2_LOGUSER.Content = Textbox_Username2.Text;
                         Label_LoggedInAs_Player2.Visibility = System.Windows.Visibility.Visible;
                         Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Visible;
+
+                        playerTwoUserID = Textbox_Username2.Text;
+                       
                     }
                     else
                     {
@@ -137,9 +145,12 @@ namespace Tfour_Main
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            Game newGame = new Game();
-            newGame.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+
+            GameOptions go = new GameOptions(playerOneUserID,playerTwoUserID, 2);
+            this.Hide();
+            go.Show();
+
+        
         }
     }
 }
