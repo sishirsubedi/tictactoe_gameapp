@@ -241,5 +241,11 @@ namespace Tfour_Main
 
         public int getPlayerTwoScore() { return playerTwoScore; }
 
+
+        public int[,] getGameMatrix()
+        {
+            return gameBoard;
+        }
+
     }
 }

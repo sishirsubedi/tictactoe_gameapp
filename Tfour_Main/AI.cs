@@ -51,6 +51,7 @@ namespace Tfour_Main
         {
             int[] cell = { 0, 0 };
 
+            int[,] matrix = gameBoard.getGameMatrix();
 
 
             return cell;
