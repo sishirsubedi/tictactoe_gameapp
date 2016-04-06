@@ -36,7 +36,7 @@ namespace Tfour_Main
             playerTwoUserID = p2;
             playMode = mode;
 
-
+            // this is for temp...need to complete game options 
             playerOneTurn = true;
 
             playerTwoTurn = false;
