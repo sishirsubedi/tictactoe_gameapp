@@ -38,146 +38,146 @@
         <Label x:Name="Label_PlayerTwoScore" Content="0" Grid.Column="5" HorizontalAlignment="Center" Margin="130.1,-23.697,-192.775,12.5" RenderTransformOrigin="0.375,-0.66" Grid.Row="3" FontSize="50" Width="162.675" HorizontalContentAlignment="Center" FontFamily="Consolas" Foreground="White" Height="111.197" VerticalAlignment="Bottom"/>
         <Button x:Name="button_1x1"
 			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Background="{x:Null}"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_1x2"
 			Grid.Column="1"
 			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Background="{x:Null}"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Click="Cell_Click"/>
         <Button x:Name="button_1x3"
 			Grid.Column="2"
 			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Background="{x:Null}"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_1x4"
 			Grid.Column="3"
 			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Background="{x:Null}"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_1x5"
 			Grid.Column="4"
 			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Background="{x:Null}"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_1x6"
 			Grid.Column="5"
 			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Background="{x:Null}"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_2x1"
 			Background="Transparent"
 			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_2x2"
 			Background="Transparent"
 			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
         <Button x:Name="button_2x3"
 			Background="Transparent"
 			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
         <Button x:Name="button_2x5"
 			Background="Transparent"
 			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4" Click="Cell_Click"/>
         <Button x:Name="button_2x4"
 			Background="Transparent"
 			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3" Click="Cell_Click"/>
         <Button x:Name="button_2x6"
 			Background="Transparent"
 			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
         <Button x:Name="button_3x1"
 			Background="Transparent"
 			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Click="Cell_Click"/>
         <Button x:Name="button_3x2"
 			Background="Transparent"
 			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
         <Button x:Name="button_3x3"
 			Background="Transparent"
 			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
         <Button x:Name="button_3x4"
 			Background="Transparent"
 			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"  Click="Cell_Click"/>
         <Button x:Name="button_3x5"
 			Background="Transparent"
 			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"  Click="Cell_Click"/>
         <Button x:Name="button_3x6"
 			Background="Transparent"
 			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"  Click="Cell_Click"/>
         <Button x:Name="button_4x1"
 			Background="Transparent"
 			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_4x2"
 			Background="Transparent"
 			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click" />
         <Button x:Name="button_4x3"
 			Background="Transparent"
 			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
         <Button x:Name="button_4x4"
 			Background="Transparent"
 			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3" Click="Cell_Click"/>
         <Button x:Name="button_4x5"
 			Background="Transparent"
 			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4" Click="Cell_Click"/>
         <Button x:Name="button_4x6"
 			Background="Transparent"
 			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
         <Button x:Name="button_5x1"
 			Background="Transparent"
 			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Click="Cell_Click"/>
         <Button x:Name="button_5x2"
 			Background="Transparent"
 			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
         <Button x:Name="button_5x3"
 			Background="Transparent"
 			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
         <Button x:Name="button_5x4"
 			Background="Transparent"
 			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"  Click="Cell_Click"/>
         <Button x:Name="button_5x5"
 			Background="Transparent"
 			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"  Click="Cell_Click"/>
         <Button x:Name="button_5x6"
 			Background="Transparent"
 			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"  Click="Cell_Click"/>
         <Button x:Name="button_6x1"
 			Background="Transparent"
 			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
         <Button x:Name="button_6x2"
 			Background="Transparent"
 			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
         <Button x:Name="button_6x3"
 			Background="Transparent"
 			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
         <Button x:Name="button_6x4"
 			Background="Transparent"
 			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"  Click="Cell_Click"/>
         <Button x:Name="button_6x5"
 			Background="Transparent"
 			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4" Click="Cell_Click"/>
         <Button x:Name="button_6x6"
 			Background="Transparent"
 			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"/>
+			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
     </Grid>
 </Window>

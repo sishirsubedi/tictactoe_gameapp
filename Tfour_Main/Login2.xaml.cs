@@ -19,7 +19,7 @@ namespace Tfour_Main
     /// </summary>
     public partial class Login2 : Window
     {
-        private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
         private Window prevWindow;
 
         private string playerOneUserID;
@@ -138,9 +138,11 @@ namespace Tfour_Main
 
         private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile2 profile = new Profile2(Textbox_Username.Text, Textbox_Username2.Text);
+            /*
+            Profile profile = new Profile(Textbox_Username.Text, Textbox_Username2.Text);
             profile.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
+            */
         }
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)

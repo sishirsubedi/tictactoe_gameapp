@@ -38,25 +38,58 @@ namespace Tfour_Main
             playerTwoUserID = p2;
             playMode = mode;
 
-            // this is for temp...need to complete game options 
+            if(mode == 1)
+            {
+                Grid_AILevel.Visibility = Visibility.Visible;
+            }
+
             playerOneTurn = true;
 
             playerTwoTurn = false;
-
-            gameLevel = "Easy";
+  
+            gameLevel = "";
         }
 
 
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            //playMode,playerOneUserID,playerOneTurn,playerTwoUserID,playerTwoTurn,gameLevel);
+            
             Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerOneGameStone, playerTwoUserID, playerTwoTurn, playerTwoGameStone, gameLevel);
             newgame.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
 
         
             
+        }
+
+        private void First_PlayerOne(object sender, RoutedEventArgs e)
+        {
+            playerOneTurn = true;
+
+            playerTwoTurn = false;
+        }
+
+        private void First_PlayerTwo(object sender, RoutedEventArgs e)
+        {
+            playerOneTurn = false;
+
+            playerTwoTurn = true;
+        }
+
+        private void GameLevel_Easy(object sender, RoutedEventArgs e)
+        {
+            gameLevel = "Easy";
+        }
+
+        private void GameLevel_Medium(object sender, RoutedEventArgs e)
+        {
+            gameLevel = "Medium";
+        }
+
+        private void GameLevel_Hard(object sender, RoutedEventArgs e)
+        {
+            gameLevel = "Hard";
         }
     }
 }

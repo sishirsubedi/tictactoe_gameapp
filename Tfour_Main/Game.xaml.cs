@@ -93,9 +93,9 @@ namespace Tfour_Main
                      {
                               // human player goes first
                             string image_string = playerOneGameStone;
-                             // btn.Background = 
+                    btn.Content = 'x';
 
-                            gameBoard.updateBoard(row, col, 1);
+                    gameBoard.updateBoard(row, col, 1);
 
 
                     // update score board for player one
@@ -112,10 +112,10 @@ namespace Tfour_Main
 
 
                              string image_string = playerTwoGameStone;
-                             // btn.Background = 
+                    btn.Content = 'o';
 
 
-                              gameBoard.updateBoard(row, col, 2);
+                    gameBoard.updateBoard(row, col, 2);
 
                             // update score board for player two
 
@@ -138,7 +138,7 @@ namespace Tfour_Main
                 {
                     // human player goes first
                     string image_string = playerOneGameStone;
-                    // btn.Background = 
+                    btn.Content = 'X';
 
                     gameBoard.updateBoard(row, col, 1);
 
@@ -155,7 +155,7 @@ namespace Tfour_Main
                 else
                 {
                     string image_string = playerTwoGameStone;
-                    // btn.Background = 
+                    btn.Content = 'O';
 
                     gameBoard.updateBoard(row, col, 2);
 
