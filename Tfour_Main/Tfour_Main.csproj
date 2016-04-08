@@ -253,6 +253,18 @@
   <ItemGroup>
     <Resource Include="background2.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="stoneSelectBG.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PLAYbutton.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="greypanel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="OneTile.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

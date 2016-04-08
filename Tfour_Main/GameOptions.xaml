@@ -5,30 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tfour_Main"
         mc:Ignorable="d"
-        Title="GameOptions" Height="818.704" Width="1050"
+        Title="GameOptions" Height="800" Width="1050"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
         Background="Transparent">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="yellowpanel.bmp"/>
+            <ImageBrush ImageSource="greypanel.bmp"/>
         </Grid.Background>
-        <Label x:Name="Title" Content="Game Options" HorizontalAlignment="Left" Margin="445,76,0,0" VerticalAlignment="Top" FontSize="19"/>
-        <Button x:Name="Button_Play" Content="Play" HorizontalAlignment="Left" Margin="471,652,0,0" VerticalAlignment="Top" FontSize="19" Width="75" Click="Button_Play_Click"/>
-        <Label x:Name="label_GameStone" Content="Select Game Stone" HorizontalAlignment="Left" Margin="132,173,0,0" VerticalAlignment="Top" Height="37" Width="151"/>
-        <Label x:Name="label_FirstPlayer" Content="Who Goes First?" HorizontalAlignment="Left" Margin="132,353,0,0" VerticalAlignment="Top" Height="37" Width="151"/>
-        <RadioButton x:Name="radioButton_PlayerOne" Content="Player One" HorizontalAlignment="Left" Margin="319,359,0,0" VerticalAlignment="Top" Checked="First_PlayerOne"/>
-        <RadioButton x:Name="radioButton_PlayerTwo" Content="Player Two" HorizontalAlignment="Left" Margin="445,362,0,0" VerticalAlignment="Top" Checked="First_PlayerTwo"/>
+        <Rectangle Fill="#FFB5B5B7" Height="101.524" Margin="274.8,0,290.2,269.42" VerticalAlignment="Bottom"/>
+        <Label x:Name="Title" Content="Game Options" HorizontalAlignment="Left" Margin="421.283,79.2,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Consolas" FontWeight="Bold"/>
+        <Button x:Name="Button_Play" Content="Play" HorizontalAlignment="Left" Margin="481,689.2,0,0" VerticalAlignment="Top" FontSize="25" Width="75" Click="Button_Play_Click" FontWeight="ExtraBold" Height="45">
+            <Button.Background>
+                <ImageBrush ImageSource="PLAYbutton.bmp"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label_GameStone" Content="Select Game Stone" Margin="404.89,150.662,410.766,0" VerticalAlignment="Top" Height="37" FontFamily="Consolas" FontSize="24" FontWeight="ExtraBold" d:LayoutOverrides="Width" HorizontalContentAlignment="Center"/>
+        <Label x:Name="label_FirstPlayer" Content="Who Goes First?" Margin="410.6,0,410.083,325.944" VerticalAlignment="Bottom" Height="37" HorizontalContentAlignment="Center" FontSize="24" FontWeight="SemiBold" FontFamily="Consolas" HorizontalAlignment="Center"/>
+        <RadioButton x:Name="radioButton_PlayerOne" Content="Player One" HorizontalAlignment="Left" Margin="339.4,0,0,261.42" VerticalAlignment="Bottom" Checked="First_PlayerOne" FontFamily="Consolas" FontSize="20" Height="47.723" Width="150.267" FontWeight="SemiBold"/>
+        <RadioButton x:Name="radioButton_PlayerTwo" Content="Player Two" HorizontalAlignment="Right" Margin="0,0,342.6,261.42" VerticalAlignment="Bottom" Checked="First_PlayerTwo" Width="132.8" FontWeight="SemiBold" FontFamily="Consolas" FontSize="20" Height="47.723"/>
 
-        <Label x:Name="label_GameStone_PlayerOne" Content="Player One" HorizontalAlignment="Left" Margin="289,244,0,0" VerticalAlignment="Top" Height="37" Width="151"/>
-        <Label x:Name="label_GameStone_PlayerTwo" Content="Player Two" HorizontalAlignment="Left" Margin="638,173,0,0" VerticalAlignment="Top" Height="37" Width="151"/>
-        <Grid x:Name="Grid_PlayerOneStone" HorizontalAlignment="Left" Height="100" Margin="445,215,0,0" VerticalAlignment="Top" Width="184" Background="Aqua"/>
-        <Grid x:Name="Grid_AILevel" HorizontalAlignment="Left" Height="100" Margin="132,428,0,0" VerticalAlignment="Top" Width="485" Background="Aquamarine" Visibility="Visible">
-            <RadioButton x:Name="radioButton_LevelHard" Content="Hard" HorizontalAlignment="Left" Margin="327,33,0,0" VerticalAlignment="Top" Width="46" Checked="GameLevel_Hard"/>
-            <RadioButton x:Name="radioButton_LevelMedium" Content="Medium" HorizontalAlignment="Left" Margin="220,33,0,0" VerticalAlignment="Top" Width="77" Checked="GameLevel_Medium"/>
-            <RadioButton x:Name="radioButton_LevelEasy" Content="Easy" HorizontalAlignment="Left" Margin="131,36,0,0" VerticalAlignment="Top" Width="46" Checked="GameLevel_Easy"/>
-            <Label x:Name="label_GameLevel" Content="GameLevel" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Height="37" Width="105"/>
+        <Label x:Name="label_GameStone_PlayerOne" Content="Player One Stone" HorizontalAlignment="Left" Margin="85,151,0,0" VerticalAlignment="Top" Height="53" Width="257" FontFamily="Consolas" FontSize="26" VerticalContentAlignment="Center" FontWeight="ExtraBold"/>
+        <Label x:Name="label_GameStone_PlayerTwo" Content="Player Two Stone" HorizontalAlignment="Right" Margin="0,157,83.6,0" VerticalAlignment="Top" Height="53" Width="263" FontFamily="Consolas" FontSize="26" HorizontalContentAlignment="Right" FontWeight="ExtraBold"/>
+        <Grid x:Name="Grid_StoneSelection" Margin="374.7,197.76,375.3,0" Height="200" VerticalAlignment="Top">
+            <Grid.Background>
+                <ImageBrush ImageSource="stoneSelectBG.bmp"/>
+            </Grid.Background>
+            <Button x:Name="Orange" Content="" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Margin="10,10,0,0" Click="Orange_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="OrangeStone.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Green" Content="" Height="80" Width="80" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Click="Green_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="GreenStone.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Red" Height="80" VerticalAlignment="Top" Margin="110,10,110,0" Click="btn_Red_Click" IsHitTestVisible="True">
+                <Button.Background>
+                    <ImageBrush ImageSource="RedStone.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Blue" Content="" HorizontalAlignment="Left" Height="80" VerticalAlignment="Bottom" Width="80" Margin="10,0,0,10" Click="Blue_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="BlueStone.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Yellow" Content="" HorizontalAlignment="Right" Width="80" Height="80" VerticalAlignment="Bottom" Margin="0,0,10,10" Click="Yellow_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="YellowStone.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Purple" Content="" Height="80" VerticalAlignment="Bottom" Margin="110,0,110,10" Click="Purple_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="PurpleStone.png"/>
+                </Button.Background>
+            </Button>
         </Grid>
+        <Grid x:Name="Grid_AILevel" HorizontalAlignment="Left" Height="100" Margin="274.8,563.6,0,0" VerticalAlignment="Top" Width="485" Background="#FFAEAEAE" Visibility="Visible">
+            <RadioButton x:Name="radioButton_LevelHard" Content="Hard" HorizontalAlignment="Left" Margin="380.6,0,0,18.783" VerticalAlignment="Bottom" Width="74.8" Checked="GameLevel_Hard" FontSize="20" FontWeight="SemiBold" FontFamily="Consolas"/>
+            <RadioButton x:Name="radioButton_LevelMedium" Content="Medium" HorizontalAlignment="Left" Margin="202.4,0,0,18.783" VerticalAlignment="Bottom" Width="85" Checked="GameLevel_Medium" FontSize="20" FontFamily="Consolas" FontWeight="SemiBold"/>
+            <RadioButton x:Name="radioButton_LevelEasy" Content="Easy" HorizontalAlignment="Left" Margin="44.6,58.8,0,0" VerticalAlignment="Top" Width="86.8" Checked="GameLevel_Easy" FontSize="20" Height="30" FontWeight="SemiBold" FontFamily="Consolas"/>
+            <Label x:Name="label_GameLevel" Content="Computer Difficulty Level" Margin="79.699,10,65.383,0" FontFamily="Consolas" FontSize="24" Height="37.733" VerticalAlignment="Top" HorizontalContentAlignment="Center" FontWeight="SemiBold" d:LayoutOverrides="Width"/>
+        </Grid>
+        <Image x:Name="tile1BG" HorizontalAlignment="Left" Margin="89.3,208.702,0,0" Width="150" Height="151" VerticalAlignment="Top" Source="OneTile.bmp"/>
+        <Image x:Name="tile2BG" HorizontalAlignment="Right" Margin="0,209,89.6,0" Width="150" Height="151" VerticalAlignment="Top" Source="OneTile.bmp"/>
+        <Image x:Name="player1SelectedSTONE" HorizontalAlignment="Left" Height="110" Margin="109.3,229.202,0,0" VerticalAlignment="Top" Width="110"/>
+        <Image x:Name="player2SelectedSTONE" HorizontalAlignment="Right" Height="110" Margin="0,229.202,108.3,0" VerticalAlignment="Top" Width="110"/>
+        <TextBlock x:Name="msg_PlayerOneSelectFirst" HorizontalAlignment="Center" Margin="89,373,788.6,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="Red" ForceCursor="True" FontWeight="SemiBold" Height="101" Width="172"><Run Text="Player One "/><LineBreak/><Run Text="Please Select "/><LineBreak/><Run Text="Game Stone"/></TextBlock>
+        <TextBlock x:Name="msg_PlayerTwoSelectStone" HorizontalAlignment="Center" Margin="788,373,89.6,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="Red" ForceCursor="True" FontWeight="SemiBold" Height="101" Width="172" TextAlignment="Right"><Run Text="Player Two"/><LineBreak/><Run Text="Please Select"/><LineBreak/><Run Text="Game Stone"/></TextBlock>
     </Grid>
 </Window>

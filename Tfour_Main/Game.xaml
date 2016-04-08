@@ -32,10 +32,10 @@
         <Image x:Name="greenpanel_bmp" HorizontalAlignment="Left" Margin="-194.6,-29.4,0,12.5" Grid.RowSpan="2" Source="greenpanel.bmp" Stretch="Fill" Width="162.675" Grid.Row="2" d:IsLocked="True"/>
         <Image x:Name="bluepanel_bmp" HorizontalAlignment="Right" Margin="0,-29.4,-192.775,12.5" Grid.Row="2" Grid.RowSpan="2" Source="bluepanel.bmp" Stretch="Fill" Width="162.675" Grid.Column="5" d:IsLocked="True"/>
         <Image x:Name="BoardGrid_bmp" Grid.ColumnSpan="6" Grid.RowSpan="6" Source="BoardGrid.bmp" Stretch="Fill"/>
-        <Label x:Name="Label_PlayerOneName" Content="Player One's Name" HorizontalAlignment="Left" Margin="-165.6,3.99,0,0" VerticalAlignment="Top" Height="31" Width="116" d:LayoutOverrides="HorizontalAlignment" Grid.Row="2" FontFamily="Consolas" FontSize="18" Foreground="White"/>
+        <Label x:Name="Label_PlayerOneName" Content="Player One's Name" HorizontalAlignment="Left" Margin="-169,79,0,0" VerticalAlignment="Top" Height="31" Width="116" Grid.Row="1" FontFamily="Consolas" FontSize="18" Foreground="White" Grid.RowSpan="2"/>
         <Label x:Name="Label_PlayerOneScore" Content="0" HorizontalAlignment="Center" Margin="-194.6,-23.697,131.925,12.5" RenderTransformOrigin="0.375,-0.66" Grid.Row="3" VerticalAlignment="Bottom" Foreground="White" FontFamily="Consolas" FontSize="60" Height="111.197" Width="162.675" HorizontalContentAlignment="Center"/>
         <Label x:Name="Label_PlayerTwoName" Content="Player Two's Name" HorizontalAlignment="Left" Margin="155,-5.45,-171,0" VerticalAlignment="Top" Height="31" Width="116" Grid.Column="5" Grid.Row="2" FontSize="18" FontFamily="Consolas" Foreground="White"/>
-        <Label x:Name="Label_PlayerTwoScore" Content="0" Grid.Column="5" HorizontalAlignment="Center" Margin="130.1,-23.697,-192.775,12.5" RenderTransformOrigin="0.375,-0.66" Grid.Row="3" FontSize="50" Width="162.675" HorizontalContentAlignment="Center" FontFamily="Consolas" Foreground="White" Height="111.197" VerticalAlignment="Bottom"/>
+        <Label x:Name="Label_PlayerTwoScore" Content="0" Grid.Column="5" HorizontalAlignment="Center" Margin="130.1,-23.697,-192.775,12.5" RenderTransformOrigin="0.375,-0.66" Grid.Row="3" FontSize="60" Width="162.675" HorizontalContentAlignment="Center" FontFamily="Consolas" Foreground="White" Height="111.197" VerticalAlignment="Bottom"/>
         <Button x:Name="button_1x1"
 			Grid.Row="0"
 			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>

@@ -15,27 +15,31 @@
         <Image x:Name="redpanel_bmp" Margin="-191.7,50,50,152.067" Source="bluepanel.bmp" Stretch="Fill" Grid.Column="1" d:IsLocked="True"/>
         <Image x:Name="yellowpanel_bmp" Margin="399.08,138.6,257.2,328.6" Source="yellowpanel.bmp" Stretch="Fill" d:IsLocked="True"/>
 
-        <Button x:Name="Button_playerOneLogin" Content="Log In" HorizontalAlignment="Left" Width="118.8" Click="Button_Click_PayerOneLogin" Margin="178.2,0,0,255.041" VerticalAlignment="Bottom" FontFamily="Consolas" FontSize="24"/>
-        <Button x:Name="Button_playerTwoLogin" Content="Log In" HorizontalAlignment="Right" Margin="0,0,-51.6,255.041" VerticalAlignment="Bottom" Width="112.12" Click="Button_Click_PayerTwoLogin" FontFamily="Consolas" FontSize="24"/>
-        <Button x:Name="Button_ForgetPassword" Content="Forgot Password" Margin="399.08,258.91,257.2,0" VerticalAlignment="Top" Click="Button_ForgetPassword_Click" FontSize="24" FontFamily="Consolas"/>
-        <Button x:Name="Button_Register" Content="Register" Margin="399.08,195.1,257.2,0" VerticalAlignment="Top" Click="Button_Register_Click" FontSize="24" FontFamily="Consolas"/>
-        <Label Content="Username" Margin="85.32,225.312,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167" FontSize="24" FontFamily="Consolas" Height="36.724" HorizontalAlignment="Left"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="85.32,306.235,0,322.641" RenderTransformOrigin="0.12,1.167" FontSize="24" d:LayoutOverrides="Height" FontFamily="Consolas"/>
+        <Button x:Name="Button_playerOneLogin" Content="Log In" HorizontalAlignment="Left" Width="118.8" Click="Button_Click_PayerOneLogin" Margin="178.2,0,0,242.296" VerticalAlignment="Bottom" FontFamily="Consolas" FontSize="24" Foreground="White"/>
+        <Button x:Name="Button_playerTwoLogin" Content="Log In" HorizontalAlignment="Right" Margin="0,0,-51.6,242.296" VerticalAlignment="Bottom" Width="112.12" Click="Button_Click_PayerTwoLogin" FontFamily="Consolas" FontSize="24" Foreground="White"/>
+        <Button x:Name="Button_ForgetPassword" Content="Forgot Password" Margin="399.08,258.91,257.2,0" VerticalAlignment="Top" Click="Button_ForgetPassword_Click" FontSize="24" FontFamily="Consolas" FontWeight="SemiBold"/>
+        <Button x:Name="Button_Register" Content="Register" Margin="399.08,195.1,257.2,0" VerticalAlignment="Top" Click="Button_Register_Click" FontSize="24" FontFamily="Consolas" FontWeight="SemiBold"/>
+        <Label Content="Username" Margin="85.32,225.312,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167" FontSize="24" FontFamily="Consolas" Height="36.724" HorizontalAlignment="Left" Foreground="White"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="85.32,306.235,0,322.641" RenderTransformOrigin="0.12,1.167" FontSize="24" d:LayoutOverrides="Height" FontFamily="Consolas" Foreground="White"/>
         <TextBox x:Name="Textbox_Username" HorizontalAlignment="Left" Height="25" Margin="127,272.323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
-        <Label Content="Username" HorizontalAlignment="Right" Margin="0,225.312,41.273,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167" FontSize="24" FontFamily="Consolas"/>
-        <Label Content="Password" HorizontalAlignment="Right" Margin="0,306.235,41.273,0" RenderTransformOrigin="0.12,1.167" VerticalAlignment="Top" FontFamily="Consolas" FontSize="24"/>
+        <Label Content="Username" HorizontalAlignment="Right" Margin="0,225.312,41.273,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167" FontSize="24" FontFamily="Consolas" Foreground="White"/>
+        <Label Content="Password" HorizontalAlignment="Right" Margin="0,306.235,41.273,0" RenderTransformOrigin="0.12,1.167" VerticalAlignment="Top" FontFamily="Consolas" FontSize="24" Foreground="White"/>
         <TextBox x:Name="Textbox_Username2" Height="25" Margin="0,269.96,-51.6,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170"/>
         <PasswordBox x:Name="PasswordBox_LoginTwo" Margin="0,0,-51.6,297.641" VerticalAlignment="Bottom" Height="25" HorizontalAlignment="Right" Width="170"/>
         <PasswordBox x:Name="PasswordBox_LoginOne" HorizontalAlignment="Left" Margin="127,0,0,297.641" VerticalAlignment="Bottom" Width="170" Height="25"/>
-        <Button x:Name="Button_GuestLogin_Copy" Content="Login as Guest" Margin="85.32,0,0,208.19" VerticalAlignment="Bottom" Height="30" FontFamily="Consolas" FontSize="24" HorizontalAlignment="Left" Width="205"/>
+        <Button x:Name="Button_GuestLogin_Copy" Content="Login as Guest" Margin="85.32,0,0,201.267" VerticalAlignment="Bottom" Height="30" FontFamily="Consolas" FontSize="24" HorizontalAlignment="Left" Width="205" Foreground="White"/>
         <TextBlock x:Name="textBlock_PlayerOne" Height="40" Margin="62.8,71,0,0" TextWrapping="Wrap" Text="PLAYER ONE" VerticalAlignment="Top" FontFamily="Consolas" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="White" RenderTransformOrigin="0.549,0.48" HorizontalAlignment="Left" Width="260.2"/>
         <Label x:Name="Label_LoggedInAs_Player1" Content="Logged In As:" Margin="85.32,115.2,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="20" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left"/>
-        <Label x:Name="Label_PLAYER1_LOGUSER" Content="USERNAME" Margin="62.8,155.5,0,0" Height="70" FontFamily="Consolas" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="260.2"/>
-        <Button x:Name="Button_GuestPlayer2Login" Content="Login as Guest" Margin="0,0,-51.6,208.19" VerticalAlignment="Bottom" Height="30" FontFamily="Consolas" FontSize="24" HorizontalAlignment="Right" Width="205"/>
+        <Label x:Name="Label_PLAYER1_LOGUSER" Content="USERNAME" Margin="62.8,155.5,0,0" Height="70" FontFamily="Consolas" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="260.2" Foreground="White"/>
+        <Button x:Name="Button_GuestPlayer2Login" Content="Login as Guest" Margin="0,0,-51.6,208.19" VerticalAlignment="Bottom" Height="30" FontFamily="Consolas" FontSize="24" HorizontalAlignment="Right" Width="205" Foreground="White"/>
         <TextBlock x:Name="textBlock_PlayerTwo" Height="40" Margin="-183.774,71,50,0" TextWrapping="Wrap" Text="PLAYER TWO" VerticalAlignment="Top" FontFamily="Consolas" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="White" Grid.Column="1"/>
         <Label x:Name="Label_LoggedInAs_Player2" Content="Logged In As:" HorizontalAlignment="Right" Margin="0,115.2,3.889,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="20" FontWeight="Bold" Foreground="White"/>
-        <Label x:Name="Label_PLAYER2_LOGUSER" Content="USERNAME" Margin="-191.7,156.34,50,0" Height="69.16" FontFamily="Consolas" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1"/>
-        <Button x:Name="Button_Play" Content="Play" HorizontalAlignment="Left" Margin="484,403,0,0" VerticalAlignment="Top" Width="75" Click="Button_Play_Click" FontSize="19"/>
+        <Label x:Name="Label_PLAYER2_LOGUSER" Content="USERNAME" Margin="-191.7,156.34,50,0" Height="69.16" FontFamily="Consolas" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="1" Foreground="White"/>
+        <Button x:Name="Button_Play" Content="Play" HorizontalAlignment="Left" Margin="484,475,0,0" VerticalAlignment="Top" Width="75" Click="Button_Play_Click" FontSize="25" Height="45" FontWeight="ExtraBold">
+            <Button.Background>
+                <ImageBrush ImageSource="PLAYbutton.bmp"/>
+            </Button.Background>
+        </Button>
 
 
     </Grid>

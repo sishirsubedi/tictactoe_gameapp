@@ -20,16 +20,20 @@ namespace Tfour_Main
     public partial class GameOptions : Window
     {
         private string playerOneUserID;
-        private string playerOneGameStone;
+        private BitmapImage playerOneGameStone;
         private Boolean playerOneTurn;
 
         private string playerTwoUserID;
-        private string playerTwoGameStone;
+        private BitmapImage playerTwoGameStone;
         private Boolean playerTwoTurn;
 
         private string gameLevel;
+        private Boolean player1ChoseStone;
         
         private int playMode;
+
+        string dir = System.IO.Directory.GetCurrentDirectory();
+        
 
         public GameOptions(string p1, string p2, int mode)
         {
@@ -37,10 +41,19 @@ namespace Tfour_Main
             playerOneUserID = p1;
             playerTwoUserID = p2;
             playMode = mode;
+            player1ChoseStone = false;
+
+            msg_PlayerTwoSelectStone.Visibility = Visibility.Hidden;
+            Grid_AILevel.Visibility = Visibility.Hidden;
 
             if(mode == 1)
             {
                 Grid_AILevel.Visibility = Visibility.Visible;
+                label_GameStone_PlayerTwo.Content = "Computer Stone";
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\CompStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+                radioButton_PlayerTwo.Content = "Computer";
+
             }
 
             playerOneTurn = true;
@@ -55,8 +68,8 @@ namespace Tfour_Main
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
             
-            Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerOneGameStone, playerTwoUserID, playerTwoTurn, playerTwoGameStone, gameLevel);
-            newgame.Visibility = System.Windows.Visibility.Visible;
+            //Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerOneGameStone, playerTwoUserID, playerTwoTurn, playerTwoGameStone, gameLevel);
+            //newgame.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
 
         
@@ -90,6 +103,150 @@ namespace Tfour_Main
         private void GameLevel_Hard(object sender, RoutedEventArgs e)
         {
             gameLevel = "Hard";
+        }
+
+        private void Orange_Click(object sender, RoutedEventArgs e)
+        {
+            Orange.Visibility = Visibility.Hidden;
+
+            if (player1ChoseStone == false)
+            {
+                
+                playerOneGameStone = new BitmapImage(new Uri(dir + @"\OrangeStone.png"));
+                player1SelectedSTONE.Source = playerOneGameStone;
+                player1ChoseStone = true;
+                msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+                
+
+                if (playMode != 1)
+                {
+                    msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\OrangeStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+            }
+        }
+
+        private void btn_Red_Click(object sender, RoutedEventArgs e)
+        {
+            Red.Visibility = Visibility.Hidden;
+
+            if (player1ChoseStone == false)
+            {
+
+                playerOneGameStone = new BitmapImage(new Uri(dir + @"\RedStone.png"));
+                player1SelectedSTONE.Source = playerOneGameStone;
+                player1ChoseStone = true;
+                msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+                
+
+                if (playMode != 1)
+                {
+                    msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\RedStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+            }
+        }
+
+        private void Green_Click(object sender, RoutedEventArgs e)
+        {
+            Green.Visibility = Visibility.Hidden;
+
+            if (player1ChoseStone == false)
+            {
+
+                playerOneGameStone = new BitmapImage(new Uri(dir + @"\GreenStone.png"));
+                player1SelectedSTONE.Source = playerOneGameStone;
+                player1ChoseStone = true;
+                msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+                
+
+                if (playMode != 1)
+                {
+                    msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\GreenStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+            }
+        }
+
+        private void Blue_Click(object sender, RoutedEventArgs e)
+        {
+            Blue.Visibility = Visibility.Hidden;
+            if (player1ChoseStone == false)
+            {
+
+                playerOneGameStone = new BitmapImage(new Uri(dir + @"\BlueStone.png"));
+                player1SelectedSTONE.Source = playerOneGameStone;
+                player1ChoseStone = true;
+                msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+
+                if (playMode != 1)
+                {
+                    msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\BlueStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+            }
+        }
+
+        private void Purple_Click(object sender, RoutedEventArgs e)
+        {
+            Purple.Visibility = Visibility.Hidden;
+            if (player1ChoseStone == false)
+            {
+
+                playerOneGameStone = new BitmapImage(new Uri(dir + @"\PurpleStone.png"));
+                player1SelectedSTONE.Source = playerOneGameStone;
+                player1ChoseStone = true;
+                msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+
+                if (playMode != 1)
+                {
+                    msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\PurpleStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+            }
+        }
+
+        private void Yellow_Click(object sender, RoutedEventArgs e)
+        {
+            Yellow.Visibility = Visibility.Hidden;
+            if (player1ChoseStone == false)
+            {
+
+                playerOneGameStone = new BitmapImage(new Uri(dir + @"\YellowStone.png"));
+                player1SelectedSTONE.Source = playerOneGameStone;
+                player1ChoseStone = true;
+                msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+                if (playMode != 1)
+                {
+                    msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
+                }
+                
+            }
+            else
+            {
+                playerTwoGameStone = new BitmapImage(new Uri(dir + @"\YellowStone.png"));
+                player2SelectedSTONE.Source = playerTwoGameStone;
+            }
         }
     }
 }
