@@ -92,15 +92,15 @@ namespace Tfour_Main
                      if (gamePlayers[0].getPlayerTurn())
                      {
                               // human player goes first
-                            string image_string = playerOneGameStone;
-                    btn.Content = 'x';
+                                string image_string = playerOneGameStone;
+                                btn.Content = 'x';
 
-                    gameBoard.updateBoard(row, col, 1);
+                              gameBoard.updateBoard(row, col, 1);
 
 
-                    // update score board for player one
+                            // update score board for player one
 
-                    Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
+                          Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
                             
                             gamePlayers[0].setPlayerTurn(false);
                              gamePlayers[1].setPlayerTurn(true);
@@ -112,10 +112,10 @@ namespace Tfour_Main
 
 
                              string image_string = playerTwoGameStone;
-                    btn.Content = 'o';
+                             btn.Content = 'o';
 
 
-                    gameBoard.updateBoard(row, col, 2);
+                              gameBoard.updateBoard(row, col, 2);
 
                             // update score board for player two
 

@@ -24,7 +24,7 @@
         <Label x:Name="label_GameStone_PlayerOne" Content="Player One" HorizontalAlignment="Left" Margin="289,244,0,0" VerticalAlignment="Top" Height="37" Width="151"/>
         <Label x:Name="label_GameStone_PlayerTwo" Content="Player Two" HorizontalAlignment="Left" Margin="638,173,0,0" VerticalAlignment="Top" Height="37" Width="151"/>
         <Grid x:Name="Grid_PlayerOneStone" HorizontalAlignment="Left" Height="100" Margin="445,215,0,0" VerticalAlignment="Top" Width="184" Background="Aqua"/>
-        <Grid x:Name="Grid_AILevel" HorizontalAlignment="Left" Height="100" Margin="132,428,0,0" VerticalAlignment="Top" Width="485" Background="Aquamarine" Visibility="Visible">
+        <Grid x:Name="Grid_AILevel" HorizontalAlignment="Left" Height="100" Margin="132,428,0,0" VerticalAlignment="Top" Width="485" Background="Aquamarine" Visibility="Hidden">
             <RadioButton x:Name="radioButton_LevelHard" Content="Hard" HorizontalAlignment="Left" Margin="327,33,0,0" VerticalAlignment="Top" Width="46" Checked="GameLevel_Hard"/>
             <RadioButton x:Name="radioButton_LevelMedium" Content="Medium" HorizontalAlignment="Left" Margin="220,33,0,0" VerticalAlignment="Top" Width="77" Checked="GameLevel_Medium"/>
             <RadioButton x:Name="radioButton_LevelEasy" Content="Easy" HorizontalAlignment="Left" Margin="131,36,0,0" VerticalAlignment="Top" Width="46" Checked="GameLevel_Easy"/>

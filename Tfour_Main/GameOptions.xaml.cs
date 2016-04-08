@@ -43,7 +43,7 @@ namespace Tfour_Main
                 Grid_AILevel.Visibility = Visibility.Visible;
             }
 
-            playerOneTurn = true;
+            playerOneTurn = false;
 
             playerTwoTurn = false;
   

@@ -29,6 +29,7 @@
         <Button x:Name="Button_Back" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Click="Button_Back_Click" Margin="0,0,0,684"/>
         <Button x:Name="Button_Exit" Content="Exit" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-1.933,-0.278" Click="Button_Exit_Click"/>
         <Button x:Name="Button_Play" Content="Play" HorizontalAlignment="Left" Margin="484,403,0,0" VerticalAlignment="Top" Width="75" Click="Button_Play_Click" FontSize="19"/>
+        <Button x:Name="button_Profile" Content="View Profile" HorizontalAlignment="Left" Margin="424,64,0,0" VerticalAlignment="Top" Width="196" Height="47" Background="Azure" Click="button_Profile_Click"/>
 
 
 

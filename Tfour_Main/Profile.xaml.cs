@@ -20,34 +20,38 @@ namespace Tfour_Main
     public partial class Profile : Window
     {
 
-        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
 
         String userID;
+        private Window prevWindow;
 
-        public Profile(String id)
+        public Profile(Window window, String id)
         {
             InitializeComponent();
             userID = id;
-            displayPlayerInformation(userID);
+            prevWindow = window;
+
 
         }
 
 
-        private void displayPlayerInformation(String id)
-        {
-            var query = from s in db.PlayerInformations
-                        where (s.UserID.Equals(id))
-                        select s;
 
-            DataGrid_ProfileInformation.ItemsSource = query.ToList();
 
-        }
+ 
 
         private void Button_Profile_Back_Click(object sender, RoutedEventArgs e)
         {
-            Login loginForm = new Login(this);
-            loginForm.Visibility = System.Windows.Visibility.Visible;
-            this.Visibility = System.Windows.Visibility.Hidden;
+            this.Visibility = Visibility.Hidden;
+            prevWindow.Visibility = Visibility.Visible;
+        }
+
+        private void button_ProfileInformation_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from s in db.PlayerInformations
+                        where (s.UserID.Equals(userID))
+                        select s;
+
+            DataGrid_ProfileInformation.ItemsSource = query.ToList();
         }
     }
 }

@@ -37,6 +37,9 @@ namespace Tfour_Main
             prevWindow = window;
             Label_LoggedInAs_Player1.Visibility = Visibility.Hidden;
             Label_PLAYER1_LOGUSER.Visibility = Visibility.Hidden;
+
+            button_Profile.Visibility = Visibility.Hidden;
+
         }
 
         private void Button_playerOneLogin_Click(object sender, RoutedEventArgs e)
@@ -70,6 +73,7 @@ namespace Tfour_Main
                         Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
                         Label_PLAYER1_LOGUSER.Visibility = Visibility.Visible;
                         Label_LoggedInAs_Player1.Visibility = Visibility.Visible;
+                        button_Profile.Visibility = Visibility.Visible;
 
                         playerOneUserID = Textbox_Username.Text;
                         playerTwoUserID = "smario";
@@ -97,12 +101,7 @@ namespace Tfour_Main
             register.Show();
         }
 
-        private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
-        {
-            Profile profile = new Profile(Textbox_Username.Text);
-            profile.Show();
-            this.Hide();
-        }
+     
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
@@ -122,5 +121,11 @@ namespace Tfour_Main
             Application.Current.Shutdown();
         }
 
+        private void button_Profile_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile( this, playerOneUserID);
+            profile.Show();
+            this.Hide();
+        }
     }
 }

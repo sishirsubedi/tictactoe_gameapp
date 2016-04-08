@@ -4,9 +4,9 @@
         Title="Profile" Height="350" Width="525">
     <Grid Background="#FF43BD86">
         <Button x:Name="Button_Profile_Back" Content="Back" HorizontalAlignment="Left" Margin="232,295,0,0" VerticalAlignment="Top" Width="75" Click="Button_Profile_Back_Click"/>
-        <DataGrid x:Name="DataGrid_ProfileInformation" HorizontalAlignment="Left" Margin="64,59,0,0" VerticalAlignment="Top" Height="83" Width="417"/>
+        <DataGrid x:Name="DataGrid_ProfileInformation" HorizontalAlignment="Left" Margin="64,59,0,0" VerticalAlignment="Top" Height="83" Width="417" Background="Beige" Foreground="Blue" />
         <DataGrid x:Name="DataGrid_GameHistory" HorizontalAlignment="Left" Margin="64,190,0,0" VerticalAlignment="Top" Height="83" Width="417"/>
-        <Button x:Name="button_ProfileInformation" Content="Profile Information" HorizontalAlignment="Left" Margin="82,22,0,0" VerticalAlignment="Top" Width="160" Background="Azure" Height="32"/>
+        <Button x:Name="button_ProfileInformation" Content="Profile Information" HorizontalAlignment="Left" Margin="82,22,0,0" VerticalAlignment="Top" Width="160" Background="Azure" Height="32" Click="button_ProfileInformation_Click"/>
         <Button x:Name="button_GameHistory" Content="Game History" HorizontalAlignment="Left" Margin="82,163,0,0" VerticalAlignment="Top" Width="100" Background="Azure" Height="22"/>
 
     </Grid>
