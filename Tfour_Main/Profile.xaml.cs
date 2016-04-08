@@ -53,5 +53,14 @@ namespace Tfour_Main
 
             DataGrid_ProfileInformation.ItemsSource = query.ToList();
         }
+
+        private void button_GameHistory_Click(object sender, RoutedEventArgs e)
+        {
+            var query = from s in db.PlayerHistories
+                        where (s.PlayerOne.Equals(userID))
+                        select s;
+
+            DataGrid_GameHistory.ItemsSource = query.ToList();
+        }
     }
 }
