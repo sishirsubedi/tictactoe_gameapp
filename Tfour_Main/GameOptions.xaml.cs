@@ -56,7 +56,7 @@ namespace Tfour_Main
 
             }
 
-            playerOneTurn = true;
+            playerOneTurn = false;
 
             playerTwoTurn = false;
   

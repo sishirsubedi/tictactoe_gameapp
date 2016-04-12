@@ -48,6 +48,9 @@ namespace Tfour_Main
 
         private void calculateScore()
         {
+            playerOneScore = 0;
+            playerTwoScore = 0;
+
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 6; j++)

@@ -54,5 +54,16 @@ namespace Tfour_Main.Properties {
                 return ((string)(this["TfourConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-94GIPOB\\SQLEXPRESS;Initial Catalog=Tfour;User ID=glassfish;Pa" +
+            "ssword=glassfish")]
+        public string TfourConnectionString1 {
+            get {
+                return ((string)(this["TfourConnectionString1"]));
+            }
+        }
     }
 }
