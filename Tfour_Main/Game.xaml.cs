@@ -40,6 +40,8 @@ namespace Tfour_Main
 
         private string gameWinner;
 
+        private int gameMode;
+
       
 
 
@@ -48,12 +50,13 @@ namespace Tfour_Main
         {
 
             InitializeComponent();
-           
+            
             gameCounter = 36;
             gamePlayers = new Player[2];
             gameBoard = new Board();
             gameLevel = gLevel;
             GameOver = false;
+            gameMode = playMode;
             playerOneGameStone = p1gstone;
             playerTwoGameStone = p2gstone;
 
@@ -300,7 +303,9 @@ namespace Tfour_Main
         private void isGameOver()
         {
 
-            GameOver gmover = new Tfour_Main.GameOver(this,gameWinner, gamePlayers[0].getPlayerID());
+            MainWindow newwindow = new MainWindow();
+
+            GameOver gmover = new GameOver(newwindow, gameWinner,  gamePlayers[0].getPlayerID(), gamePlayers[1].getPlayerID(), gameMode);
             updateHistory();
             this.Hide();
             gmover.Show();

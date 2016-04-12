@@ -11,7 +11,7 @@
         </Grid.Background>
 
 
-        <Button x:Name="Button_playerOneGame"   Content="1 Player " Margin="426.411,0,427.589,244.6" VerticalAlignment="Bottom" Height="49.8" Click="Button_playerOneGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
+        <Button x:Name="Button_playerOneGame"   Content="1 Player " Margin="426,0,427.6,273.4" VerticalAlignment="Bottom" Height="50" Click="Button_playerOneGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
             <Button.Background>
                 <ImageBrush ImageSource="redpanel.bmp"/>
             </Button.Background>
@@ -26,11 +26,11 @@
             </Button.Background>
 
         </Button>
-        <Image x:Name="TitleIMG_bmp" Height="241.267" Margin="401.211,42.224,401.522,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
-        <Button x:Name="Button_Exit" Content="Exit" Margin="922,0,-0.4,644.4" VerticalAlignment="Bottom" Height="50" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24">
-        <Button.Background>
-            <ImageBrush ImageSource="greypanel.bmp"/>
-        </Button.Background>
+        <Image x:Name="TitleIMG_bmp" Height="241" Margin="404,55,398.6,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
+        <Button x:Name="Button_Exit" Content="Exit" Margin="964,0,-0.4,644.4" VerticalAlignment="Bottom" Height="50" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24">
+            <Button.Background>
+                <ImageBrush ImageSource="greypanel.bmp"/>
+            </Button.Background>
         </Button>
     </Grid>
 </Window>

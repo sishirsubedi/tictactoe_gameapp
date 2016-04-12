@@ -25,15 +25,24 @@ namespace Tfour_Main
         private string playerOneUserID;
         private string playerTwoUserID;
 
+        private Boolean playerOneValid;
+        private Boolean playerTwoValid;
+
         public Login2(Window window)
         {
             InitializeComponent();
             prevWindow = window;
             Button_playerTwoLogin.IsEnabled = false;
+            Button_GuestPlayer2Login.IsEnabled = false;
             Label_LoggedInAs_Player1.Visibility = System.Windows.Visibility.Hidden;
             Label_LoggedInAs_Player2.Visibility = System.Windows.Visibility.Hidden;
             Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Hidden;
             Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Hidden;
+
+
+            playerOneValid = false;
+            playerTwoValid = false;
+
         }
 
         private void Button_Game_Click(object sender, RoutedEventArgs e)
@@ -65,10 +74,19 @@ namespace Tfour_Main
                         Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
                         Label_LoggedInAs_Player1.Visibility = System.Windows.Visibility.Visible;
                         Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Visible;
+
                         Button_playerTwoLogin.IsEnabled = true;
+                        Button_GuestPlayer2Login.IsEnabled = true;
+
+
+                        Button_playerOneLogin.IsEnabled = false;
+                        Button_GuestPlayer1Login.IsEnabled = false;
+
+
+                        Button_ViewProfilePlayer1.Visibility = Visibility.Visible;
 
                         playerOneUserID = Textbox_Username.Text;
-                       
+                        playerOneValid = true;
                     }
                     else
                     {
@@ -107,7 +125,19 @@ namespace Tfour_Main
                         Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Visible;
 
                         playerTwoUserID = Textbox_Username2.Text;
-                       
+                        playerTwoValid = true;
+
+
+                        Button_playerTwoLogin.IsEnabled = false;
+                        Button_GuestPlayer2Login.IsEnabled = false;
+
+                        Button_ViewProfilePlayer2.Visibility = Visibility.Visible;
+                        Button_Register.IsEnabled = false;
+                        Button_Register.Visibility = Visibility.Hidden;
+                        Button_ForgetPassword.IsEnabled = false;
+                        Button_ForgetPassword.Visibility = Visibility.Hidden;
+
+
                     }
                     else
                     {
@@ -148,11 +178,92 @@ namespace Tfour_Main
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
 
-            GameOptions go = new GameOptions(this, playerOneUserID,playerTwoUserID, 2);
-            this.Hide();
-            go.Show();
+            if (playerOneValid && playerTwoValid)
+            {
 
-        
+                GameOptions go = new GameOptions(this, playerOneUserID, playerTwoUserID, 2);
+                this.Hide();
+                go.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Please provide  valid Players Credentials.");
+            }
+        }
+
+
+
+        private void Button_GuestPlayer2Login_Click(object sender, RoutedEventArgs e)
+        {
+            Label_PLAYER2_LOGUSER.Content = Textbox_Username2.Text;
+            Label_LoggedInAs_Player2.Visibility = System.Windows.Visibility.Visible;
+            Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Visible;
+
+            Button_playerTwoLogin.IsEnabled = false;
+            Button_GuestPlayer2Login.IsEnabled = false;
+
+
+            Button_ViewProfilePlayer2.Visibility = Visibility.Visible;
+
+            Button_Register.IsEnabled = false;
+            Button_Register.Visibility = Visibility.Hidden;
+            Button_ForgetPassword.IsEnabled = false;
+            Button_ForgetPassword.Visibility = Visibility.Hidden;
+
+            playerTwoUserID = "Guest";
+            playerTwoValid = true;
+        }
+
+        private void Button_GuestPlayer1Login_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(" Login 1 as Guest. Please try Login 2 !");
+            Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
+            Label_LoggedInAs_Player1.Visibility = System.Windows.Visibility.Visible;
+            Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Visible;
+            Button_playerTwoLogin.IsEnabled = true;
+
+            playerOneUserID = "Guest";
+            playerOneValid = true;
+
+
+            Button_playerOneLogin.IsEnabled = false;
+            Button_GuestPlayer1Login.IsEnabled = false;
+
+
+            Button_playerTwoLogin.IsEnabled = true;
+            Button_GuestPlayer2Login.IsEnabled = true;
+
+            Button_ViewProfilePlayer1.Visibility = Visibility.Visible;
+
+
+
+        }
+
+        private void Button_ViewProfilePlayer1_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile(this, playerOneUserID);
+            profile.Show();
+            this.Hide();
+        }
+
+        private void Button_ViewProfilePlayer2_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile(this, playerTwoUserID);
+            profile.Show();
+            this.Hide();
+        }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            prevWindow.Show();
+        }
+
+        private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
+    
 }

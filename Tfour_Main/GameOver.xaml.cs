@@ -22,22 +22,32 @@ namespace Tfour_Main
 
         private Window prevWindow;
         private string playerOneId;
+        private string playerTwoId;
+        private int gameMode;
 
-        public GameOver(Window gameWindow, string gwinner, string p1id)
+        public GameOver(Window gameWindow, string gwinner, string p1id, string p2id, int gmode)
         {
             InitializeComponent();
 
             Label_WinnerName.Content = gwinner;
             prevWindow = gameWindow;
             playerOneId = p1id;
+            playerTwoId = p2id;
+            gameMode = gmode;
+
 
         }
 
         private void button_Replay_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
-            
-            prevWindow.Visibility = Visibility.Visible;
+
+
+
+            GameOptions go = new GameOptions(prevWindow, playerTwoId, playerTwoId, gameMode);
+            this.Hide();
+            go.Show();
+
         }
 
         private void button_Quit_Click(object sender, RoutedEventArgs e)

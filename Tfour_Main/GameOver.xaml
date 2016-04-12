@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="8BitBackground.bmp"/>
         </Grid.Background>
-        <Label x:Name="Title" Content="Game Over" HorizontalAlignment="Left" Margin="188,10,0,0" VerticalAlignment="Top" FontSize="40" FontFamily="Consolas" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="Title" Content="Game Over" HorizontalAlignment="Left" Margin="194,0,0,0" VerticalAlignment="Top" FontSize="40" FontFamily="Consolas" FontWeight="Bold" Foreground="White"/>
 
         <Image x:Name="TitleIMG_bmp" Height="232" Margin="88,145,83,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
         <Button x:Name="button_Replay" Content="REPLAY" HorizontalAlignment="Left" Margin="96,261,0,0" VerticalAlignment="Top" Width="196" Height="33" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="#FF73FF23" Foreground="Black"  Click="button_Replay_Click"/>
