@@ -11,7 +11,7 @@ namespace Tfour_Main
         private String playerID;
    
         private Boolean playerTurn;
-        private Boolean isWinner;
+        private Boolean Winner;
         private int gameScore;
 
         public Player() { }
@@ -20,7 +20,7 @@ namespace Tfour_Main
         {
             playerID = name;
             playerTurn = turn;
-            isWinner = false;
+            Winner = false;
             gameScore = 0;
 
         }
@@ -39,12 +39,28 @@ namespace Tfour_Main
 
         public void setWinner( Boolean winner)
         {
-            isWinner = winner;
+            Winner = winner;
         }
 
         public void setScore ( int score)
         {
             gameScore = score;
+        }
+
+        public string getPlayerID()
+        {
+
+            return playerID;
+        }
+
+        public int getScore()
+        {
+            return gameScore;
+        }
+
+        public Boolean isWinner()
+        {
+            return Winner;
         }
     }
 }

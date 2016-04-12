@@ -111,5 +111,10 @@ namespace Tfour_Main
             var random = new Random();
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

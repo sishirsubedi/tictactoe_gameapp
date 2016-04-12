@@ -26,21 +26,23 @@ namespace Tfour_Main
 
         private Board gameBoard;
 
-        private Boolean isGameOver;
+        private Boolean GameOver;
 
         private String gameLevel;
 
         private Boolean isPlayerOneGame;
 
-        private string playerOneGameStone;
+        private BitmapImage playerOneGameStone;
 
-        private string playerTwoGameStone;
+        private BitmapImage  playerTwoGameStone;
+
+        private string gameWinner;
 
         // private  DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
 
 
 
-        public Game(int playMode, String player1,  Boolean player1turn, string p1gstone, String player2, Boolean player2turn, string p2gstone, String gLevel )
+        public Game(int playMode, String player1,  Boolean player1turn, BitmapImage p1gstone, String player2, Boolean player2turn, BitmapImage  p2gstone, String gLevel )
         {
 
             InitializeComponent();
@@ -49,11 +51,16 @@ namespace Tfour_Main
             gamePlayers = new Player[2];
             gameBoard = new Board();
             gameLevel = gLevel;
-
+            GameOver = false;
             playerOneGameStone = p1gstone;
             playerTwoGameStone = p2gstone;
 
-         if(playMode == 1)
+            
+            button_playeroneimage.Background = new ImageBrush(p1gstone);
+
+            button_playertwoimage.Background = new ImageBrush(p2gstone);
+
+            if (playMode == 1)
             {
                 isPlayerOneGame = true;
           
@@ -61,8 +68,10 @@ namespace Tfour_Main
 
                 gamePlayers[1] = new ComputerPlayer(player2, player2turn, gameBoard, gameLevel);
 
+             
+
             }
-         else if (playMode == 2)
+            else if (playMode == 2)
             {
 
                 isPlayerOneGame = false;
@@ -75,8 +84,7 @@ namespace Tfour_Main
 
         }
 
-
-        private void Cell_Click(object sender, RoutedEventArgs e)
+        public void Cell_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
 
@@ -89,42 +97,113 @@ namespace Tfour_Main
                 // player 1 will always be human player
                 // player 2 will be AI
 
-                     if (gamePlayers[0].getPlayerTurn())
-                     {
-                              // human player goes first
-                                string image_string = playerOneGameStone;
-                                btn.Content = 'x';
-
-                              gameBoard.updateBoard(row, col, 1);
+                if (gamePlayers[0].getPlayerTurn())
+                {
+                    // human player goes first
 
 
-                            // update score board for player one
-
-                          Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
-                            
-                            gamePlayers[0].setPlayerTurn(false);
-                             gamePlayers[1].setPlayerTurn(true);
-
-                     }
-                     else
-                     {
-                              // AI goes second 
+                    ImageSource ImgSrc = playerOneGameStone;
+                    ImageBrush imgBrush = new ImageBrush(ImgSrc);
+                    btn.Background = imgBrush;
+                    btn.IsEnabled = false;
 
 
-                             string image_string = playerTwoGameStone;
-                             btn.Content = 'o';
+                    gameBoard.updateBoard(row, col, 1);
 
 
-                              gameBoard.updateBoard(row, col, 2);
+                    // update score board for player one
 
-                            // update score board for player two
+                    Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
+                    gamePlayers[0].setScore(gameBoard.getPlayerOneScore());
 
-                             Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
+                    gamePlayers[0].setPlayerTurn(false);
+                    gamePlayers[1].setPlayerTurn(true);
 
-                             gamePlayers[1].setPlayerTurn(false);
-                             gamePlayers[0].setPlayerTurn(true);
-                      }
+                    --gameCounter;
 
+                    if (gameCounter == 0)
+                    {
+
+                        if (gamePlayers[0].getScore() > gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[0].getPlayerID();
+                            gamePlayers[0].setWinner(true);
+                            gamePlayers[1].setWinner(false);
+                        }
+                        else if (gamePlayers[0].getScore() < gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[1].getPlayerID();
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(true);
+                        }
+                        else
+                        {
+                            gameWinner = "Draw";
+
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(false);
+                        }
+
+
+                        GameOver = true;
+                        isGameOver();
+                    }
+
+
+                    btn.RaiseEvent(new RoutedEventArgs((routedEvent, source)));
+                }
+                else
+                {
+                    // AI goes second 
+
+
+                    ImageSource ImgSrc = playerTwoGameStone;
+                    ImageBrush imgBrush = new ImageBrush(ImgSrc);
+                    btn.Background = imgBrush;
+                    btn.IsEnabled = false;
+
+                    gameBoard.updateBoard(row, col, 2);
+
+                    // update score board for player two
+
+                    Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
+                    gamePlayers[1].setScore(gameBoard.getPlayerTwoScore());
+
+                    gamePlayers[1].setPlayerTurn(false);
+                    gamePlayers[0].setPlayerTurn(true);
+
+
+                    --gameCounter;
+
+                    if (gameCounter == 0)
+                    {
+
+                        if (gamePlayers[0].getScore() > gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[0].getPlayerID();
+                            gamePlayers[0].setWinner(true);
+                            gamePlayers[1].setWinner(false);
+                        }
+                        else if (gamePlayers[0].getScore() < gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[1].getPlayerID();
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(true);
+                        }
+                        else
+                        {
+                            gameWinner = "Draw";
+
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(false);
+                        }
+
+
+                        GameOver = true;
+                        isGameOver();
+                    }
+
+                }
 
             }
             else
@@ -137,8 +216,10 @@ namespace Tfour_Main
                 if (gamePlayers[0].getPlayerTurn())
                 {
                     // human player goes first
-                    string image_string = playerOneGameStone;
-                    btn.Content = 'X';
+                    ImageSource ImgSrc = playerOneGameStone;
+                    ImageBrush imgBrush = new ImageBrush(ImgSrc);
+                    btn.Background = imgBrush;
+                    btn.IsEnabled = false;
 
                     gameBoard.updateBoard(row, col, 1);
 
@@ -146,24 +227,89 @@ namespace Tfour_Main
                     // update score board for player one
 
                     Label_PlayerOneScore.Content = gameBoard.getPlayerOneScore();
+                    gamePlayers[0].setScore(gameBoard.getPlayerOneScore());
 
 
                     gamePlayers[0].setPlayerTurn(false);
                     gamePlayers[1].setPlayerTurn(true);
 
+                    --gameCounter;
+                    if (gameCounter == 0)
+                    {
+
+                        if (gamePlayers[0].getScore() > gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[0].getPlayerID();
+                            gamePlayers[0].setWinner(true);
+                            gamePlayers[1].setWinner(false);
+                        }
+                        else if (gamePlayers[0].getScore() < gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[1].getPlayerID();
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(true);
+                        }
+                        else
+                        {
+                            gameWinner = "Draw";
+
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(false);
+                        }
+
+
+                        GameOver = true;
+                        isGameOver();
+                    }
+
                 }
                 else
                 {
-                    string image_string = playerTwoGameStone;
-                    btn.Content = 'O';
+                    ImageSource ImgSrc = playerTwoGameStone;
+                    ImageBrush imgBrush = new ImageBrush(ImgSrc);
+                    btn.Background = imgBrush;
+                    btn.IsEnabled = false;
+
 
                     gameBoard.updateBoard(row, col, 2);
 
                     // update score board for player two
                     Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
+                    gamePlayers[1].setScore(gameBoard.getPlayerTwoScore());
 
                     gamePlayers[1].setPlayerTurn(false);
                     gamePlayers[0].setPlayerTurn(true);
+
+                    --gameCounter;
+                    if (gameCounter == 0)
+                    {
+
+                        if (gamePlayers[0].getScore() > gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[0].getPlayerID();
+                            gamePlayers[0].setWinner(true);
+                            gamePlayers[1].setWinner(false);
+                        }
+                        else if (gamePlayers[0].getScore() < gamePlayers[1].getScore())
+                        {
+                            gameWinner = gamePlayers[1].getPlayerID();
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(true);
+                        }
+                        else
+                        {
+                            gameWinner = "Draw";
+
+                            gamePlayers[0].setWinner(false);
+                            gamePlayers[1].setWinner(false);
+                        }
+
+
+                        GameOver = true;
+                        isGameOver();
+                    }
+
+
 
                 }
 
@@ -176,6 +322,57 @@ namespace Tfour_Main
 
         }
 
+        private void isGameOver()
+        {
+
+            GameOver gmover = new Tfour_Main.GameOver(this,gameWinner, gamePlayers[0].getPlayerID());
+            updateHistory();
+            gmover.Show();
+             
+         
+
+        }
+
+        private void updateHistory()
+        {
+
+            DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+
+            PlayerHistory newPH = new PlayerHistory();
+
+            newPH.PlayerOne = gamePlayers[0].getPlayerID();
+            newPH.PlayerOneScore = gamePlayers[0].getScore();
+            newPH.Apponet = gamePlayers[1].getPlayerID();
+            newPH.ApponetScore = gamePlayers[1].getScore();
+            newPH.GameDate = DateTime.Now;
+
+            if (gamePlayers[0].isWinner())
+            {
+                newPH.Winner = gamePlayers[0].getPlayerID();
+
+            }
+            else if (gamePlayers[1].isWinner())
+            {
+                newPH.Winner = gamePlayers[1].getPlayerID();
+            }
+            else
+            {
+                newPH.Winner = "Draw";
+            }
+
+
+            db.PlayerHistories.InsertOnSubmit(newPH);
+
+            db.SubmitChanges();
+        }
+       
+
+
+        private void aimove(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("hello");
+        }
        
     }
 }

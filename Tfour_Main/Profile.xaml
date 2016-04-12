@@ -1,13 +1,33 @@
 ﻿<Window x:Class="Tfour_Main.Profile"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Profile" Height="350" Width="525">
-    <Grid Background="#FF43BD86">
-        <Button x:Name="Button_Profile_Back" Content="Back" HorizontalAlignment="Left" Margin="232,295,0,0" VerticalAlignment="Top" Width="75" Click="Button_Profile_Back_Click"/>
-        <DataGrid x:Name="DataGrid_ProfileInformation" HorizontalAlignment="Left" Margin="64,59,0,0" VerticalAlignment="Top" Height="83" Width="350" Background="RosyBrown" Foreground="Black" />
-        <DataGrid x:Name="DataGrid_GameHistory" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Height="116" Width="498" Background="RosyBrown" Foreground="Black"/>
-        <Button x:Name="button_ProfileInformation" Content="Profile Information" HorizontalAlignment="Left" Margin="165,22,0,0" VerticalAlignment="Top" Width="160" Background="Azure" Height="32" Click="button_ProfileInformation_Click"/>
-        <Button x:Name="button_GameHistory" Content="Game History" HorizontalAlignment="Left" Margin="192,147,0,0" VerticalAlignment="Top" Width="100" Background="Azure" Height="22" Click="button_GameHistory_Click"/>
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" 
+        Title="Login" Height="500" Width="650" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+
+    <Window.Background>
+        <ImageBrush ImageSource="8BitBackground.bmp" />
+    </Window.Background>
+
+    <Grid>
+
+
+
+        <Button x:Name="Button_Profile_Back" Content="Back" HorizontalAlignment="Left" Margin="258,394,0,0" VerticalAlignment="Top" Width="100" Click="Button_Profile_Back_Click" Height="27" Background="Azure"/>
+        <DataGrid x:Name="DataGrid_ProfileInformation" HorizontalAlignment="Left" Margin="101,122,0,0" VerticalAlignment="Top" Height="76" Width="455" Background="Transparent" Foreground="Black" />
+        <DataGrid x:Name="DataGrid_GameHistory" HorizontalAlignment="Left" Margin="20,273,0,0" VerticalAlignment="Top" Height="116" Width="607" Background="Transparent" Foreground="Black"/>
+        <Button x:Name="button_ProfileInformation" Content="Profile Information" HorizontalAlignment="Left" Margin="234,68,0,0" VerticalAlignment="Top" Width="160" Background="Azure" Height="32" Click="button_ProfileInformation_Click"/>
+        <Button x:Name="button_GameHistory" Content="Game History" HorizontalAlignment="Left" Margin="258,223,0,0" VerticalAlignment="Top" Width="100" Background="Azure" Height="33" Click="button_GameHistory_Click"/>
+        <Grid x:Name="grid_title" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="171">
+            <Grid.Background>
+                <ImageBrush ImageSource="TitleIMG.bmp"/>
+            </Grid.Background>
+        </Grid>
+        <Grid x:Name="grid_title_Copy" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="171" RenderTransformOrigin="0.95,0.44" Margin="479,0,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="TitleIMG.bmp"/>
+            </Grid.Background>
+        </Grid>
 
     </Grid>
 </Window>

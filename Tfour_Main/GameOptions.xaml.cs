@@ -68,8 +68,8 @@ namespace Tfour_Main
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
             
-            //Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerOneGameStone, playerTwoUserID, playerTwoTurn, playerTwoGameStone, gameLevel);
-            //newgame.Visibility = System.Windows.Visibility.Visible;
+            Game newgame = new Game(playMode, playerOneUserID, playerOneTurn, playerOneGameStone, playerTwoUserID, playerTwoTurn, playerTwoGameStone, gameLevel);
+            newgame.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
 
         

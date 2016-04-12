@@ -28,6 +28,8 @@ namespace Tfour_Main
         private string playerOneUserID;
         private string playerTwoUserID;
 
+        private Boolean playerOneValid;
+
 
 
 
@@ -39,6 +41,8 @@ namespace Tfour_Main
             Label_PLAYER1_LOGUSER.Visibility = Visibility.Hidden;
 
             button_Profile.Visibility = Visibility.Hidden;
+
+            playerOneValid = false;
 
         }
 
@@ -70,13 +74,26 @@ namespace Tfour_Main
                     }
                     else
                     {
-                        Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
+
+                        playerOneUserID = Textbox_Username.Text;
+                        playerTwoUserID = "smario";
+
+                        Label_PLAYER1_LOGUSER.Content = playerOneUserID;
                         Label_PLAYER1_LOGUSER.Visibility = Visibility.Visible;
                         Label_LoggedInAs_Player1.Visibility = Visibility.Visible;
                         button_Profile.Visibility = Visibility.Visible;
 
                         playerOneUserID = Textbox_Username.Text;
                         playerTwoUserID = "smario";
+
+                        playerOneValid = true;
+
+                        Button_playerOneLogin.IsEnabled = false;
+                        Button_GuestLogin.IsEnabled = false;
+                        Button_Register.IsEnabled = false;
+                        Button_Register.Visibility = Visibility.Hidden;
+                        Button_Forgot.IsEnabled = false;
+                        Button_Forgot.Visibility = Visibility.Hidden;
 
                     }
                 }
@@ -105,9 +122,19 @@ namespace Tfour_Main
 
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
-            GameOptions go = new GameOptions( playerOneUserID, playerTwoUserID,1);
-            this.Hide();
-            go.Show();
+
+            if (playerOneValid)
+            {
+
+                GameOptions go = new GameOptions(playerOneUserID, playerTwoUserID, 1);
+                this.Hide();
+                go.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please provide  valid Player One Credentials.");
+            }
+
         }
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
@@ -126,6 +153,30 @@ namespace Tfour_Main
             Profile profile = new Profile( this, playerOneUserID);
             profile.Show();
             this.Hide();
+        }
+
+        private void Button_GuestLogin_Click(object sender, RoutedEventArgs e)
+        {
+            playerOneUserID = "Guest";
+
+
+            Label_PLAYER1_LOGUSER.Content = playerOneUserID;
+            Label_PLAYER1_LOGUSER.Visibility = Visibility.Visible;
+            Label_LoggedInAs_Player1.Visibility = Visibility.Visible;
+            button_Profile.Visibility = Visibility.Hidden;
+
+            playerTwoUserID = "smario";
+
+            playerOneValid = true;
+
+            Button_playerOneLogin.IsEnabled = false;
+            Button_GuestLogin.IsEnabled = false;
+            Button_Register.IsEnabled = false;
+            Button_Register.Visibility = Visibility.Hidden;
+            Button_Forgot.IsEnabled = false;
+            Button_Forgot.Visibility = Visibility.Hidden;
+
+
         }
     }
 }
