@@ -19,7 +19,7 @@
         <Button x:Name="Button_playerOneLogin" Content="Log In" HorizontalAlignment="Left" Width="118.8" Click="Button_Click_PayerOneLogin" Margin="178.2,0,0,242.296" VerticalAlignment="Bottom" FontFamily="Consolas" FontSize="24" Foreground="White"/>
         <Button x:Name="Button_playerTwoLogin" Content="Log In" HorizontalAlignment="Right" Margin="0,0,-51.6,242.296" VerticalAlignment="Bottom" Width="112.12" Click="Button_Click_PayerTwoLogin" FontFamily="Consolas" FontSize="24" Foreground="White"/>
         <Button x:Name="Button_ForgetPassword" Content="Forgot Password" Margin="399.08,258.91,257.2,0" VerticalAlignment="Top" Click="Button_ForgetPassword_Click" FontSize="24" FontFamily="Consolas" FontWeight="SemiBold"/>
-        <Button x:Name="Button_Register" Content="Register" Margin="399.08,195.1,257.2,0" VerticalAlignment="Top" Click="Button_Register_Click" FontSize="24" FontFamily="Consolas" FontWeight="SemiBold"/>
+        <Button x:Name="Button_Register" Content="Register" Margin="399,224,257.6,0" VerticalAlignment="Top" Click="Button_Register_Click" FontSize="24" FontFamily="Consolas" FontWeight="SemiBold"/>
         <Label Content="Username" Margin="85.32,225.312,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.12,1.167" FontSize="24" FontFamily="Consolas" Height="36.724" HorizontalAlignment="Left" Foreground="White"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="85.32,306.235,0,322.641" RenderTransformOrigin="0.12,1.167" FontSize="24" d:LayoutOverrides="Height" FontFamily="Consolas" Foreground="White"/>
         <TextBox x:Name="Textbox_Username" HorizontalAlignment="Left" Height="25" Margin="127,272.323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
