@@ -3,15 +3,34 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="694" Width="1050" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None">
+
+
     <Grid x:Name="Grid_MainWindowGrid">
         <Grid.Background>
             <ImageBrush ImageSource="8BitBackground.bmp"/>
         </Grid.Background>
 
-        <Button x:Name="Button_playerOneGame" Content="1 Player " Margin="426.411,0,427.589,244.6" VerticalAlignment="Bottom" Height="49.8" Click="Button_playerOneGame_Click" FontFamily="Consolas" FontSize="24"/>
-        <Button x:Name="Button_playerTwoGame" Content="2 Player" Margin="426,0,428,190" VerticalAlignment="Bottom" Height="50" Click="Button_playerTwoGame_Click" FontFamily="Consolas" FontSize="24"/>
-        <Image x:Name="TitleIMG_bmp" Height="241.267" Margin="401.211,42.224,401.522,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
-        <Button x:Name="Button_Exit" Content="Exit" Margin="854,0,0,644" VerticalAlignment="Bottom" Height="50" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24"/>
 
+        <Button x:Name="Button_playerOneGame"   Content="1 Player " Margin="426.411,0,427.589,244.6" VerticalAlignment="Bottom" Height="49.8" Click="Button_playerOneGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
+            <Button.Background>
+                <ImageBrush ImageSource="redpanel.bmp"/>
+            </Button.Background>
+
+        </Button>
+
+
+        <Button x:Name="Button_playerTwoGame" Content="2 Player" Margin="426,0,428,190" VerticalAlignment="Bottom" Height="50" Click="Button_playerTwoGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
+
+            <Button.Background>
+                <ImageBrush ImageSource="bluepanel.bmp"/>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="TitleIMG_bmp" Height="241.267" Margin="401.211,42.224,401.522,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
+        <Button x:Name="Button_Exit" Content="Exit" Margin="922,0,-0.4,644.4" VerticalAlignment="Bottom" Height="50" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24">
+        <Button.Background>
+            <ImageBrush ImageSource="greypanel.bmp"/>
+        </Button.Background>
+        </Button>
     </Grid>
 </Window>

@@ -21,6 +21,11 @@ namespace Tfour_Main
 
         }
 
+
+        public AI getAI()
+        {
+            return superMario;
+        }
         
 
 

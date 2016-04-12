@@ -148,7 +148,7 @@ namespace Tfour_Main
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
 
-            GameOptions go = new GameOptions(playerOneUserID,playerTwoUserID, 2);
+            GameOptions go = new GameOptions(this, playerOneUserID,playerTwoUserID, 2);
             this.Hide();
             go.Show();
 

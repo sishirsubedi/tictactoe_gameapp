@@ -19,6 +19,9 @@ namespace Tfour_Main
     /// </summary>
     public partial class GameOptions : Window
     {
+
+        private Window prevWindow;
+
         private string playerOneUserID;
         private BitmapImage playerOneGameStone;
         private Boolean playerOneTurn;
@@ -35,9 +38,11 @@ namespace Tfour_Main
         string dir = System.IO.Directory.GetCurrentDirectory();
         
 
-        public GameOptions(string p1, string p2, int mode)
+        public GameOptions(Window pwindow, string p1, string p2, int mode)
         {
             InitializeComponent();
+
+            prevWindow = pwindow;
             playerOneUserID = p1;
             playerTwoUserID = p2;
             playMode = mode;
@@ -247,6 +252,17 @@ namespace Tfour_Main
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\YellowStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
             }
+        }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            prevWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

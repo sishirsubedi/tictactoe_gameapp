@@ -126,7 +126,7 @@ namespace Tfour_Main
             if (playerOneValid)
             {
 
-                GameOptions go = new GameOptions(playerOneUserID, playerTwoUserID, 1);
+                GameOptions go = new GameOptions (this, playerOneUserID, playerTwoUserID, 1);
                 this.Hide();
                 go.Show();
             }
@@ -148,12 +148,9 @@ namespace Tfour_Main
             Application.Current.Shutdown();
         }
 
-        private void button_Profile_Click(object sender, RoutedEventArgs e)
-        {
-            Profile profile = new Profile( this, playerOneUserID);
-            profile.Show();
-            this.Hide();
-        }
+      
+
+
 
         private void Button_GuestLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -175,8 +172,13 @@ namespace Tfour_Main
             Button_Register.Visibility = Visibility.Hidden;
             Button_Forgot.IsEnabled = false;
             Button_Forgot.Visibility = Visibility.Hidden;
+        }
 
-
+        private void button_Profile_Click(object sender, RoutedEventArgs e)
+        {
+            Profile profile = new Profile(this, playerOneUserID);
+            profile.Show();
+            this.Hide();
         }
     }
 }

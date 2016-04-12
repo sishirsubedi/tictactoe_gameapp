@@ -24,6 +24,8 @@ namespace Tfour_Main
 
         private Player[] gamePlayers;
 
+        private ComputerPlayer AI_mario;
+
         private Board gameBoard;
 
         private Boolean GameOver;
@@ -38,7 +40,7 @@ namespace Tfour_Main
 
         private string gameWinner;
 
-        // private  DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+      
 
 
 
@@ -66,9 +68,14 @@ namespace Tfour_Main
           
                 gamePlayers[0] = new Player (player1, player1turn);
 
-                gamePlayers[1] = new ComputerPlayer(player2, player2turn, gameBoard, gameLevel);
+                AI_mario=  new ComputerPlayer(player2, player2turn, gameBoard, gameLevel);
 
-             
+                gamePlayers[1] = AI_mario;
+
+                if (player2turn)
+                {
+                    button_1x1.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                }
 
             }
             else if (playMode == 2)
@@ -88,8 +95,9 @@ namespace Tfour_Main
         {
             Button btn = sender as Button;
 
-            int row = (int)btn.GetValue(Grid.RowProperty);
-            int col = (int)btn.GetValue(Grid.ColumnProperty);
+            --gameCounter;
+
+           
 
             if (isPlayerOneGame)
             {
@@ -102,6 +110,9 @@ namespace Tfour_Main
                     // human player goes first
 
 
+                    int row = (int)btn.GetValue(Grid.RowProperty);
+                    int col = (int)btn.GetValue(Grid.ColumnProperty);
+
                     ImageSource ImgSrc = playerOneGameStone;
                     ImageBrush imgBrush = new ImageBrush(ImgSrc);
                     btn.Background = imgBrush;
@@ -119,7 +130,7 @@ namespace Tfour_Main
                     gamePlayers[0].setPlayerTurn(false);
                     gamePlayers[1].setPlayerTurn(true);
 
-                    --gameCounter;
+                    
 
                     if (gameCounter == 0)
                     {
@@ -148,60 +159,20 @@ namespace Tfour_Main
                         GameOver = true;
                         isGameOver();
                     }
+                    else
+                    {
+                        btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                    }
 
 
-                    btn.RaiseEvent(new RoutedEventArgs((routedEvent, source)));
+                   
                 }
                 else
                 {
                     // AI goes second 
 
 
-                    ImageSource ImgSrc = playerTwoGameStone;
-                    ImageBrush imgBrush = new ImageBrush(ImgSrc);
-                    btn.Background = imgBrush;
-                    btn.IsEnabled = false;
-
-                    gameBoard.updateBoard(row, col, 2);
-
-                    // update score board for player two
-
-                    Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
-                    gamePlayers[1].setScore(gameBoard.getPlayerTwoScore());
-
-                    gamePlayers[1].setPlayerTurn(false);
-                    gamePlayers[0].setPlayerTurn(true);
-
-
-                    --gameCounter;
-
-                    if (gameCounter == 0)
-                    {
-
-                        if (gamePlayers[0].getScore() > gamePlayers[1].getScore())
-                        {
-                            gameWinner = gamePlayers[0].getPlayerID();
-                            gamePlayers[0].setWinner(true);
-                            gamePlayers[1].setWinner(false);
-                        }
-                        else if (gamePlayers[0].getScore() < gamePlayers[1].getScore())
-                        {
-                            gameWinner = gamePlayers[1].getPlayerID();
-                            gamePlayers[0].setWinner(false);
-                            gamePlayers[1].setWinner(true);
-                        }
-                        else
-                        {
-                            gameWinner = "Draw";
-
-                            gamePlayers[0].setWinner(false);
-                            gamePlayers[1].setWinner(false);
-                        }
-
-
-                        GameOver = true;
-                        isGameOver();
-                    }
+                    AImove();
 
                 }
 
@@ -212,6 +183,10 @@ namespace Tfour_Main
                 // two player game
                 // player 1 will always be human player
                 // player 2 will be SECOND polayer
+
+
+                int row = (int)btn.GetValue(Grid.RowProperty);
+                int col = (int)btn.GetValue(Grid.ColumnProperty);
 
                 if (gamePlayers[0].getPlayerTurn())
                 {
@@ -233,7 +208,7 @@ namespace Tfour_Main
                     gamePlayers[0].setPlayerTurn(false);
                     gamePlayers[1].setPlayerTurn(true);
 
-                    --gameCounter;
+                    
                     if (gameCounter == 0)
                     {
 
@@ -280,7 +255,7 @@ namespace Tfour_Main
                     gamePlayers[1].setPlayerTurn(false);
                     gamePlayers[0].setPlayerTurn(true);
 
-                    --gameCounter;
+                    
                     if (gameCounter == 0)
                     {
 
@@ -327,6 +302,7 @@ namespace Tfour_Main
 
             GameOver gmover = new Tfour_Main.GameOver(this,gameWinner, gamePlayers[0].getPlayerID());
             updateHistory();
+            this.Hide();
             gmover.Show();
              
          
@@ -368,11 +344,96 @@ namespace Tfour_Main
        
 
 
-        private void aimove(object sender, RoutedEventArgs e)
+        private void AImove( )
         {
 
-            MessageBox.Show("hello");
+           
+
+           int[] bestMove =  AI_mario.getAI().findMove();
+
+            int AIcolumn = bestMove[0];
+            int AIrow = bestMove[1];
+
+           // MessageBox.Show("hello  : " + bestMove[0] + bestMove[1]);
+
+            Button targetButton;
+
+            int currentRow, currentCol;
+
+            foreach (var btn in UIBoard.Children)
+            {
+
+                targetButton = btn as Button;
+
+                if (targetButton != null)
+                {
+                    currentRow = (int)targetButton.GetValue(Grid.RowProperty);
+                    currentCol = (int)targetButton.GetValue(Grid.ColumnProperty);
+                    //If the current row and column match the random coordinates.
+                    //Write an O in the button and disable it.
+                    if (currentRow == AIcolumn && currentCol == AIrow)
+                    {
+                        ImageSource ImgSrc = playerTwoGameStone;
+                        ImageBrush imgBrush = new ImageBrush(ImgSrc);
+                        targetButton.Background = imgBrush;
+                        targetButton.IsEnabled = false;
+
+                        gameBoard.updateBoard(currentRow, currentCol, 2);
+
+                        // update score board for player two
+
+                        Label_PlayerTwoScore.Content = gameBoard.getPlayerTwoScore();
+                        gamePlayers[1].setScore(gameBoard.getPlayerTwoScore());
+
+                        gamePlayers[1].setPlayerTurn(false);
+                        gamePlayers[0].setPlayerTurn(true);
+
+                    }
+                }
+            }
+                   
+
+                       
+
+                        if (gameCounter == 0)
+                        {
+
+                            if (gamePlayers[0].getScore() > gamePlayers[1].getScore())
+                            {
+                                gameWinner = gamePlayers[0].getPlayerID();
+                                gamePlayers[0].setWinner(true);
+                                gamePlayers[1].setWinner(false);
+                            }
+                            else if (gamePlayers[0].getScore() < gamePlayers[1].getScore())
+                            {
+                                gameWinner = gamePlayers[1].getPlayerID();
+                                gamePlayers[0].setWinner(false);
+                                gamePlayers[1].setWinner(true);
+                            }
+                            else
+                            {
+                                gameWinner = "Draw";
+
+                                gamePlayers[0].setWinner(false);
+                                gamePlayers[1].setWinner(false);
+                            }
+
+
+                            GameOver = true;
+                            isGameOver();
+                        }
+
+
+            }
+
+
+
+
+        private void button_gameQuit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow newwindow = new MainWindow();
+            newwindow.Show();
+            this.Hide();
         }
-       
     }
 }

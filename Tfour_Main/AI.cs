@@ -50,9 +50,29 @@ namespace Tfour_Main
         private int[] easyMove()
         {
             int[] cell = { 0, 0 };
+            Boolean checking = true;
+            Random rand = new Random();
+           
+            int randRow = rand.Next(0, 6), randCol = rand.Next(0, 6);
 
-            int[,] matrix = gameBoard.getGameMatrix();
+            while (checking)
+            {
+                
+                        if (gameBoard.getGameMatrix()[randRow,randCol] == 0)
+                        {
+                            checking = false;
 
+                        } else
+                        {
+                             randCol = rand.Next(0, 6);
+                              randRow = rand.Next(0, 6);
+                        }
+         
+
+            }
+
+            cell[0] = randRow;
+            cell[1] = randCol;
 
             return cell;
 
@@ -60,7 +80,7 @@ namespace Tfour_Main
 
         private int[] mediumMove()
         {
-            int[] cell = { 0, 0 };
+            int[] cell = { 7, 7 };
 
 
 
@@ -69,7 +89,7 @@ namespace Tfour_Main
 
         private int[] hardMove()
         {
-            int[] cell = { 0, 0 };
+            int[] cell = { 10, 10 };
 
 
 
