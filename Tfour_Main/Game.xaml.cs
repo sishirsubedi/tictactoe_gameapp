@@ -67,11 +67,11 @@ namespace Tfour_Main
             playerTwoId = player2;
             Label_PlayerOneName.Content = player1;
             Label_PlayerTwoName.Content = player2;
+            player2Image.Source = p2gstone;
+            player1Image.Source = p1gstone;
 
 
-            button_playeroneimage.Background = new ImageBrush(p1gstone);
-
-            button_playertwoimage.Background = new ImageBrush(p2gstone);
+         
 
             if (playMode == 1)
             {
