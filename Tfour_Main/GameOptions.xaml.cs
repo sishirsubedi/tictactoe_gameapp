@@ -121,6 +121,12 @@ namespace Tfour_Main
                 player1SelectedSTONE.Source = playerOneGameStone;
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+
+                if(playMode == 1)
+                {
+                    Grid_StoneSelection.IsEnabled = false;
+                }
+                
                 
 
                 if (playMode != 1)
@@ -132,6 +138,7 @@ namespace Tfour_Main
             {
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\OrangeStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
+                Grid_StoneSelection.IsEnabled = false;
             }
         }
 
@@ -146,7 +153,11 @@ namespace Tfour_Main
                 player1SelectedSTONE.Source = playerOneGameStone;
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
-                
+
+                if (playMode == 1)
+                {
+                    Grid_StoneSelection.IsEnabled = false;
+                }
 
                 if (playMode != 1)
                 {
@@ -157,6 +168,7 @@ namespace Tfour_Main
             {
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\RedStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
+                Grid_StoneSelection.IsEnabled = false;
             }
         }
 
@@ -171,7 +183,11 @@ namespace Tfour_Main
                 player1SelectedSTONE.Source = playerOneGameStone;
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
-                
+
+                if (playMode == 1)
+                {
+                    Grid_StoneSelection.IsEnabled = false;
+                }
 
                 if (playMode != 1)
                 {
@@ -182,6 +198,7 @@ namespace Tfour_Main
             {
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\GreenStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
+                Grid_StoneSelection.IsEnabled = false;
             }
         }
 
@@ -196,6 +213,11 @@ namespace Tfour_Main
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
 
+                if (playMode == 1)
+                {
+                    Grid_StoneSelection.IsEnabled = false;
+                }
+
                 if (playMode != 1)
                 {
                     msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
@@ -205,6 +227,7 @@ namespace Tfour_Main
             {
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\BlueStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
+                Grid_StoneSelection.IsEnabled = false;
             }
         }
 
@@ -218,6 +241,10 @@ namespace Tfour_Main
                 player1SelectedSTONE.Source = playerOneGameStone;
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+                if (playMode == 1)
+                {
+                    Grid_StoneSelection.IsEnabled = false;
+                }
 
                 if (playMode != 1)
                 {
@@ -228,6 +255,7 @@ namespace Tfour_Main
             {
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\PurpleStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
+                Grid_StoneSelection.IsEnabled = false;
             }
         }
 
@@ -241,6 +269,12 @@ namespace Tfour_Main
                 player1SelectedSTONE.Source = playerOneGameStone;
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+
+                if (playMode == 1)
+                {
+                    Grid_StoneSelection.IsEnabled = false;
+                }
+
                 if (playMode != 1)
                 {
                     msg_PlayerTwoSelectStone.Visibility = Visibility.Visible;
@@ -251,6 +285,7 @@ namespace Tfour_Main
             {
                 playerTwoGameStone = new BitmapImage(new Uri(dir + @"\YellowStone.png"));
                 player2SelectedSTONE.Source = playerTwoGameStone;
+                Grid_StoneSelection.IsEnabled = false;
             }
         }
 
