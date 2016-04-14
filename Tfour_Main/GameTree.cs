@@ -13,6 +13,11 @@ namespace Tfour_Main
         * COMPUTER is the maximizer *
         ****************************/
         const int OPONENT = 1, COMPUTER = 2;
+        GameState root;
+        /***************************************************************
+        * the depth is a limit on the number of levels of the GameTree *
+        ***************************************************************/
+        const int DEPTH = 10;
         #region GAME_STATE_TREE_NODE
         /****************************************
         * A gameState is a node in the gameTree *
@@ -73,11 +78,6 @@ namespace Tfour_Main
             }
         }
         #endregion
-        GameState root;
-        /***************************************************************
-        * the depth is a limit on the number of levels of the GameTree *
-        ***************************************************************/
-        const int DEPTH = 10;
         /***********************
         * GameTree Constructor *
         ***********************/
@@ -145,7 +145,7 @@ namespace Tfour_Main
         }
         /****************************************************************
         * Assigns a numerical value to any given gameState, high values *
-        *      are good for the computer and bad for the oponent        *   
+        *      are good for the computer and bad for the oponent        *
         ****************************************************************/
         int Evaluation(GameState gamesState)
         {
