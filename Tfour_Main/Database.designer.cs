@@ -30,12 +30,12 @@ namespace Tfour_Main
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertPlayerHistory(PlayerHistory instance);
-    partial void UpdatePlayerHistory(PlayerHistory instance);
-    partial void DeletePlayerHistory(PlayerHistory instance);
     partial void InsertPlayerInformation(PlayerInformation instance);
     partial void UpdatePlayerInformation(PlayerInformation instance);
     partial void DeletePlayerInformation(PlayerInformation instance);
+    partial void InsertPlayerHistory(PlayerHistory instance);
+    partial void UpdatePlayerHistory(PlayerHistory instance);
+    partial void DeletePlayerHistory(PlayerHistory instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -68,14 +68,6 @@ namespace Tfour_Main
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<PlayerHistory> PlayerHistories
-		{
-			get
-			{
-				return this.GetTable<PlayerHistory>();
-			}
-		}
-		
 		public System.Data.Linq.Table<PlayerInformation> PlayerInformations
 		{
 			get
@@ -83,210 +75,12 @@ namespace Tfour_Main
 				return this.GetTable<PlayerInformation>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PlayerHistory")]
-	public partial class PlayerHistory : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _HistoryID;
-		
-		private string _PlayerOne;
-		
-		private int _PlayerOneScore;
-		
-		private string _Apponet;
-		
-		private int _ApponetScore;
-		
-		private string _Winner;
-		
-		private System.DateTime _GameDate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnHistoryIDChanging(int value);
-    partial void OnHistoryIDChanged();
-    partial void OnPlayerOneChanging(string value);
-    partial void OnPlayerOneChanged();
-    partial void OnPlayerOneScoreChanging(int value);
-    partial void OnPlayerOneScoreChanged();
-    partial void OnApponetChanging(string value);
-    partial void OnApponetChanged();
-    partial void OnApponetScoreChanging(int value);
-    partial void OnApponetScoreChanged();
-    partial void OnWinnerChanging(string value);
-    partial void OnWinnerChanged();
-    partial void OnGameDateChanging(System.DateTime value);
-    partial void OnGameDateChanged();
-    #endregion
-		
-		public PlayerHistory()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HistoryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int HistoryID
+		public System.Data.Linq.Table<PlayerHistory> PlayerHistories
 		{
 			get
 			{
-				return this._HistoryID;
-			}
-			set
-			{
-				if ((this._HistoryID != value))
-				{
-					this.OnHistoryIDChanging(value);
-					this.SendPropertyChanging();
-					this._HistoryID = value;
-					this.SendPropertyChanged("HistoryID");
-					this.OnHistoryIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlayerOne", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string PlayerOne
-		{
-			get
-			{
-				return this._PlayerOne;
-			}
-			set
-			{
-				if ((this._PlayerOne != value))
-				{
-					this.OnPlayerOneChanging(value);
-					this.SendPropertyChanging();
-					this._PlayerOne = value;
-					this.SendPropertyChanged("PlayerOne");
-					this.OnPlayerOneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlayerOneScore", DbType="Int NOT NULL")]
-		public int PlayerOneScore
-		{
-			get
-			{
-				return this._PlayerOneScore;
-			}
-			set
-			{
-				if ((this._PlayerOneScore != value))
-				{
-					this.OnPlayerOneScoreChanging(value);
-					this.SendPropertyChanging();
-					this._PlayerOneScore = value;
-					this.SendPropertyChanged("PlayerOneScore");
-					this.OnPlayerOneScoreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Apponet", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string Apponet
-		{
-			get
-			{
-				return this._Apponet;
-			}
-			set
-			{
-				if ((this._Apponet != value))
-				{
-					this.OnApponetChanging(value);
-					this.SendPropertyChanging();
-					this._Apponet = value;
-					this.SendPropertyChanged("Apponet");
-					this.OnApponetChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApponetScore", DbType="Int NOT NULL")]
-		public int ApponetScore
-		{
-			get
-			{
-				return this._ApponetScore;
-			}
-			set
-			{
-				if ((this._ApponetScore != value))
-				{
-					this.OnApponetScoreChanging(value);
-					this.SendPropertyChanging();
-					this._ApponetScore = value;
-					this.SendPropertyChanged("ApponetScore");
-					this.OnApponetScoreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Winner", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string Winner
-		{
-			get
-			{
-				return this._Winner;
-			}
-			set
-			{
-				if ((this._Winner != value))
-				{
-					this.OnWinnerChanging(value);
-					this.SendPropertyChanging();
-					this._Winner = value;
-					this.SendPropertyChanged("Winner");
-					this.OnWinnerChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GameDate", DbType="DateTime NOT NULL")]
-		public System.DateTime GameDate
-		{
-			get
-			{
-				return this._GameDate;
-			}
-			set
-			{
-				if ((this._GameDate != value))
-				{
-					this.OnGameDateChanging(value);
-					this.SendPropertyChanging();
-					this._GameDate = value;
-					this.SendPropertyChanged("GameDate");
-					this.OnGameDateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<PlayerHistory>();
 			}
 		}
 	}
@@ -424,6 +218,212 @@ namespace Tfour_Main
 					this._Email = value;
 					this.SendPropertyChanged("Email");
 					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PlayerHistory")]
+	public partial class PlayerHistory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _HistoryID;
+		
+		private string _PlayerOne;
+		
+		private int _PlayerOneScore;
+		
+		private string _Opponet;
+		
+		private int _ApponetScore;
+		
+		private string _Winner;
+		
+		private System.DateTime _GameDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnHistoryIDChanging(int value);
+    partial void OnHistoryIDChanged();
+    partial void OnPlayerOneChanging(string value);
+    partial void OnPlayerOneChanged();
+    partial void OnPlayerOneScoreChanging(int value);
+    partial void OnPlayerOneScoreChanged();
+    partial void OnOpponetChanging(string value);
+    partial void OnOpponetChanged();
+    partial void OnApponetScoreChanging(int value);
+    partial void OnApponetScoreChanged();
+    partial void OnWinnerChanging(string value);
+    partial void OnWinnerChanged();
+    partial void OnGameDateChanging(System.DateTime value);
+    partial void OnGameDateChanged();
+    #endregion
+		
+		public PlayerHistory()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HistoryID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int HistoryID
+		{
+			get
+			{
+				return this._HistoryID;
+			}
+			set
+			{
+				if ((this._HistoryID != value))
+				{
+					this.OnHistoryIDChanging(value);
+					this.SendPropertyChanging();
+					this._HistoryID = value;
+					this.SendPropertyChanged("HistoryID");
+					this.OnHistoryIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlayerOne", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string PlayerOne
+		{
+			get
+			{
+				return this._PlayerOne;
+			}
+			set
+			{
+				if ((this._PlayerOne != value))
+				{
+					this.OnPlayerOneChanging(value);
+					this.SendPropertyChanging();
+					this._PlayerOne = value;
+					this.SendPropertyChanged("PlayerOne");
+					this.OnPlayerOneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlayerOneScore", DbType="Int NOT NULL")]
+		public int PlayerOneScore
+		{
+			get
+			{
+				return this._PlayerOneScore;
+			}
+			set
+			{
+				if ((this._PlayerOneScore != value))
+				{
+					this.OnPlayerOneScoreChanging(value);
+					this.SendPropertyChanging();
+					this._PlayerOneScore = value;
+					this.SendPropertyChanged("PlayerOneScore");
+					this.OnPlayerOneScoreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Opponet", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Opponet
+		{
+			get
+			{
+				return this._Opponet;
+			}
+			set
+			{
+				if ((this._Opponet != value))
+				{
+					this.OnOpponetChanging(value);
+					this.SendPropertyChanging();
+					this._Opponet = value;
+					this.SendPropertyChanged("Opponet");
+					this.OnOpponetChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApponetScore", DbType="Int NOT NULL")]
+		public int ApponetScore
+		{
+			get
+			{
+				return this._ApponetScore;
+			}
+			set
+			{
+				if ((this._ApponetScore != value))
+				{
+					this.OnApponetScoreChanging(value);
+					this.SendPropertyChanging();
+					this._ApponetScore = value;
+					this.SendPropertyChanged("ApponetScore");
+					this.OnApponetScoreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Winner", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Winner
+		{
+			get
+			{
+				return this._Winner;
+			}
+			set
+			{
+				if ((this._Winner != value))
+				{
+					this.OnWinnerChanging(value);
+					this.SendPropertyChanging();
+					this._Winner = value;
+					this.SendPropertyChanged("Winner");
+					this.OnWinnerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GameDate", DbType="DateTime NOT NULL")]
+		public System.DateTime GameDate
+		{
+			get
+			{
+				return this._GameDate;
+			}
+			set
+			{
+				if ((this._GameDate != value))
+				{
+					this.OnGameDateChanging(value);
+					this.SendPropertyChanging();
+					this._GameDate = value;
+					this.SendPropertyChanged("GameDate");
+					this.OnGameDateChanged();
 				}
 			}
 		}

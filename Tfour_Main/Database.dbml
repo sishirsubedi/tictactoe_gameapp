@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Tfour" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-94GIPOB\SQLEXPRESS;Initial Catalog=Tfour;User ID=glassfish" SettingsObjectName="Tfour_Main.Properties.Settings" SettingsPropertyName="TfourConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.PlayerHistory" Member="PlayerHistories">
-    <Type Name="PlayerHistory">
-      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PlayerOne" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="PlayerOneScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Apponet" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="ApponetScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Winner" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="GameDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.PlayerInformation" Member="PlayerInformations">
     <Type Name="PlayerInformation">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -18,6 +7,17 @@
       <Column Name="UserID" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PlayerHistory" Member="PlayerHistories">
+    <Type Name="PlayerHistory">
+      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlayerOne" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PlayerOneScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Opponet" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ApponetScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Winner" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="GameDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

@@ -5,20 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tfour_Main
-{ //test
+{
     class AI
     {
-
         private Board gameBoard;
         private string gameLevel;
         private Boolean isEasy;
         private Boolean isMedium;
         private Boolean isHard;
 
-
-        AI() { }
-
-        public AI (Board gboard, string glevel)
+        public AI(Board gboard, string glevel)
         {
             gameBoard = gboard;
             gameLevel = glevel;
@@ -29,9 +25,7 @@ namespace Tfour_Main
             { isEasy = false; isMedium = true; isHard = false; }
             else if (glevel.Equals("Hard"))
             { isEasy = false; isMedium = false; isHard = true; }
-
         }
-
 
         public int[] findMove()
         {
@@ -46,38 +40,37 @@ namespace Tfour_Main
             return cell;
         }
 
-
+        #region EASY
         private int[] easyMove()
         {
             int[] cell = { 0, 0 };
             Boolean checking = true;
             Random rand = new Random();
-           
+
             int randRow = rand.Next(0, 6), randCol = rand.Next(0, 6);
 
             while (checking)
             {
-                
-                        if (gameBoard.getGameMatrix()[randRow,randCol] == 0)
-                        {
-                            checking = false;
+                if (gameBoard.getGameMatrix()[randRow, randCol] == 0)
+                {
+                    checking = false;
 
-                        } else
-                        {
-                             randCol = rand.Next(0, 6);
-                              randRow = rand.Next(0, 6);
-                        }
-         
-
+                }
+                else
+                {
+                    randCol = rand.Next(0, 6);
+                    randRow = rand.Next(0, 6);
+                }
             }
 
             cell[0] = randRow;
             cell[1] = randCol;
 
             return cell;
-
         }
+        #endregion
 
+        #region MEDIUM
         private int[] mediumMove()
         {
             int[] cell = { 7, 7 };
@@ -86,14 +79,14 @@ namespace Tfour_Main
 
             return cell;
         }
+        #endregion
 
+        #region HARD
         private int[] hardMove()
         {
-            int[] cell = { 10, 10 };
-
-
-
-            return cell;
+            GameTree gameTree = new GameTree(gameBoard);
+            return gameTree.Decision();
         }
+        #endregion
     }
 }

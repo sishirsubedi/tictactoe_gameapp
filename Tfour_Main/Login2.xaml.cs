@@ -196,7 +196,7 @@ namespace Tfour_Main
 
         private void Button_GuestPlayer2Login_Click(object sender, RoutedEventArgs e)
         {
-            Label_PLAYER2_LOGUSER.Content = Textbox_Username2.Text;
+            Label_PLAYER2_LOGUSER.Content = "Guest2";
             Label_LoggedInAs_Player2.Visibility = System.Windows.Visibility.Visible;
             Label_PLAYER2_LOGUSER.Visibility = System.Windows.Visibility.Visible;
 
@@ -211,19 +211,19 @@ namespace Tfour_Main
             Button_ForgetPassword.IsEnabled = false;
             Button_ForgetPassword.Visibility = Visibility.Hidden;
 
-            playerTwoUserID = "Guest";
+            playerTwoUserID = "Guest2";
             playerTwoValid = true;
         }
 
         private void Button_GuestPlayer1Login_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(" Login 1 as Guest. Please try Login 2 !");
-            Label_PLAYER1_LOGUSER.Content = Textbox_Username.Text;
+            Label_PLAYER1_LOGUSER.Content = "Guest1";
             Label_LoggedInAs_Player1.Visibility = System.Windows.Visibility.Visible;
             Label_PLAYER1_LOGUSER.Visibility = System.Windows.Visibility.Visible;
             Button_playerTwoLogin.IsEnabled = true;
 
-            playerOneUserID = "Guest";
+            playerOneUserID = "Guest1";
             playerOneValid = true;
 
 

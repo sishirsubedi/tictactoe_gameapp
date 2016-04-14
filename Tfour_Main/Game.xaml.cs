@@ -40,6 +40,10 @@ namespace Tfour_Main
 
         private string gameWinner;
 
+        private string playerOneId;
+
+        private string playerTwoId;
+
         private int gameMode;
 
       
@@ -59,8 +63,10 @@ namespace Tfour_Main
             gameMode = playMode;
             playerOneGameStone = p1gstone;
             playerTwoGameStone = p2gstone;
+            playerOneId = player1;
+            playerTwoId = player2;
 
-            
+
             button_playeroneimage.Background = new ImageBrush(p1gstone);
 
             button_playertwoimage.Background = new ImageBrush(p2gstone);
@@ -305,7 +311,7 @@ namespace Tfour_Main
 
             MainWindow newwindow = new MainWindow();
 
-            GameOver gmover = new GameOver(newwindow, gameWinner,  gamePlayers[0].getPlayerID(), gamePlayers[1].getPlayerID(), gameMode);
+            GameOver gmover = new GameOver(newwindow, gameWinner, playerOneId, playerTwoId, gameMode);
             updateHistory();
             this.Hide();
             gmover.Show();
@@ -323,7 +329,7 @@ namespace Tfour_Main
 
             newPH.PlayerOne = gamePlayers[0].getPlayerID();
             newPH.PlayerOneScore = gamePlayers[0].getScore();
-            newPH.Apponet = gamePlayers[1].getPlayerID();
+            newPH.Opponet = gamePlayers[1].getPlayerID();
             newPH.ApponetScore = gamePlayers[1].getScore();
             newPH.GameDate = DateTime.Now;
 
