@@ -17,6 +17,7 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for Login2.xaml
     /// </summary>
+    /// test github
     public partial class Login2 : Window
     {
         private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
