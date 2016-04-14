@@ -65,6 +65,8 @@ namespace Tfour_Main
             playerTwoGameStone = p2gstone;
             playerOneId = player1;
             playerTwoId = player2;
+            Label_PlayerOneName.Content = player1;
+            Label_PlayerTwoName.Content = player2;
 
 
             button_playeroneimage.Background = new ImageBrush(p1gstone);

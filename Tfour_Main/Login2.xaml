@@ -43,7 +43,7 @@
         </Button>
         <Button x:Name="Button_ViewProfilePlayer1" Content="Player1 Profile" Margin="399,172,251,0" VerticalAlignment="Top"  FontSize="24" FontFamily="Consolas" FontWeight="SemiBold" Click="Button_ViewProfilePlayer1_Click" Visibility="Hidden"/>
         <Button x:Name="Button_ViewProfilePlayer2" Content="Player2 Profile" Margin="399,226,251,0" VerticalAlignment="Top"  FontSize="24" FontFamily="Consolas" FontWeight="SemiBold" RenderTransformOrigin="0.489,2.651" Click="Button_ViewProfilePlayer2_Click" Visibility="Hidden"/>
-        <Button x:Name="Button_Back" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="56" Click="Button_Back_Click" Margin="7,0,0,652" RenderTransformOrigin="0.5,0.5" Height="34">
+        <Button x:Name="Button_Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="56" Click="Button_Back_Click" Margin="7,0,0,652" RenderTransformOrigin="0.5,0.5" Height="34" BorderBrush="{x:Null}">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -53,13 +53,13 @@
                 </TransformGroup>
             </Button.RenderTransform>
             <Button.Background>
-                <ImageBrush ImageSource="greypanel.bmp"/>
+                <ImageBrush ImageSource="BackButton.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button x:Name="Button_Exit" Content="Exit" HorizontalAlignment="Right" Margin="0,10,0.2,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-1.933,-0.278" Click="Button_Exit_Click" Height="31" Grid.Column="1">
+        <Button x:Name="Button_Exit" Content="" HorizontalAlignment="Right" Margin="0,10,0.2,0" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-1.933,-0.278" Click="Button_Exit_Click" Height="31" Grid.Column="1">
 
             <Button.Background>
-                <ImageBrush ImageSource="greypanel.bmp"/>
+                <ImageBrush ImageSource="ExitButton.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 

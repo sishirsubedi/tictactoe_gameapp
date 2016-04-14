@@ -1,7 +1,7 @@
 ﻿<Window x:Name="Window_MainWindow" x:Class="Tfour_Main.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="694" Width="1050" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="MainWindow" Height="700" Width="1050" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         WindowStyle="None">
 
 
@@ -27,9 +27,9 @@
 
         </Button>
         <Image x:Name="TitleIMG_bmp" Height="241" Margin="404,55,398.6,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
-        <Button x:Name="Button_Exit" Content="Exit" Margin="964,0,-0.4,644.4" VerticalAlignment="Bottom" Height="50" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24">
+        <Button x:Name="Button_Exit" Content="" Margin="947.384,0,7,622.067" VerticalAlignment="Bottom" Height="55.333" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24">
             <Button.Background>
-                <ImageBrush ImageSource="greypanel.bmp"/>
+                <ImageBrush ImageSource="ExitButton.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
     </Grid>
