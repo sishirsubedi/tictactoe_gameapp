@@ -93,20 +93,16 @@ namespace Tfour_Main
         ******************************************************************/
         public int[] Decision()
         {
+            /*******************************************************************************
+            * The children of the root node is the set of moves the computer can pick from *
+            *******************************************************************************/
             /*
-            int optimumMoveValue = MaxValue(root, infinity, -infinity, 0);
+            int optimumScore = MaxValue(root, infinity, -infinity, 0);
+            
+            // Find the first children of the root with an optimumScore
 
-            the list of optimum game states is a list containing the children of the
-            root node which have optimum evaluation scores
-
-            List<GameState> optimumStates = root.Children.
-                Where(gameState => gameState.EvaluationScore == optimumMoveValue).ToList();
-
-            we will pick one of this optimum states randomly and return the move that leads to it
-
-            Random random = new Random();
-            int randomIndex = random.Next(optimumStates.Count);
-            return optimumStates[randomIndex].Move;
+            GameState optimumState = root.Children.Find(gameState => gameState.EvaluationScore == optimumScore);
+            return optimumState.Move;
             
             ^ this is more or less how it is actually going to work, now we need to actually implement
             the evaluation function before we can test it
@@ -119,11 +115,8 @@ namespace Tfour_Main
 
             Negative scores for opponent, i.e.
             -something for EACH of the opponent's 4-in-a-line, 3-in-a-line and 2-in-a-line
-            /*
+            */
 
-            /*******************************************************************************
-            * The children of the root node is the set of moves the computer can pick from *
-            *******************************************************************************/
             // This is a place holder, it just picks a random
             // move from the children of the initial game state
             root.Children = GetChildren(root);
@@ -136,7 +129,7 @@ namespace Tfour_Main
         * returns the minimum possible value min can chose from the current state *
         *       (the evaluation score of an optimum node for the oponent)         *
         **************************************************************************/
-        int MaxValue(GameState gameState, int alpha, int beta, int depth)
+            int MaxValue(GameState gameState, int alpha, int beta, int depth)
         {
             if (gameState.IsTerminalState || depth == DEPTH_LIMIT)
                 return Evaluation(gameState);
