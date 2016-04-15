@@ -129,7 +129,7 @@ namespace Tfour_Main
         * returns the minimum possible value min can chose from the current state *
         *       (the evaluation score of an optimum node for the oponent)         *
         **************************************************************************/
-            int MaxValue(GameState gameState, int alpha, int beta, int depth)
+        int MaxValue(GameState gameState, int alpha, int beta, int depth)
         {
             if (gameState.IsTerminalState || depth == DEPTH_LIMIT)
                 return Evaluation(gameState);
