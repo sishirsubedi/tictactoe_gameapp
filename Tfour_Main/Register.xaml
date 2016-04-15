@@ -13,7 +13,7 @@
         <Label x:Name="Label_name" Content="Name" HorizontalAlignment="Left" Margin="97,59,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
         <TextBox x:Name="TextBox_Name" HorizontalAlignment="Left" Height="23" Margin="163,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.28,-0.407" KeyboardNavigation.TabIndex="0" FontFamily="Consolas"/>
         <Label x:Name="Label_userID" Content="Username" HorizontalAlignment="Left" Margin="97,101,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
-        <TextBox x:Name="TextBox_userID" HorizontalAlignment="Left" Height="23" Margin="163,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.28,-0.407" TextChanged="Textbox_userID_TextChanged" KeyboardNavigation.TabIndex="1" FontFamily="Consolas"/>
+        <TextBox x:Name="TextBox_userID" HorizontalAlignment="Left" Height="23" Margin="163,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.28,-0.407"  KeyboardNavigation.TabIndex="1" FontFamily="Consolas"/>
         <Label x:Name="Label_password" Content="Password" HorizontalAlignment="Left" Margin="97,152,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>
         <PasswordBox x:Name="PasswordBox_password" HorizontalAlignment="Left" Height="23" Margin="163,155,0,0" VerticalAlignment="Top" Width="172" RenderTransformOrigin="0.28,-0.407" KeyboardNavigation.TabIndex="2" FontFamily="Consolas"/>
         <Label x:Name="Label_email" Content="Email" HorizontalAlignment="Left" Margin="119,243,0,0" VerticalAlignment="Top" FontFamily="Consolas"/>

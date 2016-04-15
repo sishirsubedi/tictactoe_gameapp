@@ -332,7 +332,7 @@ namespace Tfour_Main
             newPH.PlayerOne = gamePlayers[0].getPlayerID();
             newPH.PlayerOneScore = gamePlayers[0].getScore();
             newPH.Opponet = gamePlayers[1].getPlayerID();
-            newPH.ApponetScore = gamePlayers[1].getScore();
+            newPH.OpponetScore = gamePlayers[1].getScore();
             newPH.GameDate = DateTime.Now;
 
             if (gamePlayers[0].isWinner())
@@ -441,8 +441,7 @@ namespace Tfour_Main
 
 
 
-
-        private void button_gameQuit_Click(object sender, RoutedEventArgs e)
+        private void image_click(object sender, MouseButtonEventArgs e)
         {
             MainWindow newwindow = new MainWindow();
             newwindow.Show();

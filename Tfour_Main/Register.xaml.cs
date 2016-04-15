@@ -22,7 +22,7 @@ namespace Tfour_Main
     /// </summary>
     public partial class Register : Window
     {
-        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString);
+        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
 
         public Register()
         {
@@ -31,21 +31,7 @@ namespace Tfour_Main
             Label_passwordsDontMatch.Visibility = Visibility.Hidden;
         }
 
-        private void Textbox_userID_TextChanged(object sender, RoutedEventArgs e)
-        {
-            var query = from p in db.PlayerInformations
-                        where (p.UserID.Equals(TextBox_userID.Text))
-                        select p;
 
-            if (query.Any())
-            {
-                Label_usernameTaken.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                Label_usernameTaken.Visibility = Visibility.Hidden;
-            }
-        }
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {

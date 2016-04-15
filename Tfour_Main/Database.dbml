@@ -15,7 +15,7 @@
       <Column Name="PlayerOne" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="PlayerOneScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Opponet" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="ApponetScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OpponetScore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Winner" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="GameDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>

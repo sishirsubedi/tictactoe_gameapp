@@ -257,7 +257,7 @@ namespace Tfour_Main
 		
 		private string _Opponet;
 		
-		private int _ApponetScore;
+		private int _OpponetScore;
 		
 		private string _Winner;
 		
@@ -275,8 +275,8 @@ namespace Tfour_Main
     partial void OnPlayerOneScoreChanged();
     partial void OnOpponetChanging(string value);
     partial void OnOpponetChanged();
-    partial void OnApponetScoreChanging(int value);
-    partial void OnApponetScoreChanged();
+    partial void OnOpponetScoreChanging(int value);
+    partial void OnOpponetScoreChanged();
     partial void OnWinnerChanging(string value);
     partial void OnWinnerChanged();
     partial void OnGameDateChanging(System.DateTime value);
@@ -368,22 +368,22 @@ namespace Tfour_Main
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ApponetScore", DbType="Int NOT NULL")]
-		public int ApponetScore
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpponetScore", DbType="Int NOT NULL")]
+		public int OpponetScore
 		{
 			get
 			{
-				return this._ApponetScore;
+				return this._OpponetScore;
 			}
 			set
 			{
-				if ((this._ApponetScore != value))
+				if ((this._OpponetScore != value))
 				{
-					this.OnApponetScoreChanging(value);
+					this.OnOpponetScoreChanging(value);
 					this.SendPropertyChanging();
-					this._ApponetScore = value;
-					this.SendPropertyChanged("ApponetScore");
-					this.OnApponetScoreChanged();
+					this._OpponetScore = value;
+					this.SendPropertyChanged("OpponetScore");
+					this.OnOpponetScoreChanged();
 				}
 			}
 		}

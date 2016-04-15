@@ -207,5 +207,6 @@
 			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
         <Image x:Name="player2Image" Grid.Column="5" HorizontalAlignment="Left" Height="68" Margin="180,12,-147,0" Grid.Row="2" VerticalAlignment="Top" Width="67"/>
         <Image x:Name="player1Image" HorizontalAlignment="Left" Height="68" Margin="-146,12,0,0" Grid.Row="2" VerticalAlignment="Top" Width="67"/>
+        <Image x:Name="image_exit" Grid.Column="5" HorizontalAlignment="Left" Margin="266,-74,-218,94" Width="52" Source="ExitButton.png" MouseDown="image_click"/>
     </Grid>
 </Window>

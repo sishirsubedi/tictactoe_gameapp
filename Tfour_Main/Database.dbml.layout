@@ -8,10 +8,10 @@
         <elementListCompartment Id="f0958baa-043f-4267-927e-b314b5eaef7c" absoluteBounds="1.5149999999999997, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f9ecf88e-5ef6-4ab2-88df-acb925c4a9b6" absoluteBounds="5, 2.5, 2, 2.1554996744791666">
+    <classShape Id="82d650ba-77c3-47e1-a4e5-541766078c78" absoluteBounds="4.125, 1.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/DatabaseDataContext/PlayerHistory" />
       <nestedChildShapes>
-        <elementListCompartment Id="d526bb87-88d3-48b4-ae64-16365e184370" absoluteBounds="5.015, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1052f008-8bab-480a-bed4-b300ea3c9031" absoluteBounds="4.14, 2.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
