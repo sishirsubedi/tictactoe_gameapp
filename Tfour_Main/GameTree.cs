@@ -94,10 +94,10 @@ namespace Tfour_Main
         public int[] Decision()
         {
             /*
-            int optimumMoveValue = MaxValue(root, 1, -1, 0);
+            int optimumMoveValue = MaxValue(root, infinity, -infinity, 0);
 
             the list of optimum game states is a list containing the children of the
-            root node which have an optimum evaluation scores
+            root node which have optimum evaluation scores
 
             List<GameState> optimumStates = root.Children.
                 Where(gameState => gameState.EvaluationScore == optimumMoveValue).ToList();
@@ -111,7 +111,7 @@ namespace Tfour_Main
             ^ this is more or less how it is actually going to work, now we need to actually implement
             the evaluation function before we can test it
 
-            The evaluation function should return a value between -1 and 1
+            The evaluation function should return a value between -infinity and infinity
             
             + something for EACH 4-in-a-line for computer
             + something for EACH 3-in-a-line for computer
