@@ -44,7 +44,7 @@ namespace Tfour_Main
 
 
 
-            GameOptions go = new GameOptions(prevWindow, playerTwoId, playerTwoId, gameMode);
+            GameOptions go = new GameOptions(prevWindow, playerOneId, playerTwoId, gameMode);
             this.Hide();
             go.Show();
 
