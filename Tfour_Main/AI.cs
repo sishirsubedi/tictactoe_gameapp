@@ -183,6 +183,8 @@ namespace Tfour_Main
                 int lastMove_x = lastMove[0];
                 int lastMove_y = lastMove[1];
 
+                bool cellChanged = false;
+
 
                 if (lastMove_x == -1 && lastMove_y == -1)
                 {
@@ -209,68 +211,116 @@ namespace Tfour_Main
                                 // circle
                                 if (j <= 4 && j >= 1 && i <= 4 && i >= 1)
                                 {
+                                    // two consecutive move block
 
-                                    if (gameBoard.isFree(i - 1, j))
-
+                                    if(gameBoard.getGameMatrix()[i,j]==1 && gameBoard.getGameMatrix()[i-1, j] == 1)
                                     {
-                                        cell[0] = i - 1;
-                                        cell[1] = j;
+
+                                        if (gameBoard.isFree(i + 1, j))
+                                        {
+                                            cell[0] = i + 1;
+                                            cell[1] = j;
+                                            cellChanged = true;
+                                        }
+                                        
+                                    }
+                                    else if (gameBoard.getGameMatrix()[i, j] == 1 && gameBoard.getGameMatrix()[i + 1, j] == 1)
+                                    {
+                                        if (gameBoard.isFree(i - 1, j))
+                                        {
+                                            cell[0] = i - 1;
+                                            cell[1] = j;
+                                            cellChanged = true;
+                                        }
+                                    }
+                                    else if (gameBoard.getGameMatrix()[i, j] == 1 && gameBoard.getGameMatrix()[i , j-1] == 1)
+                                    {
+
+                                        if (gameBoard.isFree(i, j+1))
+                                        {
+                                            cell[0] = i ;
+                                            cell[1] = j+1;
+                                            cellChanged = true;
+                                        }
+
+                                        
+                                    }
+                                    else if (gameBoard.getGameMatrix()[i, j] == 1 && gameBoard.getGameMatrix()[i , j+1] == 1)
+                                    {
+
+                                        if (gameBoard.isFree(i, j - 1))
+                                        {
+                                            cell[0] = i;
+                                            cell[1] = j - 1;
+                                            cellChanged = true;
+                                        }
+                                        
                                     }
 
-                                    else if (gameBoard.isFree(i + 1, j))
-
+                                    if (!cellChanged)
                                     {
-                                        cell[0] = i + 1;
-                                        cell[1] = j;
+
+                                        if (gameBoard.isFree(i - 1, j))
+
+                                        {
+                                            cell[0] = i - 1;
+                                            cell[1] = j;
+                                        }
+
+                                        else if (gameBoard.isFree(i + 1, j))
+
+                                        {
+                                            cell[0] = i + 1;
+                                            cell[1] = j;
+                                        }
+
+                                        else if (gameBoard.isFree(i, j - 1))
+                                        {
+                                            cell[0] = i;
+                                            cell[1] = j - 1;
+                                        }
+
+                                        else if (gameBoard.isFree(i, j + 1))
+
+                                        {
+                                            cell[0] = i;
+                                            cell[1] = j + 1;
+                                        }
+
+
+                                        else if (gameBoard.isFree(i - 1, j - 1))
+                                        {
+                                            cell[0] = i - 1;
+                                            cell[1] = j - 1;
+                                        }
+
+                                        else if (gameBoard.isFree(i + 1, j - 1))
+
+                                        {
+                                            cell[0] = i + 1;
+                                            cell[1] = j - 1;
+                                        }
+
+                                        else if (gameBoard.isFree(i + 1, j + 1))
+
+                                        {
+                                            cell[0] = i + 1;
+                                            cell[1] = j + 1;
+                                        }
+
+                                        else if (gameBoard.isFree(i - 1, j + 1))
+
+                                        {
+                                            cell[0] = i - 1;
+                                            cell[1] = j + 1;
+                                        }
+                                        else
+                                        {
+                                            cell = easyMove();
+                                        }
+
                                     }
-
-                                    else if (gameBoard.isFree(i, j - 1))
-                                    {
-                                        cell[0] = i;
-                                        cell[1] = j - 1;
-                                    }
-
-                                    else if (gameBoard.isFree(i, j + 1))
-
-                                    {
-                                        cell[0] = i;
-                                        cell[1] = j + 1;
-                                    }
-
-
-                                    else if (gameBoard.isFree(i - 1, j - 1))
-                                    {
-                                        cell[0] = i - 1;
-                                        cell[1] = j - 1;
-                                    }
-
-                                    else if (gameBoard.isFree(i + 1, j - 1))
-
-                                    {
-                                        cell[0] = i + 1;
-                                        cell[1] = j - 1;
-                                    }
-
-                                    else if (gameBoard.isFree(i + 1, j + 1))
-
-                                    {
-                                        cell[0] = i + 1;
-                                        cell[1] = j + 1;
-                                    }
-
-                                    else if (gameBoard.isFree(i - 1, j + 1))
-
-                                    {
-                                        cell[0] = i - 1;
-                                        cell[1] = j + 1;
-                                    }
-                                    else
-                                    {
-                                        cell = easyMove();
-                                    }
-
-
-                                }
+                                } 
                                 // down right
                                 else if (i >= 0 && i <= 4 && j >= 0 && j <= 4)
                                 {
