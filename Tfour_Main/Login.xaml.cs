@@ -76,7 +76,7 @@ namespace Tfour_Main
                     {
 
                         playerOneUserID = Textbox_Username.Text;
-                        playerTwoUserID = "smario";
+                        playerTwoUserID = "Computer";
 
                         Label_PLAYER1_LOGUSER.Content = playerOneUserID;
                         Label_PLAYER1_LOGUSER.Visibility = Visibility.Visible;
@@ -84,7 +84,7 @@ namespace Tfour_Main
                         button_Profile.Visibility = Visibility.Visible;
 
                         playerOneUserID = Textbox_Username.Text;
-                        playerTwoUserID = "smario";
+                        playerTwoUserID = "Computer";
 
                         playerOneValid = true;
 
@@ -114,7 +114,7 @@ namespace Tfour_Main
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
-            Register register = new Register();
+            Register register = new Register(this);
             register.Show();
         }
 
@@ -162,7 +162,7 @@ namespace Tfour_Main
             Label_LoggedInAs_Player1.Visibility = Visibility.Visible;
             button_Profile.Visibility = Visibility.Hidden;
 
-            playerTwoUserID = "smario";
+            playerTwoUserID = "Computer";
 
             playerOneValid = true;
 

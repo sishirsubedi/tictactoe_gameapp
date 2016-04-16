@@ -29,184 +29,108 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+
+
+
+
     </Window.Resources>
 
 
+    <Grid x:Name="UIBoard" Margin="0,0,-8,-28">
 
-    <Grid
-		x:Name= "UIBoard"
-		HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="600" Margin="221,75,0,0">
-        <Grid.Background>
-            <ImageBrush/>
-        </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="100"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-        </Grid.RowDefinitions>
-        <Image x:Name="greenpanel_bmp" HorizontalAlignment="Left" Margin="-194.6,-29.4,0,12.5" Grid.RowSpan="2" Source="greenpanel.bmp" Stretch="Fill" Width="162.675" Grid.Row="2" d:IsLocked="True"/>
-        <Image x:Name="bluepanel_bmp" HorizontalAlignment="Right" Margin="0,-29.4,-192.775,12.5" Grid.Row="2" Grid.RowSpan="2" Source="bluepanel.bmp" Stretch="Fill" Width="162.675" Grid.Column="5" d:IsLocked="True"/>
-        <Image x:Name="BoardGrid_bmp" Grid.ColumnSpan="6" Grid.RowSpan="6" Source="BoardGrid.bmp" Stretch="Fill"/>
-        <Label x:Name="Label_PlayerOneName" Content="Player One" HorizontalAlignment="Left" Margin="-169,79,0,0" VerticalAlignment="Top" Height="31" Width="116" Grid.Row="1" FontFamily="Consolas" FontSize="18" Foreground="White" Grid.RowSpan="2" HorizontalContentAlignment="Center"/>
-        <Label x:Name="Label_PlayerOneScore" Content="0" HorizontalAlignment="Center" Margin="-194.6,-23.697,131.925,12.5" RenderTransformOrigin="0.375,-0.66" Grid.Row="3" VerticalAlignment="Bottom" Foreground="White" FontFamily="Consolas" FontSize="60" Height="111.197" Width="162.675" HorizontalContentAlignment="Center"/>
-        <Label x:Name="Label_PlayerTwoName" Content="Player Two" HorizontalAlignment="Left" Margin="152,0,-168,-10" VerticalAlignment="Bottom" Height="31" Width="116" Grid.Column="5" Grid.Row="1" FontSize="18" FontFamily="Consolas" Foreground="White" HorizontalContentAlignment="Center"/>
-        <Label x:Name="Label_PlayerTwoScore" Content="0" Grid.Column="5" HorizontalAlignment="Center" Margin="130.1,-23.697,-192.775,12.5" RenderTransformOrigin="0.375,-0.66" Grid.Row="3" FontSize="60" Width="162.675" HorizontalContentAlignment="Center" FontFamily="Consolas" Foreground="White" Height="111.197" VerticalAlignment="Bottom"/>
-        <Button x:Name="button_1x1"  Style="{StaticResource MyButtonStyle}"
-			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"  />
-        <Button x:Name="button_1x2" Style="{StaticResource MyButtonStyle}"
-			Grid.Column="1"
-			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Click="Cell_Click" />
-        <Button x:Name="button_1x3" Style="{StaticResource MyButtonStyle}"
-			Grid.Column="2"
-			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_1x4" Style="{StaticResource MyButtonStyle}"
-			Grid.Column="3"
-			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_1x5" Style="{StaticResource MyButtonStyle}"
-			Grid.Column="4"
-			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_1x6" Style="{StaticResource MyButtonStyle}"
-			Grid.Column="5"
-			Grid.Row="0"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_2x1" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_2x2" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
-        <Button x:Name="button_2x3" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
-        <Button x:Name="button_2x5" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4" Click="Cell_Click"/>
-        <Button x:Name="button_2x4" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3" Click="Cell_Click"/>
-        <Button x:Name="button_2x6" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="1"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
-        <Button x:Name="button_3x1" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Click="Cell_Click"/>
-        <Button x:Name="button_3x2" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
-        <Button x:Name="button_3x3" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
-        <Button x:Name="button_3x4" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"  Click="Cell_Click"/>
-        <Button x:Name="button_3x5" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"  Click="Cell_Click"/>
-        <Button x:Name="button_3x6" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="2"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"  Click="Cell_Click"/>
-        <Button x:Name="button_4x1" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_4x2" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click" />
-        <Button x:Name="button_4x3" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
-        <Button x:Name="button_4x4" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3" Click="Cell_Click"/>
-        <Button x:Name="button_4x5" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4" Click="Cell_Click"/>
-        <Button x:Name="button_4x6" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="3"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
-        <Button x:Name="button_5x1" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Click="Cell_Click"/>
-        <Button x:Name="button_5x2" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
-        <Button x:Name="button_5x3" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
-        <Button x:Name="button_5x4" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"  Click="Cell_Click"/>
-        <Button x:Name="button_5x5" Style="{StaticResource MyButtonStyle}"
-			Background="Transparent"
-			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4"  Click="Cell_Click"/>
-        <Button x:Name="button_5x6" Style="{StaticResource MyButtonStyle}"
-		
-			Grid.Row="4"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5"  Click="Cell_Click"/>
-        <Button x:Name="button_6x1" Style="{StaticResource MyButtonStyle}"
-			
-			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75"  Click="Cell_Click"/>
-        <Button x:Name="button_6x2" Style="{StaticResource MyButtonStyle}"
-			
-			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="1" Click="Cell_Click"/>
-        <Button x:Name="button_6x3" Style="{StaticResource MyButtonStyle}"
-			
-			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="2" Click="Cell_Click"/>
-        <Button x:Name="button_6x4" Style="{StaticResource MyButtonStyle}"
-		
-			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="3"  Click="Cell_Click"/>
-        <Button x:Name="button_6x5" Style="{StaticResource MyButtonStyle}"
-			
-			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="4" Click="Cell_Click"/>
-        <Button x:Name="button_6x6" Style="{StaticResource MyButtonStyle}"
-		
-			Grid.Row="5"
-			HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="75" Grid.Column="5" Click="Cell_Click"/>
-        <Image x:Name="player2Image" Grid.Column="5" HorizontalAlignment="Left" Height="68" Margin="180,12,-147,0" Grid.Row="2" VerticalAlignment="Top" Width="67"/>
-        <Image x:Name="player1Image" HorizontalAlignment="Left" Height="68" Margin="-146,12,0,0" Grid.Row="2" VerticalAlignment="Top" Width="67"/>
-        <Image x:Name="image_exit" Grid.Column="5" HorizontalAlignment="Left" Margin="266,-74,-218,94" Width="52" Source="ExitButton.png" MouseDown="image_click"/>
+        <MediaElement x:Name="mediaPlayer" HorizontalAlignment="Left" Height="109" Margin="10,0,0,0" VerticalAlignment="Top" Width="116" LoadedBehavior="Manual" UnloadedBehavior="Stop" Source="mariotheme.mp3" />
+        <Button x:Name="Button_Soundplay" Style="{StaticResource MyButtonStyle}" Content ="Music" FontSize="35" FontFamily="Consolas" FontWeight="Bold" Foreground="Yellow" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="98" Height="67" Click="play_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="musicbutton.png"/>
+            </Button.Background>
+        </Button>
+
+
+        <Image x:Name="greenpanel_bmp" HorizontalAlignment="Left" Margin="28,218,0,276" Source="greenpanel.bmp" Stretch="Fill" Width="175" Height="200" d:IsLocked="False"/>
+        <Image x:Name="bluepanel_bmp" HorizontalAlignment="Right" Margin="0,235,38.6,293" Source="bluepanel.bmp" Stretch="Fill" Width="175" Height="200" d:IsLocked="False"/>
+
+        <Label x:Name="Label_PlayerOneName" Content="Player One" HorizontalAlignment="Left" Margin="64,235,0,0" VerticalAlignment="Top" Height="31" Width="116" FontFamily="Consolas" FontSize="18" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Label_PlayerOneScore" Content="0" HorizontalAlignment="Center" Margin="64,0,888.6,312" RenderTransformOrigin="0.375,-0.66" VerticalAlignment="Bottom" Foreground="White" FontFamily="Consolas" FontSize="60" Height="73" Width="105" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Label_PlayerTwoName" Content="Player Two" HorizontalAlignment="Left" Margin="875,0,0,459" VerticalAlignment="Bottom" Height="31" Width="116" FontSize="18" FontFamily="Consolas" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Label_PlayerTwoScore" Content="0" HorizontalAlignment="Center" Margin="889,0,71.6,312" RenderTransformOrigin="0.375,-0.66" FontSize="60" Width="97" HorizontalContentAlignment="Center" FontFamily="Consolas" Foreground="White" Height="73" VerticalAlignment="Bottom"/>
+
+        <Image x:Name="player2Image" HorizontalAlignment="Left" Height="68" Margin="905,275,0,0" VerticalAlignment="Top" Width="67"/>
+        <Image x:Name="player1Image" HorizontalAlignment="Left" Height="68" Margin="82,275,0,0" VerticalAlignment="Top" Width="67"/>
+        <Image x:Name="image_exit" HorizontalAlignment="Center" Margin="977,10,19.6,651" Width="61" Source="ExitButton.png" MouseDown="image_click"/>
+
+
+
+        <Grid x:Name="GameGrid" HorizontalAlignment="Left" Height="527" Margin="230,58,0,0" VerticalAlignment="Top" Width="582"  Visibility="Visible" Opacity="0.9">
+
+            <Grid.Background>
+                <ImageBrush ImageSource="BoardGrid.bmp"/>
+            </Grid.Background>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="Button_1x1" Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="0" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="1" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="2" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="3" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="4" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="5" Click="Cell_Click"></Button>
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="0" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="1" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="2" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="3" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="4" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="5" Click="Cell_Click"></Button>
+
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="0" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="1" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="2" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="3" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="4" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="5" Click="Cell_Click"></Button>
+
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="0" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="1" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="2" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="3" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="4" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="5" Click="Cell_Click"></Button>
+
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="0" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="1" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="2" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="3" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="4" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="5" Click="Cell_Click"></Button>
+
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="0" Click="Cell_Click" ></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="1" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="2" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="3" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="4" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="5" Click="Cell_Click"></Button>
+
+        </Grid>
+
     </Grid>
 </Window>

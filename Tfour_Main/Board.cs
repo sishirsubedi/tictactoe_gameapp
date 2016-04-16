@@ -12,7 +12,9 @@ namespace Tfour_Main
         private int playerOneScore;
         private int playerTwoScore;
 
-        public Board()
+        private int[] lastMove = { -1, -1 };
+
+    public Board()
         {
             gameBoard = new int[6, 6];
             // initialize board to have all zeros
@@ -32,18 +34,29 @@ namespace Tfour_Main
         {
             gameBoard = board.getGameMatrix();
             calculateScore();
+
         }
 
         public void updateBoard(int x, int y, int playerNumber)
         {
             // update 1 or 2 for each player
-            if (playerNumber == 1)
+            if (playerNumber == 1) { 
                 gameBoard[x, y] = 1;
+                lastMove[0] = x;
+                lastMove[1] = y; }
             else
                 gameBoard[x, y] = 2;
 
             // check any new score is made and update the player score
             calculateScore();
+
+
+        }
+
+        public void deleteLastMove (int x, int y)
+        {
+           
+                gameBoard[x, y] = 0;
         }
 
         private void calculateScore()
@@ -210,9 +223,23 @@ namespace Tfour_Main
             return status;
         }
 
+        
+
         public int getPlayerOneScore() { return playerOneScore; }
 
         public int getPlayerTwoScore() { return playerTwoScore; }
+
+        public void setPlayerOneScore( int score)
+        {
+            playerOneScore = score;
+        }
+
+        public void setPlayerTwoScore(int score)
+        {
+            playerTwoScore = score;
+        }
+
+
 
         public int[,] getGameMatrix()
         {
@@ -225,6 +252,18 @@ namespace Tfour_Main
                 }
             }
             return gameMatrix;
+        }
+
+        public void setGameMatrix( int [,] matrix)
+        {
+
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    gameBoard[i, j] = matrix[i, j];
+                }
+            }
         }
 
         public bool isFull()
@@ -250,6 +289,15 @@ namespace Tfour_Main
             }
             return false;
         }
+
+
+        public int[] getLastMove()
+        {
+
+            return lastMove;
+        }
+
+
 
         public override string ToString()
         {

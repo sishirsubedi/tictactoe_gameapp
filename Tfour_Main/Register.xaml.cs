@@ -23,12 +23,14 @@ namespace Tfour_Main
     public partial class Register : Window
     {
         DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+        Window prevWindow;
 
-        public Register()
+        public Register(Window window)
         {
             InitializeComponent();
             Label_usernameTaken.Visibility = Visibility.Hidden;
             Label_passwordsDontMatch.Visibility = Visibility.Hidden;
+            prevWindow = window;
         }
 
 
@@ -75,6 +77,8 @@ namespace Tfour_Main
                         db.PlayerInformations.InsertOnSubmit(newplayer);
                         db.SubmitChanges();
 
+
+                        prevWindow.Show();
                         this.Close();
                     }
                 }
@@ -117,6 +121,7 @@ namespace Tfour_Main
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
+            prevWindow.Show();
             this.Close();
         }
     }

@@ -46,6 +46,8 @@ namespace Tfour_Main
 
         private int gameMode;
 
+        bool soundON;
+
       
 
 
@@ -69,6 +71,7 @@ namespace Tfour_Main
             Label_PlayerTwoName.Content = player2;
             player2Image.Source = p2gstone;
             player1Image.Source = p1gstone;
+            soundON = false;
 
 
          
@@ -85,7 +88,9 @@ namespace Tfour_Main
 
                 if (player2turn)
                 {
-                    button_1x1.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                   
+
+                    Button_1x1.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
                 }
 
             }
@@ -127,6 +132,7 @@ namespace Tfour_Main
                     ImageSource ImgSrc = playerOneGameStone;
                     ImageBrush imgBrush = new ImageBrush(ImgSrc);
                     btn.Background = imgBrush;
+                   
                     btn.IsEnabled = false;
 
 
@@ -317,8 +323,14 @@ namespace Tfour_Main
             updateHistory();
             this.Hide();
             gmover.Show();
-             
-         
+
+
+
+            mediaPlayer.Stop();
+            Button_Soundplay.Content = "OFF";
+            soundON = false;
+
+
 
         }
 
@@ -373,13 +385,12 @@ namespace Tfour_Main
 
             int currentRow, currentCol;
 
-            foreach (var btn in UIBoard.Children)
+            foreach (var btn in GameGrid.Children)
             {
 
-                targetButton = btn as Button;
+                   targetButton = btn as Button;
 
-                if (targetButton != null)
-                {
+               
                     currentRow = (int)targetButton.GetValue(Grid.RowProperty);
                     currentCol = (int)targetButton.GetValue(Grid.ColumnProperty);
                     //If the current row and column match the random coordinates.
@@ -402,7 +413,7 @@ namespace Tfour_Main
                         gamePlayers[0].setPlayerTurn(true);
 
                     }
-                }
+                
             }
                    
 
@@ -443,9 +454,38 @@ namespace Tfour_Main
 
         private void image_click(object sender, MouseButtonEventArgs e)
         {
+
+        
+
             MainWindow newwindow = new MainWindow();
             newwindow.Show();
-            this.Hide();
+           this.Hide();
+
+            mediaPlayer.Stop();
+            Button_Soundplay.Content = "OFF";
+            soundON = false;
+        }
+
+      
+        private void play_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (!soundON)
+            {
+
+                mediaPlayer.Source = new Uri(@"C:\Users\ibm-lenovo\Desktop\GitHub\TicTacToe\Tfour_Main\mariotheme.mp3");
+                Button_Soundplay.Content = "ON";
+                mediaPlayer.Play();
+                soundON = true;
+
+            }
+            else
+            {
+                mediaPlayer.Stop();
+                Button_Soundplay.Content = "OFF";
+                soundON = false;
+
+            }
         }
     }
 }

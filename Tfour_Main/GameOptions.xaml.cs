@@ -270,6 +270,7 @@ namespace Tfour_Main
         private void Purple_Click(object sender, RoutedEventArgs e)
         {
             Purple.Visibility = Visibility.Hidden;
+
             if (player1ChoseStone == false)
             {
 
@@ -277,10 +278,14 @@ namespace Tfour_Main
                 player1SelectedSTONE.Source = playerOneGameStone;
                 player1ChoseStone = true;
                 msg_PlayerOneSelectFirst.Visibility = Visibility.Hidden;
+
                 if (playMode == 1)
                 {
                     Grid_StoneSelection.IsEnabled = false;
+                    Grid_StoneSelection.Visibility = Visibility.Hidden;
                 }
+
+
 
                 if (playMode != 1)
                 {

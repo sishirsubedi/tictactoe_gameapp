@@ -162,7 +162,7 @@ namespace Tfour_Main
 
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
-            Register register = new Register();
+            Register register = new Register(this);
             register.Visibility = System.Windows.Visibility.Visible;
             this.Visibility = System.Windows.Visibility.Hidden;
         }

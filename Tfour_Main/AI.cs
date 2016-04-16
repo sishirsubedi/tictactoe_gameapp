@@ -29,7 +29,7 @@ namespace Tfour_Main
 
         public int[] findMove()
         {
-            int[] cell = { 0, 0 };
+            int[] cell = { -1, -1 };
 
             if (isEasy) cell = easyMove();
 
@@ -43,7 +43,7 @@ namespace Tfour_Main
         #region EASY
         private int[] easyMove()
         {
-            int[] cell = { 0, 0 };
+            int[] cell = { -1, -1 };
             Boolean checking = true;
             Random rand = new Random();
 
@@ -73,13 +73,325 @@ namespace Tfour_Main
         #region MEDIUM
         private int[] mediumMove()
         {
-            int[] cell = { 7, 7 };
+            int[] cell = { -1, -1 };
+
+            int next_x_offensive = -1;
+            int next_y_offensive = -1;
+            int next_x_defensive = -1;
+            int next_y_defensive = -1;
+
+
+            Board testBoard = new Board();
+
+            testBoard.setGameMatrix(gameBoard.getGameMatrix());
+
+            // offensive 
+
+            testBoard.setPlayerTwoScore(gameBoard.getPlayerTwoScore());
+            int trialScore = testBoard.getPlayerTwoScore();
+            int oldScore = testBoard.getPlayerTwoScore();
 
 
 
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+
+                    if (testBoard.isFree(i, j))
+                    {
+                        testBoard.updateBoard(i, j, 2);
+
+                        trialScore = testBoard.getPlayerTwoScore();
+
+                        if (trialScore > oldScore)
+                        {
+                            next_x_offensive = i;
+                            next_y_offensive = j;
+                            j = 7;
+                            i = 7;
+                            Console.WriteLine("this is - OFFENSIVE ");
+                            Console.WriteLine("--------------------");
+                        }
+                        else
+                        {
+                            testBoard.deleteLastMove(i, j);
+                        }
+
+                    }
+                }
+            }
+
+            //  defensive 
+
+            testBoard.setPlayerOneScore(gameBoard.getPlayerOneScore());
+            trialScore = testBoard.getPlayerOneScore();
+            oldScore = testBoard.getPlayerOneScore();
+
+
+
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    if (testBoard.isFree(i, j))
+                    {
+                        testBoard.updateBoard(i, j, 1);
+
+                        trialScore = testBoard.getPlayerOneScore();
+
+                        if (trialScore > oldScore)
+                        {
+                            next_x_defensive = i;
+                            next_y_defensive = j;
+                            j = 7;
+                            i = 7;
+                            Console.WriteLine("this is - DEFENSIVE ");
+                            Console.WriteLine("--------------------");
+                        }
+                        else
+                        {
+                            testBoard.deleteLastMove(i, j);
+                        }
+                    }
+
+                }
+            }
+
+
+
+            if (next_x_offensive == -1 && next_x_defensive != -1)
+            {
+                cell[0] = next_x_defensive;
+                cell[1] = next_y_defensive;
+            }
+            else if (next_x_offensive != -1 && next_x_defensive == -1)
+            {
+                cell[0] = next_x_offensive;
+                cell[1] = next_y_offensive;
+            }
+            else if (next_x_offensive != -1 && next_x_defensive != -1)
+            {
+                cell[0] = next_x_offensive;
+                cell[1] = next_y_offensive;
+            }
+
+            else if (next_x_offensive == -1 && next_x_defensive == -1)
+            {
+                int[] lastMove = gameBoard.getLastMove();
+
+                int lastMove_x = lastMove[0];
+                int lastMove_y = lastMove[1];
+
+
+                if (lastMove_x == -1 && lastMove_y == -1)
+                {
+                    cell = easyMove();
+
+                }
+                else
+                {
+
+
+
+
+
+
+                    for (int i = 0; i < 6; i++)
+                    {
+                        for (int j = 0; j < 6; j++)
+                        {
+
+                            if (lastMove_x == i && lastMove_y == j)
+                            {
+                                Console.WriteLine("this is -  TACKLE  @ " + i + j);
+                                Console.WriteLine("--------------------");
+                                // circle
+                                if (j <= 4 && j >= 1 && i <= 4 && i >= 1)
+                                {
+
+                                    if (gameBoard.isFree(i - 1, j))
+
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j;
+                                    }
+
+                                    else if (gameBoard.isFree(i + 1, j))
+
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j;
+                                    }
+
+                                    else if (gameBoard.isFree(i, j - 1))
+                                    {
+                                        cell[0] = i;
+                                        cell[1] = j - 1;
+                                    }
+
+                                    else if (gameBoard.isFree(i, j + 1))
+
+                                    {
+                                        cell[0] = i;
+                                        cell[1] = j + 1;
+                                    }
+
+
+                                    else if (gameBoard.isFree(i - 1, j - 1))
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j - 1;
+                                    }
+
+                                    else if (gameBoard.isFree(i + 1, j - 1))
+
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j - 1;
+                                    }
+
+                                    else if (gameBoard.isFree(i + 1, j + 1))
+
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j + 1;
+                                    }
+
+                                    else if (gameBoard.isFree(i - 1, j + 1))
+
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j + 1;
+                                    }
+                                    else
+                                    {
+                                        cell = easyMove();
+                                    }
+
+
+                                }
+                                // down right
+                                else if (i >= 0 && i <= 4 && j >= 0 && j <= 4)
+                                {
+                                    if (gameBoard.isFree(i, j + 1))
+                                    {
+                                        cell[0] = i;
+                                        cell[1] = j + 1;
+                                    }
+                                    else if (gameBoard.isFree(i + 1, j + 1))
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j + 1;
+                                    }
+                                    else if (gameBoard.isFree(i + 1, j))
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j;
+                                    }
+                                    else
+                                    {
+                                        cell = easyMove();
+                                    }
+
+                                }
+
+                                //up right
+                                else if (i <= 5 && i >= 1 && j >= 0 && j <= 4)
+                                {
+                                    if (gameBoard.isFree(i, j + 1))
+                                    {
+                                        cell[0] = i;
+                                        cell[1] = j + 1;
+                                    }
+                                    else if (gameBoard.isFree(i - 1, j + 1))
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j + 1;
+                                    }
+                                    else if (gameBoard.isFree(i - 1, j))
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j;
+                                    }
+                                    else
+                                    {
+                                        cell = easyMove();
+                                    }
+
+                                }
+                                //down left
+                                else if (j <= 5 && j >= 1 && i >= 0 && i <= 4)
+                                {
+                                    if (gameBoard.isFree(i, j - 1))
+                                    {
+                                        cell[0] = i;
+                                        cell[1] = j - 1;
+                                    }
+                                    else if (gameBoard.isFree(i + 1, j - 1))
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j - 1;
+                                    }
+                                    else if (gameBoard.isFree(i + 1, j))
+                                    {
+                                        cell[0] = i + 1;
+                                        cell[1] = j;
+                                    }
+                                    else
+                                    {
+                                        cell = easyMove();
+                                    }
+
+                                }
+
+                                // up left
+                                else if (j <= 5 && j >= 1 && i <= 5 && i >= 1)
+                                {
+                                    if (gameBoard.isFree(i, j - 1))
+                                    {
+                                        cell[0] = i;
+                                        cell[1] = j - 1;
+                                    }
+                                    else if (gameBoard.isFree(i - 1, j - 1))
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j - 1;
+                                    }
+                                    else if (gameBoard.isFree(i - 1, j))
+                                    {
+                                        cell[0] = i - 1;
+                                        cell[1] = j;
+                                    }
+                                    else
+                                    {
+                                        cell = easyMove();
+                                    }
+
+
+                                }
+
+
+
+                            }
+
+
+                        }
+
+                    }
+
+                    
+                }
+            }
+
+
+            
+         
             return cell;
         }
         #endregion
+
+
 
         #region HARD
         private int[] hardMove()
