@@ -52,6 +52,7 @@ namespace Tfour_Main
                         select s;
 
             DataGrid_ProfileInformation.ItemsSource = query.ToList();
+            DataGrid_ProfileInformation.Columns[3].Visibility = Visibility.Hidden;
         }
 
         private void button_GameHistory_Click(object sender, RoutedEventArgs e)

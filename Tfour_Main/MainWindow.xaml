@@ -5,13 +5,21 @@
         WindowStyle="None">
 
 
-    <Grid x:Name="Grid_MainWindowGrid">
+    <Grid x:Name="Grid_MainWindowGrid" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform X="5"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Grid.Background>
             <ImageBrush ImageSource="8BitBackground.bmp"/>
         </Grid.Background>
 
 
-        <Button x:Name="Button_playerOneGame"   Content="1 Player " Margin="426,0,427.6,273.4" VerticalAlignment="Bottom" Height="50" Click="Button_playerOneGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
+        <Button x:Name="Button_playerOneGame"   Content="1 Player " Margin="440,0,413.6,234" VerticalAlignment="Bottom" Height="50" Click="Button_playerOneGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
             <Button.Background>
                 <ImageBrush ImageSource="redpanel.bmp"/>
             </Button.Background>
@@ -19,18 +27,24 @@
         </Button>
 
 
-        <Button x:Name="Button_playerTwoGame" Content="2 Player" Margin="426,0,428,190" VerticalAlignment="Bottom" Height="50" Click="Button_playerTwoGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
+        <Button x:Name="Button_playerTwoGame" Content="2 Player" Margin="440,0,413.6,146" VerticalAlignment="Bottom" Height="50" Click="Button_playerTwoGame_Click" FontFamily="Consolas" FontSize="24" Foreground="white">
 
             <Button.Background>
                 <ImageBrush ImageSource="bluepanel.bmp"/>
             </Button.Background>
 
         </Button>
-        <Image x:Name="TitleIMG_bmp" Height="241" Margin="404,55,398.6,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
+        <Image x:Name="TitleIMG_bmp" Height="279" Margin="341,108,333.6,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
         <Button x:Name="Button_Exit" Content="" Margin="947.384,0,7,622.067" VerticalAlignment="Bottom" Height="55.333" Click="Button_Exit_Click" FontFamily="Consolas" FontSize="24">
             <Button.Background>
                 <ImageBrush ImageSource="ExitButton.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
+        <Label x:Name="label_Title" Content="Terrific" HorizontalAlignment="Left" Margin="82,12,0,0" VerticalAlignment="Top" Height="81" Width="366" FontSize="75" FontFamily="Consolas" FontWeight="Bold"  Foreground="RED"/>
+        <Label x:Name="label_Title_Copy" Content="Tic" HorizontalAlignment="Left" Margin="448,12,0,0" VerticalAlignment="Top" Height="81" Width="147" FontSize="75" FontFamily="Consolas" FontWeight="Bold"  Foreground="Yellow"/>
+        <Label x:Name="label_Title_Copy1" Content="Tac" HorizontalAlignment="Left" Margin="600,12,0,0" VerticalAlignment="Top" Height="81" Width="159" FontSize="75" FontFamily="Consolas" FontWeight="Bold"  Foreground="LawnGreen"/>
+        <Label x:Name="label_Title_Copy2" Content="Toe" HorizontalAlignment="Left" Margin="759,12,0,0" VerticalAlignment="Top" Height="81" Width="163" FontSize="75" FontFamily="Consolas" FontWeight="Bold"  Foreground="Blue"/>
+        <Image x:Name="image_mario" HorizontalAlignment="Left" Height="81" Margin="472,161,0,0" VerticalAlignment="Top" Width="112" Source="mariopic.png" Stretch="Fill" Opacity="0.75"/>
+
     </Grid>
 </Window>

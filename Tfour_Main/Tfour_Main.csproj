@@ -273,6 +273,7 @@
     <Resource Include="BackButton.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="mariopic.PNG" />
     <Content Include="mariotheme.mp3" />
     <Resource Include="musicbutton.png" />
   </ItemGroup>
