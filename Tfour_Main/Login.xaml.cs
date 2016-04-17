@@ -20,9 +20,9 @@ namespace Tfour_Main
     public partial class Login : Window
     {
         // Sishir's Server
-        DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
+        // DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
         // Gabriel's Server
-        //private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString1);
+        private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.TfourConnectionString1);
         private Window prevWindow;
 
         private string playerOneUserID;

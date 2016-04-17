@@ -46,11 +46,6 @@ namespace Tfour_Main
 
         }
 
-        private void Button_Game_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Button_Click_PayerOneLogin(object sender, RoutedEventArgs e)
         {
 
