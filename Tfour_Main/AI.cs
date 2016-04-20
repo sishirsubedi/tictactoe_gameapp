@@ -256,6 +256,10 @@ namespace Tfour_Main
                                         }
                                         
                                     }
+                                    else
+                                    {
+                                        cell = easyMove();
+                                    }
 
                                     if (!cellChanged)
                                     {
