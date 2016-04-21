@@ -20,17 +20,19 @@ namespace Tfour_Main
     public partial class GameOver : Window
     {
 
-        private Window prevWindow;
+        private Window gameWindow;
+        private Window mainWindow;
         private string playerOneId;
         private string playerTwoId;
         private int gameMode;
 
-        public GameOver(Window gameWindow, string gwinner, string p1id, string p2id, int gmode)
+        public GameOver(Window mainwindow, Window gamewindow, string gwinner, string p1id, string p2id, int gmode)
         {
             InitializeComponent();
 
             Label_WinnerName.Content = gwinner;
-            prevWindow = gameWindow;
+            mainWindow = mainwindow;
+            gameWindow = gamewindow;
             playerOneId = p1id;
             playerTwoId = p2id;
             gameMode = gmode;
@@ -40,11 +42,7 @@ namespace Tfour_Main
 
         private void button_Replay_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-
-
-
-            GameOptions go = new GameOptions(prevWindow, playerOneId, playerTwoId, gameMode);
+            GameOptions go = new GameOptions(mainWindow, playerOneId, playerTwoId, gameMode);
             this.Hide();
             go.Show();
 
@@ -57,7 +55,7 @@ namespace Tfour_Main
 
         private void button_Home_Click(object sender, RoutedEventArgs e)
         {
-            prevWindow.Hide();
+            
             MainWindow newwindow = new MainWindow();
             newwindow.Show();
             this.Hide();
@@ -65,12 +63,18 @@ namespace Tfour_Main
 
         private void button_profile_Click(object sender, RoutedEventArgs e)
         {
-            prevWindow.Hide();
+           
 
             MainWindow newwindow = new MainWindow();
 
             Profile profile = new Profile(newwindow, playerOneId);
             profile.Show();
+            this.Hide();
+        }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            gameWindow.Show();
             this.Hide();
         }
     }

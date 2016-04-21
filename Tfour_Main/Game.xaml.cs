@@ -319,7 +319,7 @@ namespace Tfour_Main
 
             MainWindow newwindow = new MainWindow();
 
-            GameOver gmover = new GameOver(newwindow, gameWinner, playerOneId, playerTwoId, gameMode);
+            GameOver gmover = new GameOver(newwindow,this, gameWinner, playerOneId, playerTwoId, gameMode);
             updateHistory();
             this.Hide();
             gmover.Show();
