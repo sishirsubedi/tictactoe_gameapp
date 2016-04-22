@@ -24,7 +24,7 @@
         <PasswordBox x:Name="PasswordBox_LoginOne" HorizontalAlignment="Left" Margin="120,0,0,322.641" Width="170" Height="25" VerticalAlignment="Bottom" d:LayoutOverrides="Height" FontFamily="Consolas"/>
         <Button x:Name="Button_GuestLogin" Content="Login as Guest" Margin="85,0,0,208.19" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="205" Height="30" FontFamily="Consolas" FontSize="24" Foreground="White" Click="Button_GuestLogin_Click"/>
         <TextBlock x:Name="textBlock_PlayerOne" HorizontalAlignment="Left" Height="40" Margin="62.4,80,0,0" TextWrapping="Wrap" Text="PLAYER ONE" VerticalAlignment="Top" Width="260.2" FontFamily="Consolas" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="White" RenderTransformOrigin="0.549,0.48"/>
-        <Label x:Name="Label_LoggedInAs_Player1" Content="Logged in as:" HorizontalAlignment="Left" Margin="70,120,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="20" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="Label_LoggedInAs_Player1" Content="Logged in as:" HorizontalAlignment="Left" Margin="62,122,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="20" FontWeight="Bold" Foreground="White"/>
         <Label x:Name="Label_PLAYER1_LOGUSER" Content="USERNAME" HorizontalAlignment="Left" Margin="62.4,155.5,0,0" Width="260.2" Height="70" FontFamily="Consolas" FontSize="35" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="White"/>
         <Button x:Name="Button_Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="56" Click="Button_Back_Click" Margin="3.615,0,0,653.023" RenderTransformOrigin="0.5,0.5" Height="34" BorderBrush="{x:Null}">
             <Button.RenderTransform>
@@ -53,7 +53,7 @@
             </Button.Background>
         </Button>
         <Button x:Name="button_Profile" Content="View Profile" HorizontalAlignment="Left" Margin="430,226,0,0" VerticalAlignment="Top" Width="196" Height="36" FontSize="24" FontFamily="Consolas" FontWeight="SemiBold" Visibility="Hidden" Click="button_Profile_Click"/>
-        <TextBlock x:Name="textBlock_PlayerTwo" HorizontalAlignment="Left" Height="40" Margin="721,111,0,0" TextWrapping="Wrap" Text="PLAYER ONE" VerticalAlignment="Top" Width="261" FontFamily="Consolas" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="White" RenderTransformOrigin="0.549,0.48"/>
+        <TextBlock x:Name="textBlock_PlayerTwo" HorizontalAlignment="Left" Height="40" Margin="727,84,0,0" TextWrapping="Wrap" Text="COMPUTER" VerticalAlignment="Top" Width="261" FontFamily="Consolas" FontSize="30" FontWeight="Bold" TextAlignment="Center" Foreground="White" RenderTransformOrigin="0.549,0.48"/>
         <Grid HorizontalAlignment="Left" Height="100" Margin="430,534,0,0" VerticalAlignment="Top" Width="100"/>
         <Grid x:Name="Grid_ComputerImage" HorizontalAlignment="Left" Height="218" Margin="771,197,0,0" VerticalAlignment="Top" Width="179">
 
