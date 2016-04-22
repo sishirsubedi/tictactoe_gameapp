@@ -75,7 +75,9 @@ namespace Tfour_Main
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             gameWindow.Show();
+            gameWindow.IsEnabled = true;
             this.Hide();
+
         }
     }
 }

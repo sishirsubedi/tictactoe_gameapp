@@ -317,11 +317,14 @@ namespace Tfour_Main
         private void isGameOver()
         {
 
+           
+
+
             MainWindow newwindow = new MainWindow();
 
             GameOver gmover = new GameOver(newwindow,this, gameWinner, playerOneId, playerTwoId, gameMode);
             updateHistory();
-            this.Hide();
+            this.IsEnabled=false;
             gmover.Show();
 
 
