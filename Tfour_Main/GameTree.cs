@@ -1,18 +1,19 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tfour_Main
+namespace AIModule
 {
     class GameTree
     {
-        const int OPONENT = 1, COMPUTER = 2, INFINITY = 1000000000;
+        const int OPONENT = 1, COMPUTER = 2, INFINITY = 1000000000, DEPTH_LIMIT = 2;
         GameNode root;
         class GameNode
         {
             public int EvaluationScore { get; private set; }
+            public int CurrentPlayer { get; private set; }
             /************************************************************************
             * Move is an array (x, y) representing the Board entry that was changed *
             *      to get from the parent gameState to the present GameNode         *
@@ -22,11 +23,12 @@ namespace Tfour_Main
             * board is the state of the board at this node *
             ***********************************************/
             public Board GameBoard { get; private set; }
+            public int Depth { get; private set; }
             /**********************************************************
             * The children of a node are all the possible GameStates  *
             *      the currentPlayer's valid moves can lead too       *
             **********************************************************/
-            public List<GameNode> Children { get; set; }
+            public List<GameNode> Children { get; private set; }
             public bool GameOver
             {
                 get
@@ -35,30 +37,56 @@ namespace Tfour_Main
                     else return false;
                 }
             }
-            int Evaluation()
+            /*************************************************************************************
+             * GetChildren returns the list all the possible moves that can follow this GameNode *
+             ************************************************************************************/
+            void GetChildren()
             {
-                int oponentScore = GameBoard.getPlayerOneScore();
-                int computerScore = GameBoard.getPlayerTwoScore();
-                if (GameOver)
+                int[] move = null;
+                Board newBoard = null;
+                GameNode newGameNode = null;
+                if (!GameOver && Depth < DEPTH_LIMIT)
                 {
-                    // Computer won
-                    if (computerScore > oponentScore) return INFINITY;
-                    // Opponent won
-                    if (oponentScore > computerScore) return -INFINITY;
+                    for (int i = 0; i < 6; i++)
+                    {
+                        for (int j = 0; j < 6; j++)
+                        {
+                            /******************************************************
+                            *     If the board entry (i, j) is free, then the     *
+                            *   current player can place their token in that cell *
+                            ******************************************************/
+                            if (GameBoard.isFree(i, j))
+                            {
+                                move = new int[2] { i, j };
+                                newBoard = new Board(GameBoard);
+                                newBoard.updateBoard(i, j, CurrentPlayer);
+
+                                if (CurrentPlayer == COMPUTER)
+                                    newGameNode = new GameNode(newBoard, Depth + 1, OPONENT, move);
+                                else if (CurrentPlayer == OPONENT)
+                                    newGameNode = new GameNode(newBoard, Depth + 1, COMPUTER, move);
+
+                                Children.Add(newGameNode);
+                            }
+                        }
+                    }
                 }
-                return computerScore - oponentScore;
             }
             /***********************
             * GameNode Constructor *
             ***********************/
-            public GameNode(Board GameBoard, int[] Move = null)
+            public GameNode(Board GameBoard, int Depth, int CurrentPlayer, int[] Move = null)
             {
                 if (GameBoard == null)
                     throw new ArgumentNullException("Failed to find an instance of Board class to initialize the gameState.");
 
+                Children = new List<GameNode>();
+
                 this.GameBoard = GameBoard;
                 this.Move = Move;
-                EvaluationScore = Evaluation();
+                this.CurrentPlayer = CurrentPlayer;
+
+                GetChildren();
             }
         }
         /***********************
@@ -71,52 +99,30 @@ namespace Tfour_Main
             /*********************************
             * The computer always goes first *
             *********************************/
-            root = new GameNode(initialBoardState);
-            root.Children = GetChildren(root);
+            root = new GameNode(initialBoardState, 0, COMPUTER);
         }
-        public int[] Decision()
-        {
+        //public int[] Decision()
+        //{
             /*******************************************************************************
             * The children of the root node is the set of moves the computer can pick from *
             *******************************************************************************/
-            int maximumEvaluation = root.Children.Max(gameNode => gameNode.EvaluationScore);
-            GameNode goodGameNode = root.Children.Find(gameNode => gameNode.EvaluationScore == maximumEvaluation);
-            return goodGameNode.Move;
-        }
-        /************************************************************************************
-        * GetChildren returns the list all the possible moves that can follow this GameNode *
-        ************************************************************************************/
-        List<GameNode> GetChildren(GameNode root)
-        {
-            int[] move = null;
-            Board newBoard = null;
-            GameNode newGameNode = null;
-            List<GameNode> children = null;
-            if (!root.GameOver)
-            {
-                children = new List<GameNode>();
-                for (int i = 0; i < 6; i++)
-                {
-                    for (int j = 0; j < 6; j++)
-                    {
-                        /******************************************************
-                        *     If the board entry (i, j) is free, then the     *
-                        *   current player can place their token in that cell *
-                        ******************************************************/
-                        if (root.GameBoard.isFree(i, j))
-                        {
-                            move = new int[2] { i, j };
-                            newBoard = new Board(root.GameBoard);
-                            newBoard.updateBoard(i, j, COMPUTER);
+          //  int maximumEvaluation = root.Children.Max(gameNode => gameNode.EvaluationScore);
+           // GameNode goodGameNode = root.Children.Find(gameNode => gameNode.EvaluationScore == maximumEvaluation);
+           // return goodGameNode.Move;
+        //}
 
-                            newGameNode = new GameNode(newBoard, move);
-
-                            children.Add(newGameNode);
-                        }
-                    }
-                }
-            }
-            return children;
-        }
+        //int Evaluation()
+        //{
+          //  int oponentScore = GameBoard.getPlayerOneScore();
+           // int computerScore = GameBoard.getPlayerTwoScore();
+            //if (GameOver)
+            //{
+             //   // Computer won
+              //  if (computerScore > oponentScore) return INFINITY;
+               // // Opponent won
+                //if (oponentScore > computerScore) return -INFINITY;
+           // }
+            //return computerScore - oponentScore;
+       // }
     }
 }
