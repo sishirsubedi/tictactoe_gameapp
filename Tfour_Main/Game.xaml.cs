@@ -317,14 +317,11 @@ namespace Tfour_Main
         private void isGameOver()
         {
 
-           
-
-
             MainWindow newwindow = new MainWindow();
 
             GameOver gmover = new GameOver(newwindow,this, gameWinner, playerOneId, playerTwoId, gameMode);
             updateHistory();
-            this.IsEnabled=false;
+            this.Hide();
             gmover.Show();
 
 
@@ -489,6 +486,11 @@ namespace Tfour_Main
                 soundON = false;
 
             }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
         }
     }
 }
