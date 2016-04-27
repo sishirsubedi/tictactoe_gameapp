@@ -10,31 +10,58 @@ namespace Tfour_Main
     {
         #region BOARD_NETWORK_FIELDS
         const int NUM_ROW = 6, NUM_COL = 6;
-        const int OPONENT = 1, COMPUTER = 2, EMPTY = 0;
+        /*****************************************************************
+        * The the "board network" (or graph) is  a representation of the *
+        *  adjacency relationships between the cells on the game board   *
+        *****************************************************************/
         BoardNode[,] boardNetwork;
-        const int upL = 0, up = 1, upR = 2;
-        const int L = 3, R = 4;
-        const int downL = 5, down = 6, downR = 7;
+        const int OPONENT = 1, COMPUTER = 2, EMPTY = 0; // Token enumerarion
+        const int upL = 0, up = 1, upR = 2; // Direction Enumeration
+        const int L = 3, R = 4; // Direction Enumeration
+        const int downL = 5, down = 6, downR = 7; // Direction Enumeration
+        /*************************************************************************
+        * Possible moves is a list of all empty board nodes in the board network *
+        *************************************************************************/
         List<BoardNode> possibleMoves;
         #endregion
 
+        #region NESTED_BOARD_NODE_CLASS
+        /*********************************************************************
+        *    The board node class represents a cell in the game board        *
+        *                                                                    *
+        *      A node is either empty or it contains a player token          *
+        *                                                                    *
+        * A node has at most 8 neighbors, these neighboring nodes are stored *
+        * in an array according to the Direction Enumeration outlined above  *
+        *                                                                    *
+        *  If a node does not have a neighbor in a given direction then the  *
+        *            correstponding array entry contains null                *
+        *                                                                    *
+        *                  A move node its an empty node                     *
+        *                                                                    *
+        *   The score of a node is used to determine the quality of a move   *
+        *         node. The higher a move node's score is the better         *
+        *********************************************************************/
         class BoardNode
         {
-            public string ID;
             public int token, row, col;
             public double score;
             public BoardNode[] neighbors;
 
-            public BoardNode(int token, string ID, int row, int col)
+            public BoardNode(int token, int row, int col)
             {
                 this.token = token;
-                this.ID = ID;
                 this.row = row;
                 this.col = col;
                 score = 0;
                 neighbors = new BoardNode[8];
+                for (int n = 0; n < neighbors.Length; n++)
+                {
+                    neighbors[n] = null;
+                }
             }
         }
+        #endregion
 
         public AIBoard(Board gameBoard)
         {
@@ -45,6 +72,7 @@ namespace Tfour_Main
             GeneratePossibleMoves();
         }
 
+        #region DECISION_AND_SCORING_PROCCESS
         public int[] Decision()
         {
             if (BoardIsEmpty())
@@ -67,10 +95,10 @@ namespace Tfour_Main
         {
             CountAndAssignNodeScores();
             BoardNode optimumMove = FindHighestScoringNode();
-            return new int[2] { optimumMove.row, optimumMove.col};
+            return new int[2] { optimumMove.row, optimumMove.col };
         }
 
-        private BoardNode FindHighestScoringNode()
+        BoardNode FindHighestScoringNode()
         {
             BoardNode highestNode = possibleMoves.First();
             foreach (var moveNode in possibleMoves)
@@ -111,7 +139,9 @@ namespace Tfour_Main
                 AssignDefensivePoints(moveNode, count);
 
                 count = CountOpponentTokensVertical(moveNode);
-                AssignDefensivePoints(moveNode, count); 
+                AssignDefensivePoints(moveNode, count);
+
+                AssignTrapBlockingPoints(moveNode);
             }
         }
 
@@ -147,7 +177,7 @@ namespace Tfour_Main
             }
             else if (count == 2)
             {
-                moveNode.score += 0.10;
+                moveNode.score += 0.25;
             }
             else if (count == 3)
             {
@@ -163,6 +193,26 @@ namespace Tfour_Main
             }
         }
 
+        void AssignTrapBlockingPoints(BoardNode moveNode)
+        {
+            double trapBlockingPoints = 0;
+            int count;
+            bool isTrap;
+            for (int direction = 0; direction < 8; direction++)
+            {
+                count = 0;
+                isTrap = false;
+                BlocksTrap(moveNode.neighbors[direction], direction, ref count, ref isTrap);
+                if (isTrap)
+                {
+                    trapBlockingPoints += 0.25;
+                }
+            }
+            moveNode.score += trapBlockingPoints;
+        }
+        #endregion
+
+        #region COUNT_COMPUTER_TOKENS
         int CountComputerTokensDiagonalOne(BoardNode moveNode)
         {
             int count = 0;
@@ -202,7 +252,9 @@ namespace Tfour_Main
 
             return count;
         }
+        #endregion
 
+        #region COUNT_OPONENT_TOKENS
         int CountOpponentTokensDiagonalOne(BoardNode moveNode)
         {
             int count = 0;
@@ -242,7 +294,9 @@ namespace Tfour_Main
 
             return count;
         }
+        #endregion
 
+        #region UTILITY_FUNCTIONS
         void TraverseAndCountTokens(BoardNode curNode, int direction, int TOKEN, ref int count)
         {
             if (curNode == null)
@@ -259,19 +313,30 @@ namespace Tfour_Main
             return;
         }
 
-        bool BoardIsEmpty()
+        void BlocksTrap(BoardNode curNode, int direction, ref int count, ref bool isTrap)
         {
-            for (int r = 0; r < NUM_ROW; r++)
+            if (curNode == null)
             {
-                for (int c = 0; c < NUM_COL; c++)
+                return;
+            }
+
+            if (curNode.token == COMPUTER)
+            {
+                count++;
+                if (curNode.neighbors[direction] != null)
                 {
-                    if (boardNetwork[r, c].token != 0)
+                    if (count == 2 && curNode.neighbors[direction].token == EMPTY)
                     {
-                        return false;
+                        isTrap = true;
+                        return;
                     }
                 }
+                BlocksTrap(curNode.neighbors[direction], direction, ref count, ref isTrap);
             }
-            return true;
+            else
+            {
+                return;
+            }
         }
 
         void GeneratePossibleMoves()
@@ -288,6 +353,9 @@ namespace Tfour_Main
             }
         }
 
+        /********************************************************************************
+        * Creates board network nodes reflecting the gameBoard passed in as a parameter *
+        ********************************************************************************/
         void CreateBoardNodes(Board gameBoard)
         {
             int[,] boardMatrix = gameBoard.getGameMatrix();
@@ -295,37 +363,39 @@ namespace Tfour_Main
             {
                 for (int c = 0; c < NUM_COL; c++)
                 {
-                    boardNetwork[r, c] = new BoardNode(boardMatrix[r, c], String.Format("({0}, {1})", r, c), r, c);
+                    boardNetwork[r, c] = new BoardNode(boardMatrix[r, c], r, c);
                 }
             }
         }
 
-        /**
-         * Connects the nodes on the grid to their neighbors.
-         */
+        /*************************************************************
+        * Connects the nodes on the board network to their neighbors *
+        *************************************************************/
         void ConnectBoardNodes()
         {
             for (int r = 0; r < NUM_ROW; r++)
             {
                 for (int c = 0; c < NUM_COL; c++)
                 {
-                    /**
-                     * If the node it's not in the first row then it has a neighbor above.
-                     */
+                    /*********************************************************************
+                    * If the node it's not in the first row then it has a neighbor above *
+                    *********************************************************************/
                     if (r > 0) boardNetwork[r, c].neighbors[up] = boardNetwork[r - 1, c];
-                    /**
-                     * If the node it's not in the last row then it has a neighbor below.
-                     */
+                    /********************************************************************
+                    * If the node it's not in the last row then it has a neighbor below *
+                    ********************************************************************/
                     if (r < NUM_ROW - 1) boardNetwork[r, c].neighbors[down] = boardNetwork[r + 1, c];
-                    /**
-                     * If the node it's not in the leftmost column then it has a neighbor to the left.
-                     */
+                    /*********************************************************************************
+                    * If the node it's not in the leftmost column then it has a neighbor to the left *
+                    *********************************************************************************/
                     if (c > 0) boardNetwork[r, c].neighbors[L] = boardNetwork[r, c - 1];
-                    /**
-                     * If the node it's not in the rightmost column then it has a neighbor to the right.
-                     */
+                    /***********************************************************************************
+                    * If the node it's not in the rightmost column then it has a neighbor to the right *
+                    ***********************************************************************************/
                     if (c < NUM_COL - 1) boardNetwork[r, c].neighbors[R] = boardNetwork[r, c + 1];
-
+                    /*************************
+                    * Connect the diagonal's *
+                    *************************/
                     if ((r > 0 && r < NUM_ROW - 1) && (c > 0 && c < NUM_COL - 1))
                     {
                         boardNetwork[r, c].neighbors[upL] = boardNetwork[r - 1, c - 1];
@@ -359,10 +429,32 @@ namespace Tfour_Main
                     }
                 }
             }
+            /***************************************
+            * Connect the diagonals on the corners *
+            ***************************************/
             boardNetwork[0, 0].neighbors[downR] = boardNetwork[1, 1];
             boardNetwork[0, 5].neighbors[downL] = boardNetwork[1, 4];
             boardNetwork[5, 0].neighbors[upR] = boardNetwork[4, 1];
             boardNetwork[5, 5].neighbors[downL] = boardNetwork[4, 4];
         }
+
+        /**************************************
+        * Returns true if every node is empty *
+        **************************************/
+        bool BoardIsEmpty()
+        {
+            for (int r = 0; r < NUM_ROW; r++)
+            {
+                for (int c = 0; c < NUM_COL; c++)
+                {
+                    if (boardNetwork[r, c].token != 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        #endregion
     }
 }
