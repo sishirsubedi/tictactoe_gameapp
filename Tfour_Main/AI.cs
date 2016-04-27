@@ -450,8 +450,8 @@ namespace Tfour_Main
         #region HARD
         private int[] hardMove()
         {
-            GameTree gameTree = new GameTree(gameBoard);
-            return gameTree.Decision();
+            AIBoard aiBoard = new AIBoard(gameBoard);
+            return aiBoard.Decision();
         }
         #endregion
     }
