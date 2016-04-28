@@ -18,6 +18,11 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for ForgotCredentials.xaml
     /// </summary>
+    
+    // Forgot Credentials window is used to retrieve a users username or password
+            // Email must be provided
+            // If user request for their username - it will be displayed on button click
+            // If user request for their password - it will be sent to their email
     public partial class ForgotCredentials : Window
     {
 
@@ -29,7 +34,8 @@ namespace Tfour_Main
             InitializeComponent();
             prevWindow = window;
         }
-
+        
+        // Button used to retrieve a users username only if email provided matches the email in the database
         private void Button_RetriveUserName_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -74,6 +80,7 @@ namespace Tfour_Main
             }
         }
 
+        // Button used to retrieve a password only if the email matched the one provided in the database
         private void Button_ResetPassword_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -137,7 +144,7 @@ namespace Tfour_Main
         }
 
      
-
+        // Button will close down this window
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
