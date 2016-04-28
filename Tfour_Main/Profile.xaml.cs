@@ -17,6 +17,10 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for Profile.xaml
     /// </summary>
+    
+    // Profile window is used to very a Players information
+        //  Profile displays - Name, username, and email
+        // Game History displays - player, opponent, scores for each, time and date game was played
     public partial class Profile : Window
     {
 
@@ -25,6 +29,7 @@ namespace Tfour_Main
         String userID;
         private Window prevWindow;
 
+        // Profile window is loaded with the username ID that was given
         public Profile(Window window, String id)
         {
             InitializeComponent();
