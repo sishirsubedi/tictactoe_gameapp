@@ -17,6 +17,8 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
+    
+    // This Login window is used for a One Player game VS an AI
     public partial class Login : Window
     {
         // Sishir's Server
@@ -32,7 +34,7 @@ namespace Tfour_Main
 
 
 
-
+        // This function initializes the initial display of the window
         public Login(Window window)
         {
             InitializeComponent();
@@ -46,6 +48,7 @@ namespace Tfour_Main
 
         }
 
+        // This button retrieves the username and password in the textbox and verifies the information is correct in the database
         private void Button_playerOneLogin_Click(object sender, RoutedEventArgs e)
         {
 
@@ -106,26 +109,31 @@ namespace Tfour_Main
             }
         }
 
+        // This button is used to open the Forgot Credentials window
         private void Button_Forgot_Click(object sender, RoutedEventArgs e)
         {
             ForgotCredentials forgot = new ForgotCredentials(this);
             forgot.Show();
         }
 
+        // This button is used to open the Register window
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
             Register register = new Register(this);
             register.Show();
         }
-
-     
-
+        
+        
+        // This button checks if player has logged in with a registered user or if it is a guest.
+        // If a player is logged in as a guest or registered user then open the Game options window.  
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
 
             if (playerOneValid)
             {
 
+                // GameOptions window is opened with 4 arguments
+                // 1. current window, 2. Player Ones ID, 3. Player Twos ID, 4. 1 for One player game / 2 for Two players
                 GameOptions go = new GameOptions (this, playerOneUserID, playerTwoUserID, 1);
                 this.Hide();
                 go.Show();
@@ -137,21 +145,21 @@ namespace Tfour_Main
 
         }
 
+        // Button to return to previous window ( The Main Window )
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
             prevWindow.Show();
         }
 
+        // Button to exit the application
         private void Button_Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
       
-
-
-
+        // Button for a player to sign in as a guest
         private void Button_GuestLogin_Click(object sender, RoutedEventArgs e)
         {
             playerOneUserID = "Guest";
@@ -174,8 +182,11 @@ namespace Tfour_Main
             Button_Forgot.Visibility = Visibility.Hidden;
         }
 
+        // Button to open the Profile window
         private void button_Profile_Click(object sender, RoutedEventArgs e)
         {
+            // Profile is open with two arguments
+            // 1. current window, 2. Player One user ID
             Profile profile = new Profile(this, playerOneUserID);
             profile.Show();
             this.Hide();
