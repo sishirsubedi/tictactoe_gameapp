@@ -50,9 +50,9 @@
         <Image x:Name="greenpanel_bmp" HorizontalAlignment="Left" Margin="28,218,0,276" Source="greenpanel.bmp" Stretch="Fill" Width="175" Height="200" d:IsLocked="False"/>
         <Image x:Name="bluepanel_bmp" HorizontalAlignment="Right" Margin="0,235,38.6,293" Source="bluepanel.bmp" Stretch="Fill" Width="175" Height="200" d:IsLocked="False"/>
 
-        <Label x:Name="Label_PlayerOneName" Content="Player One" HorizontalAlignment="Left" Margin="64,235,0,0" VerticalAlignment="Top" Height="31" Width="116" FontFamily="Consolas" FontSize="18" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Label_PlayerOneName" Content="Player One" HorizontalAlignment="Left" Margin="58,244,0,0" VerticalAlignment="Top" Height="31" Width="116" FontFamily="Consolas" FontSize="18" Foreground="White" HorizontalContentAlignment="Center"/>
         <Label x:Name="Label_PlayerOneScore" Content="0" HorizontalAlignment="Center" Margin="64,0,888.6,312" RenderTransformOrigin="0.375,-0.66" VerticalAlignment="Bottom" Foreground="White" FontFamily="Consolas" FontSize="60" Height="73" Width="105" HorizontalContentAlignment="Center"/>
-        <Label x:Name="Label_PlayerTwoName" Content="Player Two" HorizontalAlignment="Left" Margin="875,0,0,459" VerticalAlignment="Bottom" Height="31" Width="116" FontSize="18" FontFamily="Consolas" Foreground="White" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Label_PlayerTwoName" Content="Player Two" HorizontalAlignment="Left" Margin="875,0,0,453" VerticalAlignment="Bottom" Height="31" Width="116" FontSize="18" FontFamily="Consolas" Foreground="White" HorizontalContentAlignment="Center"/>
         <Label x:Name="Label_PlayerTwoScore" Content="0" HorizontalAlignment="Center" Margin="889,0,71.6,312" RenderTransformOrigin="0.375,-0.66" FontSize="60" Width="97" HorizontalContentAlignment="Center" FontFamily="Consolas" Foreground="White" Height="73" VerticalAlignment="Bottom"/>
 
         <Image x:Name="player2Image" HorizontalAlignment="Left" Height="68" Margin="905,275,0,0" VerticalAlignment="Top" Width="67"/>
@@ -84,51 +84,51 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Button x:Name="Button_1x1" Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="0" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="1" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="2" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="3" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="4" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="5" Click="Cell_Click"></Button>
+            <Button x:Name="Button_1x1" Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="0" Click="Cell_Click" Width="74" Height="67"> </Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="1" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="2" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="3" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="4" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="0" Grid.Row="5" Click="Cell_Click" Width="74" Height="67"></Button>
 
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="0" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="1" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="2" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="3" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="4" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="5" Click="Cell_Click"></Button>
-
-
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="0" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="1" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="2" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="3" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="4" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="5" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="0" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="1" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="2" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="3" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="4" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="1" Grid.Row="5" Click="Cell_Click" Width="74" Height="67"></Button>
 
 
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="0" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="1" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="2" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="3" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="4" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="5" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="0" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="1" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="2" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="3" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="4" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="2" Grid.Row="5" Click="Cell_Click" Width="74" Height="67"></Button>
 
 
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="0" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="1" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="2" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="3" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="4" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="5" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="0" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="1" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="2" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="3" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="4" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="3" Grid.Row="5" Click="Cell_Click" Width="74" Height="67"></Button>
 
 
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="0" Click="Cell_Click" ></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="1" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="2" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="3" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="4" Click="Cell_Click"></Button>
-            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="5" Click="Cell_Click"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="0" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="1" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="2" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="3" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="4" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="4" Grid.Row="5" Click="Cell_Click" Width="74" Height="67"></Button>
+
+
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="0" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="1" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="2" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="3" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="4" Click="Cell_Click" Width="74" Height="67"></Button>
+            <Button Style="{StaticResource MyButtonStyle}" Grid.Column="5" Grid.Row="5" Click="Cell_Click" Width="74" Height="67"></Button>
 
         </Grid>
 

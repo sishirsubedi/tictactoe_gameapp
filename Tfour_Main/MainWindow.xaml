@@ -45,11 +45,11 @@
         <Label x:Name="label_Title_Copy1" Content="Tac" HorizontalAlignment="Left" Margin="600,12,0,0" VerticalAlignment="Top" Height="81" Width="159" FontSize="75" FontFamily="Consolas" FontWeight="Bold"  Foreground="LawnGreen"/>
         <Label x:Name="label_Title_Copy2" Content="Toe" HorizontalAlignment="Left" Margin="759,12,0,0" VerticalAlignment="Top" Height="81" Width="163" FontSize="75" FontFamily="Consolas" FontWeight="Bold"  Foreground="Blue"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="125" Margin="95,407,0,0" VerticalAlignment="Top" Width="113" Source="purplestone.png"/>
-        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="100" Margin="169,482,0,0" VerticalAlignment="Top" Width="100" Source="OrangeStone.png"/>
-        <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="100" Margin="39,482,0,0" VerticalAlignment="Top" Width="100" Source="redStone.png"/>
-        <Image x:Name="image_Copy2" HorizontalAlignment="Left" Height="125" Margin="819,399,0,0" VerticalAlignment="Top" Width="113" Source="greenStone.png"/>
-        <Image x:Name="image_Copy3" HorizontalAlignment="Left" Height="94" Margin="897,488,0,0" VerticalAlignment="Top" Width="90" Source="blueStone.png"/>
-        <Image x:Name="image_Copy4" HorizontalAlignment="Left" Height="100" Margin="759,482,0,0" VerticalAlignment="Top" Width="100" Source="yellowStone.png"/>
+        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="100" Margin="169,498,0,0" VerticalAlignment="Top" Width="100" Source="OrangeStone.png"/>
+        <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="100" Margin="39,498,0,0" VerticalAlignment="Top" Width="100" Source="redStone.png"/>
+        <Image x:Name="image_Copy2" HorizontalAlignment="Left" Height="125" Margin="825,425,0,0" VerticalAlignment="Top" Width="113" Source="greenStone.png"/>
+        <Image x:Name="image_Copy3" HorizontalAlignment="Left" Height="94" Margin="897,509,0,0" VerticalAlignment="Top" Width="90" Source="blueStone.png"/>
+        <Image x:Name="image_Copy4" HorizontalAlignment="Left" Height="100" Margin="759,500,0,0" VerticalAlignment="Top" Width="100" Source="yellowStone.png"/>
 
     </Grid>
 </Window>

@@ -339,6 +339,10 @@ namespace Tfour_Main
 
             DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
 
+
+            // save player one information in the database
+
+
             PlayerHistory newPH = new PlayerHistory();
 
             newPH.PlayerOne = gamePlayers[0].getPlayerID();
@@ -365,6 +369,40 @@ namespace Tfour_Main
             db.PlayerHistories.InsertOnSubmit(newPH);
 
             db.SubmitChanges();
+
+
+
+            // save player two ddinformation in the database
+            PlayerHistory newPH2 = new PlayerHistory();
+
+            newPH2.PlayerOne = gamePlayers[1].getPlayerID();
+            newPH2.PlayerOneScore = gamePlayers[1].getScore();
+            newPH2.Opponet = gamePlayers[0].getPlayerID();
+            newPH2.OpponetScore = gamePlayers[0].getScore();
+            newPH2.GameDate = DateTime.Now;
+
+            if (gamePlayers[1].isWinner())
+            {
+                newPH2.Winner = gamePlayers[1].getPlayerID();
+
+            }
+            else if (gamePlayers[0].isWinner())
+            {
+                newPH2.Winner = gamePlayers[0].getPlayerID();
+            }
+            else
+            {
+                newPH2.Winner = "Draw";
+            }
+
+
+            db.PlayerHistories.InsertOnSubmit(newPH2);
+
+            db.SubmitChanges();
+
+
+
+
         }
        
 

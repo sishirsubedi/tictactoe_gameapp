@@ -10,16 +10,16 @@
         <Grid.Background>
             <ImageBrush ImageSource="8BitBackground.bmp"/>
         </Grid.Background>
-        <Label x:Name="Title" Content="Game Over" HorizontalAlignment="Left" Margin="194,0,0,0" VerticalAlignment="Top" FontSize="40" FontFamily="Consolas" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="Title" Content="Game Over" HorizontalAlignment="Left" Margin="194,5.744,0,0" VerticalAlignment="Top" FontSize="40" FontFamily="Consolas" FontWeight="Bold" Foreground="White"/>
 
-        <Image x:Name="TitleIMG_bmp" Height="232" Margin="88,145,83,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
-        <Button x:Name="button_Replay" Content="REPLAY" HorizontalAlignment="Left" Margin="96,261,0,0" VerticalAlignment="Top" Width="196" Height="33" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="#FF73FF23" Foreground="Black"  Click="button_Replay_Click"/>
-        <Button x:Name="button_Quit" Content="QUIT" HorizontalAlignment="Left" Margin="313,147,0,0" VerticalAlignment="Top" Width="194" Height="35" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="Yellow"  Foreground="BLACK"  Click="button_Quit_Click"/>
+        <Image x:Name="TitleIMG_bmp" Height="351.713" Margin="78,134.837,93,0" Source="TitleIMG.bmp" Stretch="Fill" VerticalAlignment="Top"/>
+        <Button x:Name="button_Replay" Content="REPLAY" HorizontalAlignment="Left" Margin="96,0,0,244.227" VerticalAlignment="Bottom" Width="178" Height="33" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="#FF73FF23" Foreground="Black"  Click="button_Replay_Click"/>
+        <Button x:Name="button_Quit" Content="QUIT" HorizontalAlignment="Left" Margin="313,147,0,0" VerticalAlignment="Top" Width="178.677" Height="35" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="Yellow"  Foreground="BLACK"  Click="button_Quit_Click"/>
 
         <Label x:Name="Label_Winner" Content="WINNER:" HorizontalAlignment="Left" Margin="78,73,0,0" VerticalAlignment="Top" FontSize="40" FontFamily="Consolas" FontWeight="Bold"  Foreground="RED" Width="196"/>
         <Label x:Name="Label_WinnerName" Content="" HorizontalAlignment="Left" Margin="239,73,0,0" VerticalAlignment="Top" FontSize="40" FontFamily="Consolas" FontWeight="Bold"  Foreground="RED" Width="286"/>
-        <Button x:Name="button_Home" Content="HOME" HorizontalAlignment="Left" Margin="313,266,0,0" VerticalAlignment="Top" Width="194" Height="28" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="Blue" Foreground="White"  Click="button_Home_Click" />
-        <Button x:Name="button_profile" Content="PROFILE" HorizontalAlignment="Left" Margin="96,147,0,0" VerticalAlignment="Top" Width="196" Height="35" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="Red" Foreground="Black"  Click="button_profile_Click" />
+        <Button x:Name="button_Home" Content="HOME" HorizontalAlignment="Left" Margin="313,0,0,248.538" VerticalAlignment="Bottom" Width="178.677" Height="28" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="Blue" Foreground="White"  Click="button_Home_Click" />
+        <Button x:Name="button_profile" Content="PROFILE" HorizontalAlignment="Left" Margin="96,147,0,0" VerticalAlignment="Top" Width="178" Height="35" FontSize="25" FontFamily="Consolas" FontWeight="Bold"  Background="Red" Foreground="Black"  Click="button_profile_Click" />
         <Button x:Name="Button_Back" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="62"  Margin="4,0,0,542" RenderTransformOrigin="0.5,0.5" Height="51" BorderBrush="{x:Null}" Click="Button_Back_Click">
             <Button.RenderTransform>
                 <TransformGroup>

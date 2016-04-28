@@ -184,7 +184,7 @@ namespace Tfour_Main
 
             else
             {
-                MessageBox.Show("Please provide  valid Players Credentials.");
+                MessageBox.Show("Please provide valid Player One credentials.");
             }
         }
 
@@ -200,7 +200,7 @@ namespace Tfour_Main
             Button_GuestPlayer2Login.IsEnabled = false;
 
 
-            Button_ViewProfilePlayer2.Visibility = Visibility.Visible;
+            Button_ViewProfilePlayer2.Visibility = Visibility.Hidden;
 
             Button_Register.IsEnabled = false;
             Button_Register.Visibility = Visibility.Hidden;
@@ -230,7 +230,7 @@ namespace Tfour_Main
             Button_playerTwoLogin.IsEnabled = true;
             Button_GuestPlayer2Login.IsEnabled = true;
 
-            Button_ViewProfilePlayer1.Visibility = Visibility.Visible;
+            Button_ViewProfilePlayer1.Visibility = Visibility.Hidden;
 
 
 

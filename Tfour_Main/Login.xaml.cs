@@ -132,7 +132,7 @@ namespace Tfour_Main
             }
             else
             {
-                MessageBox.Show("Please provide  valid Player One Credentials.");
+                MessageBox.Show("Please provide valid Player One credentials.");
             }
 
         }
