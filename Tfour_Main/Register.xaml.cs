@@ -20,6 +20,9 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
+    
+    // Register window is used to open a new profile in the database
+        // Name, username, password, a reentered password, and email must be provided
     public partial class Register : Window
     {
         DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
@@ -34,7 +37,9 @@ namespace Tfour_Main
         }
 
 
-
+        // Button to create the profile in database
+            // All textbox designated are checked for input
+            // The username is checked in the database for any similar usernames ( No double usernames allowed )
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TextBox_Name.Text)
@@ -118,7 +123,8 @@ namespace Tfour_Main
                 Label_passwordsDontMatch.Visibility = Visibility.Hidden;
             }
         }
-
+    
+        // Button to return to previous screen ( Login, Login2, and GameOver windows )
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             prevWindow.Show();
