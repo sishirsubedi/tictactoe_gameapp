@@ -18,6 +18,8 @@ namespace Tfour_Main
     /// Interaction logic for Login2.xaml
     /// </summary>
     /// test github
+    
+    // This Login2 window is used for a Two Player Game
     public partial class Login2 : Window
     {
         private DatabaseDataContext db = new DatabaseDataContext(Properties.Settings.Default.Tfour_ConnectionString);
@@ -29,6 +31,7 @@ namespace Tfour_Main
         private Boolean playerOneValid;
         private Boolean playerTwoValid;
 
+        //Sets the display for the window onload
         public Login2(Window window)
         {
             InitializeComponent();
@@ -46,6 +49,8 @@ namespace Tfour_Main
 
         }
 
+        // Button for Player One to login using their username and password
+        // The button checks for the username and password within the designated textboxes on the left and verifies it through the database
         private void Button_Click_PayerOneLogin(object sender, RoutedEventArgs e)
         {
 
@@ -97,6 +102,8 @@ namespace Tfour_Main
             }
         }
 
+        // Button for Player Two to login using their username and password
+        // The button checks for the username and password within the designated textboxes on the right and verifies it through the database
         private void Button_Click_PayerTwoLogin(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Textbox_Username2.Text) || string.IsNullOrWhiteSpace(PasswordBox_LoginTwo.Password))
@@ -148,6 +155,7 @@ namespace Tfour_Main
             }
         }
 
+        // Button is used to open the Forgot Credentials window
         private void Button_ForgetPassword_Click(object sender, RoutedEventArgs e)
         {
             ForgotCredentials forgetpassword = new ForgotCredentials(this);
@@ -155,6 +163,7 @@ namespace Tfour_Main
             this.Visibility = System.Windows.Visibility.Hidden;
         }
 
+        // Button is used to open a Register window
         private void Button_Register_Click(object sender, RoutedEventArgs e)
         {
             Register register = new Register(this);
@@ -162,6 +171,7 @@ namespace Tfour_Main
             this.Visibility = System.Windows.Visibility.Hidden;
         }
 
+    
         private void Button_View_Profile_Click(object sender, RoutedEventArgs e)
         {
             /*
@@ -171,6 +181,7 @@ namespace Tfour_Main
             */
         }
 
+        // Button is used to open the GameOptions window only after both Players has logged in as guest or as a registered user
         private void Button_Play_Click(object sender, RoutedEventArgs e)
         {
 
@@ -189,7 +200,8 @@ namespace Tfour_Main
         }
 
 
-
+        // Button is used to sign in Player Two as "Guest2"
+        // Disables the buttons for Player Two to sign in as a registered user
         private void Button_GuestPlayer2Login_Click(object sender, RoutedEventArgs e)
         {
             Label_PLAYER2_LOGUSER.Content = "Guest2";
@@ -211,6 +223,8 @@ namespace Tfour_Main
             playerTwoValid = true;
         }
 
+        // Button is used to sign in Player One as "Guest1"
+        // Disables the buttons for Player One to sign in as a registered user
         private void Button_GuestPlayer1Login_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(" Login 1 as Guest. Please try Login 2 !");
@@ -236,6 +250,7 @@ namespace Tfour_Main
 
         }
 
+        // Button is used to open the Profile window for Player One
         private void Button_ViewProfilePlayer1_Click(object sender, RoutedEventArgs e)
         {
             Profile profile = new Profile(this, playerOneUserID);
@@ -243,19 +258,23 @@ namespace Tfour_Main
             this.Hide();
         }
 
+        // Button to open the Profile window
         private void Button_ViewProfilePlayer2_Click(object sender, RoutedEventArgs e)
         {
+            // Profile window is opened using Player Two username
             Profile profile = new Profile(this, playerTwoUserID);
             profile.Show();
             this.Hide();
         }
 
+        // Button to return to previous window
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
             prevWindow.Show();
         }
 
+        // Button to close the application
         private void Button_Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
