@@ -18,6 +18,8 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
+    // The MainWindow is the first window to appear for the application
 
     public partial class MainWindow : Window
     {
@@ -25,7 +27,8 @@ namespace Tfour_Main
         {
             InitializeComponent();
         }
-
+        
+        // This button will load the login window for a One Player game
         private void Button_playerOneGame_Click(object sender, RoutedEventArgs e)
         {
             // Create and display one player login form
@@ -35,6 +38,7 @@ namespace Tfour_Main
             this.Visibility = System.Windows.Visibility.Hidden;
         }
 
+        // This button will load the login window for a Two Player game
         private void Button_playerTwoGame_Click(object sender, RoutedEventArgs e)
         {
             // Create and display two player login form
@@ -44,6 +48,7 @@ namespace Tfour_Main
             this.Visibility = System.Windows.Visibility.Hidden;
         }
 
+        // This button is used to exit the application
         private void Button_Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
