@@ -17,6 +17,8 @@ namespace Tfour_Main
     /// <summary>
     /// Interaction logic for Game.xaml
     /// </summary>
+    
+    // Game window is where the actual game is played
     public partial class Game : Window
     {
         // Fields
@@ -51,7 +53,7 @@ namespace Tfour_Main
       
 
 
-
+        // The Game window is loaded with Player One and Player Two username, stones, game mode, and who has the first move.
         public Game(int playMode, String player1,  Boolean player1turn, BitmapImage p1gstone, String player2, Boolean player2turn, BitmapImage  p2gstone, String gLevel )
         {
 
@@ -504,7 +506,7 @@ namespace Tfour_Main
             soundON = false;
         }
 
-      
+        // Music Button - turn off/on
         private void play_Click(object sender, RoutedEventArgs e)
         {
 
@@ -525,7 +527,7 @@ namespace Tfour_Main
 
             }
         }
-
+        
         private void button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
