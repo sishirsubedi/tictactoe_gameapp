@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -297,6 +297,10 @@ namespace Tfour_Main
         #endregion
 
         #region UTILITY_FUNCTIONS
+        /************************************************************************************************************
+        * Traverses the board from the give start node in the direction provided and counts the desired tokens. It  *
+        * counts the number of such tokens in a row and it will stop if it finds a different token or an empty node *
+        ************************************************************************************************************/
         void TraverseAndCountTokens(BoardNode curNode, int direction, int TOKEN, ref int count)
         {
             if (curNode == null)
@@ -309,10 +313,19 @@ namespace Tfour_Main
                 count++;
                 TraverseAndCountTokens(curNode.neighbors[direction], direction, TOKEN, ref count);
             }
-
-            return;
+            else
+            {
+                return;
+            }
         }
 
+        /****************************************************************************
+        * Makes isTrap true if the oponent is setting a trap on any given direction *
+        *                                                                           *
+        *                    The "Trap Pattern" is depicted below:                  *
+        *                                                                           *
+        *        (Empty Move Node)->(Oponent Node)->(Oponent Node)->(Empty Node)    *
+        ****************************************************************************/
         void BlocksTrap(BoardNode curNode, int direction, ref int count, ref bool isTrap)
         {
             if (curNode == null)
@@ -339,6 +352,9 @@ namespace Tfour_Main
             }
         }
 
+        /************************************************************************************
+        * Finds the empty nodes on the networks and adds them to the list of possible moves *
+        ************************************************************************************/
         void GeneratePossibleMoves()
         {
             for (int r = 0; r < NUM_ROW; r++)
@@ -377,25 +393,18 @@ namespace Tfour_Main
             {
                 for (int c = 0; c < NUM_COL; c++)
                 {
-                    /*********************************************************************
-                    * If the node it's not in the first row then it has a neighbor above *
-                    *********************************************************************/
+                    // If the node it's not in the first row then it has a neighbor above
                     if (r > 0) boardNetwork[r, c].neighbors[up] = boardNetwork[r - 1, c];
-                    /********************************************************************
-                    * If the node it's not in the last row then it has a neighbor below *
-                    ********************************************************************/
+                    // If the node it's not in the last row then it has a neighbor below
                     if (r < NUM_ROW - 1) boardNetwork[r, c].neighbors[down] = boardNetwork[r + 1, c];
-                    /*********************************************************************************
-                    * If the node it's not in the leftmost column then it has a neighbor to the left *
-                    *********************************************************************************/
+                    // If the node it's not in the leftmost column then it has a neighbor to the left
                     if (c > 0) boardNetwork[r, c].neighbors[L] = boardNetwork[r, c - 1];
-                    /***********************************************************************************
-                    * If the node it's not in the rightmost column then it has a neighbor to the right *
-                    ***********************************************************************************/
-                    if (c < NUM_COL - 1) boardNetwork[r, c].neighbors[R] = boardNetwork[r, c + 1];
-                    /*************************
-                    * Connect the diagonal's *
-                    *************************/
+                    // If the node it's not in the rightmost column then it has a neighbor to the right
+                    if (c < NUM_COL - 1) boardNetwork[r, c].neighbors[R] = boardNetwork[r, c + 1];     
+                    
+                    /************************
+                    * Connect the diagonals *
+                    ************************/
                     if ((r > 0 && r < NUM_ROW - 1) && (c > 0 && c < NUM_COL - 1))
                     {
                         boardNetwork[r, c].neighbors[upL] = boardNetwork[r - 1, c - 1];
@@ -429,9 +438,7 @@ namespace Tfour_Main
                     }
                 }
             }
-            /***************************************
-            * Connect the diagonals on the corners *
-            ***************************************/
+            // Connect the diagonals on the corners
             boardNetwork[0, 0].neighbors[downR] = boardNetwork[1, 1];
             boardNetwork[0, 5].neighbors[downL] = boardNetwork[1, 4];
             boardNetwork[5, 0].neighbors[upR] = boardNetwork[4, 1];
