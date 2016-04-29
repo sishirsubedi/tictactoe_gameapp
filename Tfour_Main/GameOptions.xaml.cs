@@ -12,15 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+    // GameOptions window is used to prepare a game
+    // For a One Player game - the user must choose a stone, the AI difficulty level, and who gets to make the first move.
+    // For a Two Player game - the user must each choose a stone and whos gets to make the first move.
+
 namespace Tfour_Main
 {
     /// <summary>
     /// Interaction logic for GameOptions.xaml
     /// </summary>
-    
-    // GameOptions window is used to prepare a game
-    // For a One Player game - the user must choose a stone, the AI difficulty level, and who gets to make the first move.
-    // For a Two Player game - the user must each choose a stone and whos gets to make the first move.
     public partial class GameOptions : Window
     {
 
