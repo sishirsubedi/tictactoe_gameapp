@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tfour_Main
-{
+{ // This module stores the player information . It sets whose turn it is. Player attributes are playerID, playerTurn and winner.
     class Player
     {
         private String playerID;

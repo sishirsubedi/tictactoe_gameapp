@@ -14,9 +14,7 @@ using System.Windows.Shapes;
 
 namespace Tfour_Main
 {
-    /// <summary>
-    /// Interaction logic for GameOver.xaml
-    /// </summary>
+    // This class describes the features of game over module which is visible as soon as game module closes
     public partial class GameOver : Window
     {
 
@@ -39,7 +37,7 @@ namespace Tfour_Main
 
 
         }
-
+        // replay game
         private void button_Replay_Click(object sender, RoutedEventArgs e)
         {
             GameOptions go = new GameOptions(mainWindow, playerOneId, playerTwoId, gameMode);
@@ -48,11 +46,14 @@ namespace Tfour_Main
 
         }
 
+        // quit game applicatoin
         private void button_Quit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+
+        // game goes to first page of the application
         private void button_Home_Click(object sender, RoutedEventArgs e)
         {
             
@@ -61,6 +62,8 @@ namespace Tfour_Main
             this.Hide();
         }
 
+
+        // game goes to profile page
         private void button_profile_Click(object sender, RoutedEventArgs e)
         {
            
@@ -72,6 +75,8 @@ namespace Tfour_Main
             this.Hide();
         }
 
+
+        // game goes back to game window to obseve ended game
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
             gameWindow.Show();

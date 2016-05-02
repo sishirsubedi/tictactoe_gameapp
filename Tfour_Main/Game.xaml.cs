@@ -316,6 +316,8 @@ namespace Tfour_Main
 
         }
 
+        // this module is active as soon as game counter is zero
+
         private void isGameOver()
         {
 

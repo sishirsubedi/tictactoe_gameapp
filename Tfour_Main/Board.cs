@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tfour_Main
-{
+{// This module describes the game board which has 2d integer array and scores for two players.
+    // it also has calculate score function to calculate score using horizontal, diagonal, and vertical direction
+    // to find consecutive 4 or more same stones.
     class Board
     {
         private int[,] gameBoard;
@@ -37,6 +39,13 @@ namespace Tfour_Main
 
         }
 
+        /*
+ This module updates the data structure (2d integer array) and marks the cells for the player who clicked on it.  
+1.	Takes in three integers as arguments. First two are row and column number and third one is either 1 and 2 for player one and player two respectively.
+2.	Call calculateScore() to update scores for player one and player two score.
+
+         
+         */
         public void updateBoard(int x, int y, int playerNumber)
         {
             // update 1 or 2 for each player
@@ -58,6 +67,15 @@ namespace Tfour_Main
            
                 gameBoard[x, y] = 0;
         }
+
+
+        /*
+         This module checks the current status of the board and calculates the score for both players.
+1.	Loop through all the cells in the game board.
+2.	Call checkHorizontal, checkVertical, and checkDiagonal to check if there are consecutive four or more stones in horizontal, vertical and diagonal direction.
+3.	Update the score for players.
+
+    */
 
         private void calculateScore()
         {
@@ -84,6 +102,14 @@ namespace Tfour_Main
             }
         }
 
+
+        /*
+         This module checks if there are four or more consecutive stones in a horizontal direction and updates the score for each player.
+1.	Check horizontal input. Since to make four or more stones in a horizontal direction you need to have third column in it, check only third column.
+2.	If four consecutive stones then add score one for that player score.
+3.	If more than four then add one score for fifth and another one score for sixth consecutive score.
+
+         */
         private int checkHorizontal(int x, int y)
         {
             int status = 0;
@@ -128,6 +154,15 @@ namespace Tfour_Main
             return status;
         }
 
+
+        /*
+         This module checks if there are four or more consecutive stones in a vertical direction and updates the score for each player.
+1.	Check vertical input. Since to make four or more stones in a vertical direction you need to have third row in it, check only third row.
+2.	If four consecutive stones then add score one for that player score.
+3.	If more than four then add one score for fifth and another one score for sixth consecutive score.
+
+         */
+
         private int checkVertical(int x, int y)
         {
             int status = 0;
@@ -171,6 +206,13 @@ namespace Tfour_Main
             }
             return status;
         }
+
+        /*
+ This module checks if there are four or more consecutive stones in a diagonal direction and updates the score for each player.
+1.	Check diagonal input. Check first three rows in both left and right direction.
+2.	If four consecutive stones then add score one for that player score.
+3.	If more than four then add one score for fifth and another one score for sixth consecutive score.
+*/
 
         private int checkDiagonal(int x, int y)
         {
@@ -240,7 +282,7 @@ namespace Tfour_Main
         }
 
 
-
+        // This modules returns current game board matrix.
         public int[,] getGameMatrix()
         {
             int[,] gameMatrix = new int[6, 6];
@@ -254,6 +296,8 @@ namespace Tfour_Main
             return gameMatrix;
         }
 
+
+        // This modules fills game board matrix
         public void setGameMatrix( int [,] matrix)
         {
 
@@ -314,3 +358,5 @@ namespace Tfour_Main
         }
     }
 }
+ 
+ 

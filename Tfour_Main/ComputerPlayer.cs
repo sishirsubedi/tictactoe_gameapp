@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Tfour_Main
+
+    // this module describes features of the computer player and calls AI class to get optimum location for the game
 {
     class ComputerPlayer : Player
     {
